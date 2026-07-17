@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@theme {
+  /* Named so Tailwind sorts it correctly among min-width breakpoints;
+     an arbitrary `min-[1440px]:` variant emits in first-use stylesheet
+     order instead, letting md: (768px) win the cascade at 1440px. */
+  --breakpoint-xl2: 90rem; /* 1440px: Creative page's 4-column masonry breakpoint */
+}
+
+:root {
+  /* Design tokens: see CLAUDE.md "Design tokens & reference" */
+  --color-bg: #fff4f4; /* blush */
+  --color-surface: #ffffff; /* card fill on top of the blush page */
+  --color-ink: #000000; /* body text, headings: sampled pure black from the Figma source */
+  --color-accent: #cc513b; /* terracotta: large headings 24px+, button fills, decoration */
+  --color-accent-deep: #923626; /* deep terracotta: small text - nav, eyebrows, captions, links */
+  --color-nav-active: var(--color-accent-deep);
+  --color-navy: #3c5889; /* UI blue: badges, tag pills, Back to top button fill (sampled from Figma; distinct from tanmigo-blue) */
+  --color-navy-tint: #d1dcf0; /* tag pill fill */
+  --color-muted: #666666; /* gray captions/attribution labels (5.74:1 on white, passes AA) */
+  --color-tanmigo-blue: #1db2e5; /* Tanmigo brand mark only: decoration / dark ground, never text on light */
+  --color-card-from: #f1cdc6;
+  --color-card-to: #f8e9e6;
+  --color-decision-bg: #ffece6; /* pixel-sampled from Figma: case-study decision-card band background */
+  --color-reflection-bg: #f5ffda; /* pixel-sampled from Figma: "Becoming a better designer" reflection card + Background band */
+  --grid-line: #f5dcd8; /* sampled from refs/grid reference.png: #ffffff cells, 80px pitch, this line color */
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-ink: var(--color-ink);
+  --color-accent: var(--color-accent);
+  --color-accent-deep: var(--color-accent-deep);
+  --color-nav-active: var(--color-nav-active);
+  --color-navy: var(--color-navy);
+  --color-navy-tint: var(--color-navy-tint);
+  --color-muted: var(--color-muted);
+  --color-tanmigo-blue: var(--color-tanmigo-blue);
+  --color-card-from: var(--color-card-from);
+  --color-card-to: var(--color-card-to);
+  --color-decision-bg: var(--color-decision-bg);
+  --color-reflection-bg: var(--color-reflection-bg);
+  --font-sans: var(--font-hanken);
+  --font-nav: var(--font-hanken);
+  --font-display: var(--font-hanken);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  /* var(--font-hanken) directly: @theme inline tokens don't exist at
+     runtime, same reason .font-display below is plain CSS */
+  font-family: var(--font-hanken), sans-serif;
+}
+
+/* Font utilities written explicitly: the @theme inline tokens above were
+   not generating .font-display/.font-nav, so headings silently fell back
+   to Roboto. Plain CSS keeps this working regardless of Tailwind config. */
+.font-display {
+  font-family: var(--font-hanken), sans-serif;
+}
+.font-nav {
+  font-family: var(--font-hanken), sans-serif;
+}
+
+/* Accessibility: visible keyboard focus everywhere (CLAUDE.md a11y rules) */
+:focus-visible {
+  outline: 2px solid var(--color-nav-active);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Accessibility: respect reduced-motion preference (CLAUDE.md a11y rules) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.card-gradient {
+  background: radial-gradient(
+    circle at 50% 30%,
+    var(--color-card-from) 0%,
+    var(--color-card-to) 70%
+  );
+}
+
+/* Grid-paper texture (CLAUDE.md design rules): CSS-drawn so it stays crisp on
+   retina, tiles without seams, and the line opacity stays tunable via
+   --grid-line. Home and About apply this full-page; never place it behind
+   paragraph text. */
+.bg-grid-paper {
+  background-color: var(--color-bg);
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      var(--grid-line) 0,
+      var(--grid-line) 1px,
+      transparent 1px,
+      transparent 80px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      var(--grid-line) 0,
+      var(--grid-line) 1px,
+      transparent 1px,
+      transparent 80px
+    );
+  /* Pin each layer to a fixed 80x80 tile so cells stay square at every
+     viewport size: without this, "auto" sizing resolves a repeating
+     gradient to the element's own box, stretching cells on wide screens. */
+  background-size: 80px 80px, 80px 80px;
+  background-repeat: repeat, repeat;
+  background-position: top left, top left;
+  background-attachment: scroll, scroll;
+}
