@@ -20,7 +20,7 @@ const MORE_PROJECTS = [
 const RESOURCE_CARDS = [
   {
     label: "CLAUDE.md",
-    href: null,
+    href: "https://github.com/irenecancode/irene-portfolio/blob/main/CLAUDE.md",
     lines: ["Accessibility Guidelines", "Design Tokens"],
   },
   {
@@ -35,7 +35,7 @@ const RESOURCE_CARDS = [
   },
   {
     label: "Disclaimer",
-    href: null,
+    href: "https://github.com/irenecancode/irene-portfolio",
     lines: ["Code is public. Artwork and content: all rights reserved."],
   },
 ] as const;
