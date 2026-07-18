@@ -1,291 +1,222 @@
 @AGENTS.md
-# Irene's portfolio site
+# CLAUDE.md — the rules for my portfolio site
 
+Hi, I'm Irene. This file keeps my coding agents (and me) honest while we
+build irenecheung.net together in Next.js + Tailwind + TypeScript. The repo
+is public, so this file has two audiences: the agent working in this repo,
+and anyone who found it through my site.
 
+If you're here to borrow: the sections people usually want are
+**Accessibility**, **Tech gotchas**, and **The no-GIF motion pattern**.
+They're written so you can paste them into your own CLAUDE.md — swap my
+hex codes for yours and keep the ratios.
 
-## Copy rules (audited — do not violate)
-- Voice: plain full sentences. No "it's not X, it's Y" constructions,
-  no dramatic one-word fragments, no marketing adjectives.
-- Banned in site copy and alt text: invented percentage metrics
-  (especially "25% data integrity") and photos taken inside Meta labs.
-  "Quest Pro" is ALLOWED (Irene's explicit ruling, 2026-07-17) — but
-  never caption the Mugsy dome as a Quest Pro; they are different
-  hardware.
-- No em-dash
-- Check grammatical mistakes, and don't rewrite
+## Accessibility (WCAG AA)
+
+Portable. Lines marked [mine] are specific to my palette — test your own
+colors with any contrast checker before trusting them.
+
+- Semantic HTML: exactly one h1 per page, h2 for section titles, h3 for
+  card titles. Eyebrow labels, captions, and body text are p or span —
+  never a heading tag just because the text is small and bold.
+- Landmarks on every page: header, nav, main, footer.
+- Every page gets its own title tag and meta description.
+- Alt text: an image that carries information gets one descriptive
+  sentence. Pure decoration (blobs, textures, stickers) gets alt="".
+  Any icon-only link needs an accessible name via aria-label or
+  visually-hidden text.
+- Contrast, with the real AA numbers: normal text needs 4.5:1 against
+  its background; large text (24px+, or roughly 19px bold) needs 3:1.
+  [mine] Terracotta #CC513B measures 4.37:1 on white — fails for body
+  text, fine for large headings and button fills. Small text uses deep
+  terracotta #923626 (7.56:1). Tanmigo blue #1DB2E5 is never text on a
+  light background.
+- Keyboard: everything reachable by tab, in a sensible order, with a
+  visible :focus-visible outline.
+- Motion: respect prefers-reduced-motion. Content is readable by
+  default — nothing sits invisible waiting for a scroll trigger.
+  Animation is a bonus, never a gate.
+- Before calling a page done: read the heading outline the way a screen
+  reader would, tab through the whole page, zoom to 200% (text should
+  reflow, not clip or scroll sideways), and check 390 / 768 / 1024 /
+  1440px. A tablet should get a real tablet layout, not stretched
+  mobile.
+
+## Tech gotchas (learned the hard way — also portable)
+
+- Tailwind v4's @theme inline tokens are build-time only. They don't
+  exist as runtime CSS variables, so plain-CSS rules (body,
+  :focus-visible, custom font classes) must reference variables that
+  actually exist at runtime: next/font's variables or :root tokens.
+  This silently reverted my fonts twice before I wrote it down.
+- Turbopack ignores touch (mtime-only changes). To force a CSS rebuild,
+  change real file content.
+
+## The no-GIF motion pattern (portable)
+
+No raw GIFs, ever — my fox was an 18MB gif once. Every animation ships
+as: a static poster image by default, upgraded to a looping WebM/MP4
+only after JS confirms motion is allowed. See src/lib/useAllowMotion.ts,
+used by FoxHero, DoodleBrain, and CollageVideo. Reduced-motion users get
+a crisp still, everyone else gets the loop, and nobody downloads 18MB.
+
+## My copy rules
+
+- Plain, full sentences. No "it's not X, it's Y" constructions, no
+  dramatic one-word fragments, no marketing adjectives.
+- No em dashes in site copy.
+- No metrics I can't defend out loud. If I didn't measure it, it
+  doesn't go on the site.
+- No photos taken inside Meta labs. Publicly published imagery with a
+  visible source link is fine. The name "Quest Pro" is fine (my call,
+  2026-07-17) — but never caption the Mugsy dome as a Quest Pro;
+  they're different hardware.
+- Fix my grammar. Don't rewrite my sentences.
 
 ## Design rules
-- Grid-paper background placement: Hero and top section for all, make sure "home", "creative", and "about" sit right inside the grid
-  case study pages get it ONLY on the hero/top section and the footer.
-- Grid image is saved under media, named grid reference; adjust opacity if accessibility constrat is not met 
-- Body text: max-width ~660px, 16–17px, line-height 1.6.
-  Section titles 32–40px+. Strong size contrast is the goal.
-- Illustrations (fox, hand-drawn diagrams) are identity moments:
-  hero, case-study covers, footer. Don't scatter them as decoration.
-- fox.gif is 18MB — never ship it as-is. Compress or convert to a short
-  looping video with a static fallback.
-- Header layout: logo absolute-left, site title absolute-center
-  (`left-1/2 -translate-x-1/2`), nav absolute-right — each pinned
-  independently via `position: absolute` inside a `relative` header,
-  per Irene's explicit spec. (An earlier CSS-grid-areas version was
-  also verified mathematically centered at every tested width, but she
-  reported an off-center render we couldn't reproduce; absolute
-  positioning is both what she asked for and the most defensive option
-  regardless of the root cause.) Mobile stacks the title on its own row
-  below logo/nav using breakpoint-specific top offsets — see
-  Header.tsx.
-- "Case Studies" section: heading and the "Click to see more" caption
-  under it are both left-aligned, not centered.
-- "Back to top": navy fill (#3C5889) with white text, right-aligned within the content column
-  (not centered), sitting inside its own grid-paper-textured band just
-  above the footer. Shared as `<BackToTop>` (src/components/BackToTop.tsx)
-  — every page renders this component rather than inlining the markup.
-- Footer: left-aligned (not centered). "Irene Cheung" heading in
-  terracotta. Body line in black. A gray uppercase "Social" label, then
-  LinkedIn / GitHub / Instagram as plain stacked text links — NOT
-  icon buttons. (The mailto link stays too; it just wasn't visible in
-  the Figma crop this was checked against.)
-- The footer and back-to-top band always use the site container
-  (max-w-6xl), never a page's local text column. One left rail, all
-  pages. `<Footer>` (src/components/Footer.tsx) and `<BackToTop>` each
-  own their own max-w-6xl/px-6 sm:px-10 wrapper internally — never nest
-  either inside a narrower page-level container (e.g. a case study's
-  max-w-3xl prose column), or their left/right edges will drift off the
-  rail that the hero headline and section titles sit on. Caught on
-  /meta and /about: the About page's back-to-top was hand-rolled with
-  `flex justify-center` and no site container at all, floating dead
-  center instead of right-aligned to the rail.
 
-## Tech gotchas (learned the hard way)
-- Tailwind's @theme inline tokens are BUILD-TIME only: they do not exist
-  as runtime CSS variables. Any plain-CSS rule (body, .font-display,
-  :focus-visible etc.) must reference variables that actually exist at
-  runtime: the next/font variables (--font-hanken) or :root tokens.
-  This bug has silently reverted fonts twice already.
-- Turbopack ignores mtime-only changes (touch): to force a CSS rebuild,
-  make a real content change.
+- Grid-paper background: Home, About, and Creative get it full-page,
+  with the header content sitting inside the grid. Case study pages get
+  it only on the hero band and the footer; the main content between
+  them is explicit white (bg-surface). Never put the grid behind
+  paragraph text — texture frames reading, it shouldn't accompany it.
+- The grid is drawn in CSS (fixed 80x80px tiles — see .bg-grid-paper in
+  globals.css), never a stretched image, so cells stay square at every
+  viewport width. If the lines ever fight legibility, lower --grid-line,
+  don't remove the texture.
+- Body text: max-width ~660px, 16–17px, line-height 1.6. Section titles
+  32–40px+. Strong size contrast is the goal. The wider rule: containers
+  scale with the viewport, text measure never does.
+- One left rail: every section, including the footer and back-to-top
+  band, shares the site container (max-w-6xl, px-6 sm:px-10). Footer
+  and BackToTop own that wrapper internally — never nest them inside a
+  page's narrower text column, or their edges drift off the rail. (This
+  happened on /meta and /about before it became a rule.)
+- Illustrations (the fox, hand-drawn diagrams) are identity moments:
+  hero, case-study covers, footer. Don't scatter them as decoration.
+- Header: logo pinned absolute-left, site title absolute-center, nav
+  absolute-right, each positioned independently inside a relative
+  header — my explicit spec, keep it. Mobile stacks the title on its
+  own row (see Header.tsx). An earlier grid-areas version measured
+  centered but rendered off-center for me once; absolute positioning is
+  the defensive choice either way.
+- "Case Studies" heading and its "Click to see more" caption: left-
+  aligned on the rail, not centered.
+- Back to top: navy (#3C5889) fill, white text, right-aligned within
+  the site container, in its own grid-textured band above the footer.
+  Always the shared <BackToTop> component.
+- Footer: left-aligned on the rail. Name in terracotta, body in ink,
+  gray uppercase "Social" label, then LinkedIn / GitHub / Instagram as
+  plain stacked text links (not icon buttons), plus the mailto link.
+
+## Design tokens
+
+Colors: follow the Figma site file (link in the build log below). The
+only reason to deviate is a contrast failure against the accessibility
+rules above — then pick a passing value and tell me. Current sampled
+tokens live in globals.css with usage comments.
+
+Type: one family, Hanken Grotesk (Google Fonts via next/font), for
+everything — headings, body, nav, labels. Hierarchy comes from weight,
+size, and color, never from switching families. UI labels differentiate
+with uppercase + letter-spacing + smaller size. The header's site title
+is weight 900. Never use the "London Tube" font anywhere (unlicensed
+Johnston clone — its TTF must never be committed) and don't reintroduce
+Roboto.
+
+Spacing: section gap 96–140px · heading-to-body 12–16px · paragraph
+gap 24px.
+
+Interaction: horizontal scrollers are focusable, arrow-key navigable,
+and never hijack the wheel.
+
+## Build log & working notes
+
+Everything below is running memory between me and my build agents: what
+got decided, what drifted, and what to check before "fixing" something
+that looks odd. It's messy on purpose — building in the open includes
+the notes.
+
+- Build from my references and screenshots; follow the UI exactly. The
+  old live site (irenecheung.net) is NOT the source of truth for this
+  rebuild.
+- Never touch DNS or anything about the live irenecheung.net. It stays
+  untouched until I switch it myself.
+- Source-of-truth design file: my Figma Site,
+  https://www.figma.com/site/biQs3RDV8GBaONPLsXq66P/Site — viewable
+  anonymously, just slow to navigate by automation (ctrl+scroll zooms,
+  plain scroll pans; the in-app Find tool is the fastest way to a
+  specific string). When a screenshot and this file disagree, or this
+  file is silent, check the Figma and update this file — it started
+  life written from screenshots and has had real mistakes (ink color,
+  tag-pill color, footer layout).
+- The repo is public now: github.com/irenecancode/irene-portfolio. The
+  Open Resource cards (CLAUDE.md, Disclaimer) and the footer GitHub
+  link all point at it.
+- Home page structure: Hero → Case Studies (2x2 grid) → More Project
+  (2 plain cards) → Open Resource (intro + 4 info cards) → Back to top
+  → Footer. The Figma content shifts over time (Blue Bottle moved from
+  Case Studies to More Project; a Claude Code card replaced it) — re-
+  check the Figma before assuming a card's section.
+- More Project cards are deliberately plain: headline + body + outlined
+  tag pills (border-navy, transparent fill) directly on the page
+  background. No white card, no shadow, no image, no attribution. The
+  outline pills are part of what signals "secondary" — don't let this
+  section drift back into the filled-pill <CaseStudy> look (it did
+  once; caught 2026-07-16). Implemented inline in page.tsx.
+- Case-study pages built: /meta, /tanmigo, /claude-code. Cards link via
+  the href prop on <CaseStudy>. Felidae and Blue Bottle have no pages
+  yet — Felidae's card keeps its in-progress copy and no href until the
+  case study exists.
+- The shared case-study skeleton (the only parts that must repeat):
+  hero band with grid texture → h1/subtitle/tags → <SummaryGrid> (six
+  fields, each with its own semantic icon — the Figma's single repeated
+  icon was a placeholder, not a design) → intro paragraphs → bordered
+  info cards (<ToolCard>/<ListCard>/<ImageImpactCard> in
+  OutlineCard.tsx) → page-specific middle → <ReflectionCard> ("Becoming
+  a better designer", #F5FFDA, DoodleBrain docked right with the no-GIF
+  motion pattern) → "Read more" (two <CaseStudy> cards in the fixed
+  rotation meta → tanmigo → claude-code) → <BackToTop> → <Footer>.
+- Each case study's MIDDLE is different by design (Meta: ops-tool
+  story; Tanmigo: shipped-product story; Claude Code: concept +
+  prototype). Don't force identical middles — only the skeleton
+  repeats.
+- Type scale below case-study heroes: h2 sections are 36px on the full
+  frame; most carry a 28px lead line via the shared <Lead> component
+  (max-w-3xl, ~46–56 characters per line measured in a real browser).
+  One measure for every lead — no per-instance widths. A lead that
+  exceeds ~4 lines gets split: first sentence or two stay in <Lead>,
+  the rest demotes to body. Accepted deviations: the "how I ran it"
+  arrow-chain lead runs 3 lines (2 would need ~87cpl); ReflectionCard's
+  body is narrower (max-w-2xl) to leave room for the DoodleBrain — both
+  deliberate, don't "fix".
+- Background tints are pixel-sampled from Figma, not eyeballed:
+  --color-reflection-bg #F5FFDA, --color-decision-bg #FFECE6. The same
+  pass fixed real AA failures: several small labels wore text-accent
+  (#CC513B, 4.37:1) and were switched to text-accent-deep (7.56:1);
+  text-accent stays on true 30px+ headings. Two ink-opacity
+  approximations were replaced with the sampled --color-muted #666666.
+- Meta's System Impact card contains the literal string "Quest Pro" on
+  purpose (my override, 2026-07-17). Don't silently remove it — ask.
+- Paragraph lengths and wording on built pages are verified against
+  Figma. Don't tighten or summarize them on sight, even if they look
+  long for a portfolio.
+- Case-study hero images double as homepage thumbnails: one
+  case-<name>.webp/png per project in public/media, cropped from the
+  Figma exports in refs/ (the exports had a soft blush card baked in;
+  crops keep only the opaque content so the site's own wrapper supplies
+  the card look). Remaining PlaceholderImage usage (Tanmigo's video
+  prototype, some Claude Code screenshots) still needs real assets.
+- /meta history worth knowing: its "three layers" heading was corrected
+  2026-07-16 from retired copy ("Three Layers to demystify the AI Black
+  Box"); a few Background/Problem lines were reconstructed from
+  truncated screenshots (single-word completions, low risk, flagged).
 
 ## Process rules
-- Use Irene's reference and screenshots to build, follow exactly the UI elements; not based on irenecheung.net
-- Never touch DNS or anything about the live irenecheung.net —
-  it stays untouched until Irene switches it herself.
-- Source-of-truth design file: Irene's Figma Site at
-  https://www.figma.com/site/biQs3RDV8GBaONPLsXq66P/Site — it's viewable
-  anonymously (no login needed), just slow to navigate via automation
-  (canvas needs ctrl+scroll to zoom, plain scroll pans, and the in-app
-  "Find" tool is the fastest way to jump to a specific text string).
-  When a screenshot and this file disagree, or this file is silent on a
-  value, check the Figma file and update this file — it was originally
-  written by an agent from screenshots and has had mistakes in it
-  (e.g. the ink color, the tag-pill color, the footer layout).
-- That Figma file's "Webpages" list revealed the live site has (or is
-  meant to have) dedicated case-study pages: /tanmigo, /blue-bottle,
-  /meta, plus /about and template pages /page-2, /page-3. /meta is now
-  built (see below); /tanmigo and /blue-bottle are not. Case-study cards
-  that link to a built page use the `href` prop on `<CaseStudy>` — only
-  the Meta card has one so far.
-- Home page has more sections than the original build: Case Studies
-  (2x2 grid) → "More Project" (2 cards, exploratory/concept work, not
-  shipped) → "Open Resource" (intro line + 4 info cards: CLAUDE.md,
-  Tech Stack, Tools I used, Disclaimer) → Back to top → Footer. The
-  Figma content changes over time — e.g. Blue Bottle moved from Case
-  Studies into More Project and was replaced by a new Claude Code
-  card. Always re-check the Figma before assuming a card's section.
-- "More Project" cards are deliberately plain, not `<CaseStudy>` cards:
-  headline + body + tag pills directly on the page background, no
-  white card box, no shadow, no image/thumbnail, no attribution line.
-  Tag pills here are outlined (`border border-navy`, transparent fill,
-  navy text), NOT the filled `bg-navy-tint` pills used everywhere else
-  (the 4 real case studies, case-study hero tags) — the outline is
-  part of what signals "secondary." Confirmed against Irene's
-  screenshots 2026-07-16 after the section had drifted to reuse
-  `<CaseStudy>`'s filled-pill treatment, making it look identical to
-  the section above it. Implemented inline in `src/app/page.tsx`
-  (`MORE_PROJECTS` array) rather than as a shared component, since
-  it's a one-off, simpler-than-`<CaseStudy>` pattern only used here.
-- The "CLAUDE.md" and "Disclaimer" cards in Open Resource are meant to
-  link to this repo on GitHub, but the repo isn't public yet. They're
-  rendered as plain (non-linked) text for now — wire up real `href`s
-  once Irene has pushed the repo and given the URL.
-- /meta (case-study detail page) is built from Figma node 1107-108722,
-  but navigating that specific frame via automation got unreliable
-  after enough zoom/pan round-trips (keyboard shortcuts like Shift+1
-  stopped registering). The page covers hero → category/product/core
-  challenge → tools → background → problem space → "for a bit of
-  context" → "how I ran it" → two decision cards → "I design technical
-  tools in three layers, from the backend up" (corrected 2026-07-16;
-  was previously "Three Layers to demystify the AI Black Box," which
-  Irene confirmed is retired copy) → back to top. Content below that
-  heading (a literal three-layer breakdown looked like it continued)
-  wasn't confirmed — screenshots at that scroll position showed
-  fragments that may belong to the Tanmigo page's near-identical
-  template instead. Verify with Irene before extending. The hero paragraph under
-  "Background" and two of the "Core Challenge"/"Problem Space" bullets
-  were reconstructed from truncated screenshot text (single obvious
-  word completions like "latency" and "streams at once") — low risk,
-  but not verbatim-confirmed like the rest of the page.
-- /meta and /tanmigo (both built) share a real, confirmed pattern: grid-paper
-  on the hero band and footer only — the `<main>` in between must be
-  explicit `bg-surface` (white). It was inheriting the blush page
-  background from `body` by default (that default is correct for
-  Home/About, which are blush+grid-paper full-page, but wrong for case
-  studies) until caught against the Figma reference. `<h1>` = case title, `<h2>` = section
-  titles, `<h3>` = two-card callouts, and — most importantly — a shared
-  `<ReflectionCard>` component (src/components/ReflectionCard.tsx) that
-  closes every case study: fixed eyebrow "Becoming a better designer",
-  pale yellow-green bg (--color-reflection-bg, #F5FFDA), heading, body,
-  then either a stakeholder-breakdown list (Meta: TPM/Engineers) or an
-  italic closing line (Tanmigo), plus the doodle-brain illustration
-  docked to the right on sm+ screens — animated (`<DoodleBrain>`,
-  src/components/DoodleBrain.tsx), same prefers-reduced-motion pattern
-  as `<FoxHero>`: static poster by default, upgrades to the looping
-  alpha-WebM/MP4 once JS confirms motion is allowed. When building
-  /blue-bottle, reuse `<ReflectionCard>` — don't rebuild the pattern inline.
-- Beyond the shared wrapper, each case study's MIDDLE content is
-  different by design (Meta: Background/Problem Space/Three Layers
-  reflecting an internal ops tool; Tanmigo: Design Strategy/Rapid
-  Prototyping/The "Failed" Moment reflecting a shipped product build).
-  Don't force identical middle sections across pages — only the
-  hero/tags, ReflectionCard, back-to-top, and footer are the literal
-  repeating pattern.
-- The exact background tints are now pixel-sampled from Figma, not
-  eyeballed: --color-reflection-bg #F5FFDA (Background band +
-  ReflectionCard), --color-decision-bg #FFECE6 (the two-card decision
-  band on /meta). Both corrected from earlier guesses during the
-  "follow Figma colors, only deviate for AA failures" pass.
-- That same pass found real AA violations: `text-accent` (#CC513B,
-  4.37:1) was used on several small/sub-24px elements — the /meta
-  decision-card `<h3>` titles, the OutlineCard title labels (Tool/
-  System Impact/Stakeholder/Core User Journey), and a couple of
-  Tanmigo's small labels. All switched to `text-accent-deep` (7.56:1).
-  `text-accent` stays correct on the actual large headings (Hero,
-  Footer, Stack, About — all 30px+). Also replaced two `text-ink/70`
-  opacity approximations (Header's "Product Designer" subtitle, Meta's
-  Three-Layers question text) with the real sampled `--color-muted`
-  (#666666) token now that we know it's a flat swatch, not an ink tint.
-- Another real shared pattern (found after the first pass on /meta and
-  /tanmigo missed it entirely): right after the hero tags, every case
-  study has a "Summary" block — `<SummaryGrid>` (src/components/SummaryGrid.tsx),
-  a light-gray card holding 6 fields (Category, Org, Product, Role, Core
-  Challenge, Impact), each with its own semantic icon
-  (src/components/icons/SummaryIcons.tsx — tag/building/box/person/
-  warning-shield/target). The Figma source reused one identical icon
-  for all 6, which was a placeholder, not intentional — giving each
-  field a distinct icon was the one deliberate change asked for here.
-  Below that: 1-2 intro paragraphs, then a row of bordered
-  (`border-accent/30`) cards — `<ToolCard>` (icon+name+desc, reuses the
-  same public/media/stack-*.webp icons as the About page's Stack
-  component), `<ListCard>` (plain bullet list, e.g. Stakeholder / Core
-  User Journey), `<ImageImpactCard>` (Meta only, System Impact). All
-  three live in src/components/OutlineCard.tsx.
-- Type scale below the hero (added 2026-07-16, first found on /meta):
-  `<h2>` section titles are 36px, left-aligned, spanning the section's
-  full `max-w-5xl` frame. Directly under most of them sits a "lead"
-  paragraph — a 28px, medium-weight statement — via the shared
-  `<Lead>` component (src/components/Lead.tsx): `max-w-3xl`, left-
-  aligned text, block-centered (`mx-auto`) so it reads as a narrower,
-  inset column under the full-width h2. `<Lead>` is the single shared
-  measure for every 28px intro across /meta, /tanmigo, and
-  `ReflectionCard` — don't give individual instances their own
-  max-width. Measured with a real headless browser (not eyeballed):
-  this yields roughly 46-56 characters per line at desktop widths,
-  landing near the 50-60cpl target but not exact for every string —
-  natural variance from word length, not a bug. One confirmed
-  exception: a lead exceeding ~4 lines gets split, first 1-2 sentences
-  stay in `<Lead>`, the rest demotes to a normal body `<p>` below it
-  (done for the three-layers intro). One accepted deviation: the "how
-  I ran it" arrow-chain lead runs 3 lines, not the 2 Irene originally
-  guessed — reaching 2 lines would need ~87 characters/line, well
-  outside the shared measure, so 3 lines was kept rather than special-
-  casing that instance's width. ReflectionCard's own body text is
-  narrower still (`max-w-2xl`, ~42cpl) because that component reserves
-  room for the DoodleBrain illustration beside it — Irene confirmed
-  this is a deliberate exception, not something to widen to match.
-- Meta's System Impact card includes the literal string "Quest Pro" —
-  Irene explicitly overrode the audited copy-rule ban on that name for
-  this one instance. Don't silently "fix" it back out; if it looks
-  wrong in a future pass, ask before touching it.
-- Paragraph lengths/wording on these pages are intentional — verified
-  against Figma, not summarized or tightened. Don't shorten them on
-  sight even if they look long for a portfolio site.
-- Home page's case-study cards link out via the `href` prop on
-  `<CaseStudy>` now that /meta and /tanmigo exist. Blue Bottle's card
-  still has no href — add one when /blue-bottle is built.
-- Hero images for all four homepage case studies (Felidae, Meta,
-  Tanmigo, Claude Code) plus the matching homepage thumbnails are
-  `case-<name>.webp/png` in `public/media` — one shared file for both
-  uses per case study, same as the pre-existing pattern. The 2026-07-16
-  set was cropped from Figma exports in `refs/` (`meta thumbnail.png`,
-  `tanmigo thumbnail.png`, `Claude_thumbnail.png`, `felidae
-  thumbnail.png`): each export had a soft blush card/shadow baked in
-  around the actual screenshot (a fully-opaque rectangle sits inside a
-  ~60%-alpha padded card), so the crop keeps only the fully-opaque
-  content and lets the site's own `card-gradient` wrapper supply the
-  card look. This replaced Meta's old logo-overlay image and Tanmigo's
-  old laptop+phone mockup composite with plainer screenshot crops —
-  confirmed with Irene as the intended direction before overwriting.
-  Felidae has no dedicated page yet, so it only got the homepage
-  thumbnail; its card still has placeholder headline/body text and no
-  href. Remaining `PlaceholderImage` usage (Tanmigo's video prototype,
-  Claude Code's before/after and use-case screenshots) is unrelated
-  non-hero content and still needs real assets.
-- Every built case-study page (`/meta`, `/tanmigo`, `/claude-code`)
-  ends with a "Read more" section, right before `<BackToTop>`, in the
-  exact `<CaseStudy>` card format used on the homepage grid. It shows
-  the other two case studies in a fixed rotation — meta → tanmigo →
-  claude-code → meta → ... — so each page lists the next two names in
-  that cycle (e.g. Meta's page shows Tanmigo then Claude Code;
-  Tanmigo's shows Claude Code then Meta). Felidae isn't in the
-  rotation since it has no page. When Blue Bottle gets a page, decide
-  with Irene whether it joins this rotation or stays separate.
 
-## Accessibility rules (WCAG AA — non-negotiable, from the July 2026 audit)
-- Semantic HTML everywhere: exactly ONE <h1> per page ("Irene Cheung" on
-  home; the case-study title on case pages). <h2> for section titles,
-  <h3> for card titles. Eyebrow labels (MY ROLE, BACKGROUND), captions,
-  and body text are <p> or <span> — never heading tags.
-- Landmarks: <header>, <nav>, <main>, <footer> on every page.
-- Every page gets a unique <title> ("Irene Cheung — Product Designer",
-  "Tanmigo — Case Study") and its own meta description.
-- Alt text: evidence images (dome photo, product screenshots, diagrams)
-  get one descriptive sentence. True decoration (blobs, stickers,
-  gradients) gets alt="". Any icon-only link (e.g. the header logo)
-  MUST have an accessible name: aria-label or visually-hidden text.
-  (Footer social links are plain text — LinkedIn / GitHub / Instagram —
-  not icon buttons, so this mainly applies elsewhere.)
-- Contrast, measured: small text on light backgrounds uses deep
-  terracotta #923626 (7.56:1), NEVER #CC513B (4.37:1 — fails AA for
-  body text). #CC513B is allowed only for large headings (24px+ or
-  19px bold), button fills, and decoration. Tanmigo blue #1DB2E5 is
-  never text on a light background.
-- Focus: visible :focus-visible outline on every interactive element;
-  logical tab order; site fully navigable by keyboard.
-- Motion: respect prefers-reduced-motion (animations off or instant).
-  Content must never be invisible waiting for a scroll trigger —
-  sections render readable by default; animation is enhancement only.
-- Before any page is "done": check headings with a screen-reader
-  outline, tab through it, and verify at 390 / 768 / 1024 / 1440px —
-  a real tablet layout, not stretched mobile.
-
-## Design tokens & reference
-
-## Colors
-- Follow the colors used from the figma site link Irene provided; only case to change it: it violates the accessibility guidelines, replace it with the color that pasts the accessibility check, and inform Irene
-
-## Type
-- Body: 16–17px, line-height 1.6, max-width ~660px
-- Section titles: 32–40px+
-- One font family: Hanken Grotesk (via Google Fonts / next/font) for
-  everything: headings, body, nav, UI labels. Hierarchy comes from
-  weight, size, and color, never from switching families. UI labels
-  (eyebrows, tags) differentiate with uppercase + letter-spacing +
-  smaller size, not a different font. Never use the "London Tube" font
-  anywhere: it is an unlicensed Johnston clone, and its TTF must never
-  be committed to this repo. Do not reintroduce Roboto.
-- The header's "Irene Cheung" site title uses font-weight 900
-
-## Spacing
-- Section gap: 96–140px · Heading-to-body: 12–16px · Paragraph gap: 24px
-
-## Interaction 
-- horizontal scrollers: focusable, arrow-key navigable, no scroll-jacking
+- Small, frequent commits with messages that say what changed ("add
+  case study card grid"), never one giant commit. The history is
+  public and part of the portfolio.
+- Files sometimes change outside a session (I edit, or another agent
+  does). If anything looks different from your memory of it, run git
+  diff and re-read this file before continuing.
