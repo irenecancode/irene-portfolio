@@ -149,9 +149,8 @@ and never hijack the wheel.
 
 ## Build log & working notes
 
-- metadataBase in layout.tsx is hardcoded to the Vercel URL. ON DOMAIN
-  SWITCH DAY it must change to https://irenecheung.net or every social
-  unfurl will point its image at the old address. The og-image itself
+- metadataBase is https://irenecheung.net (switched 2026-07-18; the
+  vercel.app URL remains as an alias). The og-image itself
   is public/media/og-image.png (1200x630).
 
 Everything below is running memory between me and my build agents: what

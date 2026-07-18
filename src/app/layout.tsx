@@ -9,7 +9,7 @@ const hankenGrotesk = Hanken_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://irene-portfolio-beta.vercel.app"),
+  metadataBase: new URL("https://irenecheung.net"),
   title: "Irene Cheung, Product Designer",
   description: "Product designer who ships code. Case studies in internal tools, data workflows, and human-AI interaction.",
   openGraph: {
