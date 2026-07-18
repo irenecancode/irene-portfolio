@@ -11,11 +11,11 @@ export function Header({ active, titleAs = "p" }: HeaderProps) {
   const TitleTag = titleAs;
 
   return (
-    <header className="relative w-full px-8 pt-6 pb-[92px] sm:px-12 sm:py-8">
+    <header className="relative w-full px-8 pt-8 pb-[108px] sm:px-12 sm:py-12">
       <Link
         href="/"
         aria-label="Irene Cheung, home"
-        className="absolute top-6 left-6 transition-opacity duration-200 hover:opacity-80 focus-visible:opacity-80 sm:top-1/2 sm:left-10 sm:-translate-y-1/2"
+        className="absolute top-6 left-6 transition-opacity duration-200 hover:opacity-80 focus-visible:opacity-80 lg:top-1/2 lg:left-10 lg:-translate-y-1/2"
       >
         <Image
           src="/media/fox-logo.webp"
@@ -27,14 +27,17 @@ export function Header({ active, titleAs = "p" }: HeaderProps) {
         />
       </Link>
 
-      <div className="absolute top-[68px] left-1/2 -translate-x-1/2 text-center sm:top-1/2 sm:left-1/2 sm:-translate-y-1/2">
-        <TitleTag className="font-display text-xl leading-tight font-black text-ink sm:text-[26px]">
+      <Link
+        href="/"
+        className="absolute top-[68px] left-1/2 -translate-x-1/2 text-center transition-opacity duration-200 hover:opacity-80 focus-visible:opacity-80 lg:top-1/2 lg:left-1/2 lg:-translate-y-1/2"
+      >
+        <TitleTag className="font-display text-2xl leading-tight font-black text-ink sm:text-4xl">
           Irene Cheung
         </TitleTag>
-        <p className="-mt-0.5 text-sm leading-tight text-muted sm:text-[15px]">Product Designer</p>
-      </div>
+        <p className="-mt-0.5 text-lg leading-tight text-muted sm:text-2xl">Product Designer</p>
+      </Link>
 
-      <nav className="absolute top-6 right-6 flex items-center gap-6 font-nav text-sm sm:top-1/2 sm:right-10 sm:-translate-y-1/2 sm:gap-7 sm:text-[15px]">
+      <nav className="absolute top-6 right-6 flex items-center gap-6 font-nav text-lg sm:gap-8 sm:text-2xl lg:top-1/2 lg:right-10 lg:-translate-y-1/2">
         <Link
           href="/"
           className={`transition-colors duration-200 ${active === "home" ? "text-nav-active" : "text-ink hover:text-nav-active focus-visible:text-nav-active"}`}

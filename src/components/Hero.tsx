@@ -48,9 +48,9 @@ export function Hero() {
         <FoxHero />
       </div>
 
-      <div className="mt-12 grid grid-cols-1 gap-10 sm:mt-16 sm:grid-cols-2 sm:gap-16 lg:gap-24">
+      <div className="hero-fade-up mt-12 grid grid-cols-1 gap-10 sm:mt-16 sm:grid-cols-2 sm:gap-16 lg:gap-24">
         <div>
-          <h2 className="font-display text-[32px] leading-tight font-medium text-accent text-balance sm:text-[40px]">
+          <h2 className="hero-caret font-display text-[32px] leading-tight font-medium text-accent text-balance sm:text-[40px]">
             Designer who builds and ships code.
           </h2>
           <div className="mt-6 flex flex-wrap gap-3">

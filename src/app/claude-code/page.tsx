@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BackToTop } from "@/components/BackToTop";
 import { ReflectionCard } from "@/components/ReflectionCard";
+import { Reveal } from "@/components/Reveal";
 import { Lead } from "@/components/Lead";
 import { SummaryGrid, type SummaryField } from "@/components/SummaryGrid";
 import { ToolCard, ListCard } from "@/components/OutlineCard";
@@ -18,7 +19,7 @@ import {
 } from "@/components/icons/SummaryIcons";
 
 export const metadata: Metadata = {
-  title: "Claude Code — Case Study",
+  title: "Claude Code · Irene Cheung",
   description: "A concept project prototyping how developers can keep agency and control while coding with AI agents in Claude Code via VS Code.",
 };
 
@@ -126,7 +127,7 @@ const CHANGES: ChangeStep[] = [
       attribution: "Gen AI prototyper, Claude Code user",
     },
     takeaways: [
-      "Provide a high-level summary about what command is leading the user to",
+      "Provide a high-level summary of what the command is about to do",
       "2-sentence risk assessment beforehand, colored with yellow for low risk, red for high risk",
       "Technical part comes last",
     ],
@@ -188,7 +189,7 @@ const USE_CASES: UseCase[] = [
         src: "claude-code-scenario1-guardrail",
         alt: "Reset confirmation warning explaining the action will undo current and subsequent code modifications",
         aspect: "347/308",
-        scale: 0.9,
+        scale: 0.8,
       },
     ],
     consequence:
@@ -203,7 +204,7 @@ const USE_CASES: UseCase[] = [
         src: "claude-code-scenario2-consequence",
         alt: "Change log entry showing an undo option after a reset action",
         aspect: "396/354",
-        scale: 0.9,
+        scale: 0.8,
       },
       {
         src: "claude-code-scenario2-guardrail",
@@ -319,11 +320,11 @@ export default function ClaudeCodeCaseStudy() {
           </div>
 
           <h1 className="font-display mt-8 max-w-3xl text-[32px] leading-tight font-normal text-ink text-balance sm:text-[40px]">
-            Developer&apos;s experience in Claude Code via VS Code
+            Developer experience in Claude Code
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-7 text-ink">
-            Experimenting better sense of agency in an IDE editor environment
-            for developers with functional prototype.
+            Restoring a sense of agency in AI coding tools, tested with a
+            working prototype.
           </p>
 
           <div className="mt-4 flex flex-wrap gap-2">
@@ -340,7 +341,7 @@ export default function ClaudeCodeCaseStudy() {
       </div>
 
       <main className="flex-1 bg-surface">
-        <section className="mx-auto w-full max-w-6xl px-6 py-12 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-12 sm:px-10">
           <SummaryGrid fields={SUMMARY_FIELDS} />
 
           <Lead className="mt-10">
@@ -357,9 +358,9 @@ export default function ClaudeCodeCaseStudy() {
             <ToolCard title="Tool" tools={TOOLS} />
             <ListCard title="Key Workflows" items={KEY_WORKFLOWS} />
           </div>
-        </section>
+        </Reveal>
 
-        <section className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
           <p className="font-nav text-sm font-medium text-muted uppercase">Problem Space</p>
           <Lead className="mt-4">Users lose their sense of agency when:</Lead>
           <ol className="mt-6 flex max-w-3xl flex-col gap-3">
@@ -379,9 +380,9 @@ export default function ClaudeCodeCaseStudy() {
             Code environment, so the changes work for every expertise level
             with minimal disruption.
           </p>
-        </section>
+        </Reveal>
 
-        <section className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
           <hr className="mb-16 border-accent/30" />
 
           <h2 className="font-display text-[36px] font-normal text-ink">
@@ -614,9 +615,9 @@ export default function ClaudeCodeCaseStudy() {
               </div>
             </div>
           </div>
-        </section>
+        </Reveal>
 
-        <section className="bg-decision-bg px-6 py-16 sm:px-10">
+        <Reveal as="section" className="bg-decision-bg px-6 py-16 sm:px-10">
           <div className="mx-auto w-full max-w-6xl">
             <h2 className="font-display text-[36px] font-normal text-ink">Use cases</h2>
 
@@ -672,9 +673,9 @@ export default function ClaudeCodeCaseStudy() {
               ))}
             </div>
           </div>
-        </section>
+        </Reveal>
 
-        <section className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
           <h2 className="font-display text-[36px] font-normal text-ink">Video Prototype</h2>
           <p className="mt-4 max-w-2xl text-lg leading-7 text-ink">
             The feature development workflow demonstrates how you work with
@@ -703,9 +704,9 @@ export default function ClaudeCodeCaseStudy() {
               <source src="/media/claude-code-feature-workflow-2.mp4" type="video/mp4" />
             </video>
           </div>
-        </section>
+        </Reveal>
 
-        <section className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
           <h2 className="font-display text-[36px] font-normal text-ink">Clickable Prototype</h2>
 
           <p className="mt-4 font-nav text-sm font-medium text-muted uppercase">Guidelines</p>
@@ -745,9 +746,9 @@ export default function ClaudeCodeCaseStudy() {
               GitHub repo ↗
             </a>
           </div>
-        </section>
+        </Reveal>
 
-        <section className="bg-decision-bg px-6 py-16 sm:px-10">
+        <Reveal as="section" className="bg-decision-bg px-6 py-16 sm:px-10">
           <div className="mx-auto w-full max-w-6xl">
             <p className="font-nav text-sm font-medium text-muted uppercase">
               The Alternative Experiment
@@ -850,17 +851,17 @@ export default function ClaudeCodeCaseStudy() {
               </li>
             </ol>
           </div>
-        </section>
+        </Reveal>
 
-        <section className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
           <ReflectionCard
             heading="I challenge my own answer before anyone else can."
             body="Before proposing any UI, I tested the counterargument: could better CLAUDE.md instructions solve this with no interface changes at all? Mapping exactly where they fall short is what made the final design defensible instead of just plausible."
             closing="Given more time, I'd design what the change log becomes when you share it: a structured session summary a developer can hand to teammates, covering what changed, why, and what needs review, instead of a raw list of results."
           />
-        </section>
+        </Reveal>
 
-        <section className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
           <h2 className="font-display text-[36px] font-normal text-ink">Read more</h2>
           <div className="mx-auto mt-10 grid w-full grid-cols-1 gap-8 sm:grid-cols-2">
             <CaseStudy
@@ -884,7 +885,7 @@ export default function ClaudeCodeCaseStudy() {
               tags={["TypeScript", "Front-End Development", "Live Product"]}
             />
           </div>
-        </section>
+        </Reveal>
 
         <BackToTop />
       </main>

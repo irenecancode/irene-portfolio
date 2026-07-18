@@ -26,10 +26,10 @@ const SECTIONS: JumpNavSection[] = [
 // was removed at Irene's request.
 const DRAWING_ITEMS: CollageItem[] = [
   { type: "image", src: "/media/creative-12.webp", width: 587, height: 800, alt: "Illustration of a fluffy white dog walking with a red toy in its mouth" },
-  { type: "image", src: "/media/creative-21.webp", width: 800, height: 725, alt: "Illustration of a gnome and a cat standing beneath a cherry blossom tree on a city street" },
+  { type: "image", src: "/media/creative-21.webp", width: 800, height: 725, alt: "Illustration of a gnome and a cat standing beneath a cherry blossom tree on a city street", size: "lg" },
   { type: "image", src: "/media/creative-08.webp", width: 800, height: 620, alt: "Illustration of two ripe, spotted bananas" },
   { type: "image", src: "/media/creative-17.webp", width: 734, height: 800, alt: "Illustration of a husky mid-leap" },
-  { type: "image", src: "/media/creative-04.webp", width: 800, height: 618, alt: "Illustration of a group of dogs dancing together at a party" },
+  { type: "image", src: "/media/creative-04.webp", width: 800, height: 618, alt: "Illustration of a group of dogs dancing together at a party", size: "lg" },
   { type: "image", src: "/media/creative-20.webp", width: 800, height: 668, alt: "Illustration of a gnome and a cat drinking beer together" },
   { type: "image", src: "/media/creative-01.webp", width: 800, height: 709, alt: "Illustration of two wooden crates overflowing with apples" },
   {
@@ -43,12 +43,12 @@ const DRAWING_ITEMS: CollageItem[] = [
     alt: "Looping animation of a girl in a yellow raincoat holding an umbrella in the rain",
   },
   { type: "image", src: "/media/creative-16.webp", width: 490, height: 800, alt: "Illustration of a shiba inu standing and smiling, tail curled up" },
-  { type: "image", src: "/media/creative-05.webp", width: 800, height: 618, alt: "Illustration of dogs working in a bakery decorated for Lunar New Year" },
+  { type: "image", src: "/media/creative-05.webp", width: 800, height: 618, alt: "Illustration of dogs working in a bakery decorated for Lunar New Year", size: "lg" },
   { type: "image", src: "/media/creative-13.webp", width: 800, height: 550, alt: "Illustration of a tricolor puppy lying on its back playfully" },
   { type: "image", src: "/media/creative-24.webp", width: 800, height: 596, alt: "Illustration of three dogs wearing Santa hats" },
   { type: "image", src: "/media/creative-09.webp", width: 800, height: 360, alt: "Illustration of a rainbow trout" },
   { type: "image", src: "/media/creative-19.webp", width: 800, height: 672, alt: "Illustration of a girl with blue hair sweeping with a broom beside a black cat" },
-  { type: "image", src: "/media/creative-03.webp", width: 800, height: 618, alt: "Illustration of four dogs sitting nervously in a row, paws pressed together" },
+  { type: "image", src: "/media/creative-03.webp", width: 800, height: 618, alt: "Illustration of four dogs sitting nervously in a row, paws pressed together", size: "lg" },
   { type: "image", src: "/media/creative-14.webp", width: 555, height: 800, alt: "Illustration of a golden retriever puppy portrait wearing an orange bandana" },
   { type: "image", src: "/media/creative-11.webp", width: 800, height: 787, alt: "Illustration of two mandarin ducks in grass" },
   {
@@ -165,7 +165,7 @@ export default function Creative() {
             <h2 className="font-display text-[30px] font-normal text-ink">UI Icons</h2>
             <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4">
               {UI_ICON_ITEMS.map((item) => (
-                <div key={item.src} className="flex aspect-square items-center justify-center p-4">
+                <div key={item.src} className="flex aspect-square items-center justify-center p-4 hover:z-10">
                   <Image
                     src={item.src}
                     alt={item.alt}
@@ -173,7 +173,7 @@ export default function Creative() {
                     height={item.height}
                     sizes="(min-width: 640px) 25vw, 45vw"
                     loading="lazy"
-                    className="h-full w-full object-contain"
+                    className="h-full w-full object-contain transition-transform duration-200 hover:scale-110"
                   />
                 </div>
               ))}
@@ -195,7 +195,7 @@ export default function Creative() {
                     height={item.height}
                     sizes="(min-width: 640px) 45vw, 90vw"
                     loading="lazy"
-                    className="aspect-[4/3] h-auto w-full object-cover"
+                    className="aspect-[4/3] h-auto w-full object-cover transition-transform duration-300 hover:scale-110"
                   />
                 </div>
               ))}

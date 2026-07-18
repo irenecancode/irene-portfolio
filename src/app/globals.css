@@ -83,6 +83,61 @@ body {
   }
 }
 
+/* Home hero: one-time fade-up on load (headline, badges, intro paragraph).
+   Pure CSS so it plays without JS and never re-triggers on scroll. */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-fade-up {
+  animation: hero-fade-up 250ms ease-out both;
+}
+
+/* Blinking terminal caret after the hero headline. A styled ::after box,
+   not a text glyph, so the headline string stays exactly "Designer who
+   builds and ships code." for screen readers and copy-paste. */
+.hero-caret::after {
+  content: "";
+  display: inline-block;
+  width: 0.5em;
+  height: 0.9em;
+  margin-left: 0.15em;
+  background: var(--color-accent);
+  vertical-align: text-bottom;
+  animation: caret-blink 1.1s steps(1) infinite;
+}
+@keyframes caret-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Explicit reduced-motion overrides: the blanket 0.01ms rule above
+   compresses these to a single near-instant frame, which risks landing on
+   an invisible keyframe. Force the static, visible end state instead. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-fade-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .hero-caret::after {
+    animation: none;
+    opacity: 1;
+  }
+}
+
 .card-gradient {
   background: radial-gradient(
     circle at 50% 30%,

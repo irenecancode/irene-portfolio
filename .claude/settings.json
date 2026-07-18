@@ -158,7 +158,9 @@
       "Bash(pkill -f \"npm run dev\")",
       "Bash(rm -rf /private/tmp/claude-501/-Users-irene-code-irene-portfolio/6f160a20-98e5-4f1a-901a-d86da3d28474/scratchpad/*.png /private/tmp/claude-501/-Users-irene-code-irene-portfolio/6f160a20-98e5-4f1a-901a-d86da3d28474/scratchpad/*.js)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/creative --max-time 5)",
-      "Bash(curl -s -H \"Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8\" \"http://localhost:3000/_next/image?url=%2Fmedia%2Fui-icon-01.webp&w=384&q=75\" -o /private/tmp/claude-501/-Users-irene-code-irene-portfolio/3c07fbb4-7b2e-4882-b333-c6233904e211/scratchpad/icon-check.webp)"
+      "Bash(curl -s -H \"Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8\" \"http://localhost:3000/_next/image?url=%2Fmedia%2Fui-icon-01.webp&w=384&q=75\" -o /private/tmp/claude-501/-Users-irene-code-irene-portfolio/3c07fbb4-7b2e-4882-b333-c6233904e211/scratchpad/icon-check.webp)",
+      "Bash(curl -s http://localhost:3000/meta)",
+      "Bash(NODE_PATH=/Users/irene/.npm/_npx/d71ea5ed3eabc9b3/node_modules node /private/tmp/claude-501/-Users-irene-code-irene-portfolio/3c07fbb4-7b2e-4882-b333-c6233904e211/scratchpad/verify-sizes.js)"
     ]
   }
 }

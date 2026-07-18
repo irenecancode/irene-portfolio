@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BackToTop } from "@/components/BackToTop";
 import { ReflectionCard } from "@/components/ReflectionCard";
+import { Reveal } from "@/components/Reveal";
 import { SummaryGrid, type SummaryField } from "@/components/SummaryGrid";
 import { ToolCard, ListCard } from "@/components/OutlineCard";
 import { CaseStudy } from "@/components/CaseStudy";
@@ -16,7 +17,7 @@ import {
 } from "@/components/icons/SummaryIcons";
 
 export const metadata: Metadata = {
-  title: "Tanmigo — Case Study",
+  title: "Tanmigo · Irene Cheung",
   description: "A 0-to-1 video annotation platform for dancers: bridging video discovery and physical practice, designed and built in code with an engineer.",
 };
 
@@ -140,7 +141,7 @@ export default function TanmigoCaseStudy() {
       </div>
 
       <main className="flex-1 bg-surface">
-        <section className="mx-auto w-full max-w-6xl px-6 py-12 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-12 sm:px-10">
           <SummaryGrid fields={SUMMARY_FIELDS} />
 
           <p className="mt-10 max-w-2xl text-xl leading-8 font-medium text-ink">
@@ -153,9 +154,9 @@ export default function TanmigoCaseStudy() {
             <ToolCard title="Tool" tools={TOOLS} />
             <ListCard title="Core User Journey" items={CORE_USER_JOURNEY} />
           </div>
-        </section>
+        </Reveal>
 
-        <section className="bg-[var(--color-reflection-bg)] px-6 py-16 sm:px-10">
+        <Reveal as="section" className="bg-[var(--color-reflection-bg)] px-6 py-16 sm:px-10">
           <div className="mx-auto max-w-3xl">
             <p className="font-nav text-sm font-medium text-muted uppercase">Background</p>
             <p className="mt-4 text-lg leading-7 text-ink">
@@ -195,9 +196,9 @@ export default function TanmigoCaseStudy() {
               </div>
             </div>
           </div>
-        </section>
+        </Reveal>
 
-        <section className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
           <h2 className="font-display text-[36px] font-normal text-ink">Design Strategy</h2>
 
           <p className="mt-6 font-nav text-sm font-medium text-accent-deep uppercase">
@@ -227,9 +228,9 @@ export default function TanmigoCaseStudy() {
               className="mt-6 aspect-video w-full rounded-md object-cover"
             />
           </picture>
-        </section>
+        </Reveal>
 
-        <section className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
           <h2 className="font-display text-[36px] font-normal text-ink">Rapid prototyping</h2>
           <p className="mt-4 text-lg leading-7 text-ink">
             From first concept to usability testing in 8 hours. Early on,
@@ -283,9 +284,9 @@ export default function TanmigoCaseStudy() {
             To me, that is the essence of design: we design for better
             communication.
           </p>
-        </section>
+        </Reveal>
 
-        <section className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
           <hr className="mb-16 border-accent/30" />
 
           <h2 className="font-display text-[36px] font-normal text-ink">Visual Foundations</h2>
@@ -324,9 +325,9 @@ export default function TanmigoCaseStudy() {
               </p>
             </div>
           </div>
-        </section>
+        </Reveal>
 
-        <section className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
           <hr className="mb-16 border-accent/30" />
 
           <h2 className="font-display text-[36px] font-normal text-ink">The &quot;Failed&quot; Moment</h2>
@@ -356,9 +357,9 @@ export default function TanmigoCaseStudy() {
               </p>
             </div>
           </div>
-        </section>
+        </Reveal>
 
-        <section className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
           <hr className="mb-16 border-accent/30" />
 
           <h2 className="font-display text-[36px] font-normal text-ink">Video Prototype</h2>
@@ -373,17 +374,17 @@ export default function TanmigoCaseStudy() {
             can explore the functional MVP. This prototype reflects the
             foundational user journey mentioned above.
           </p>
-        </section>
+        </Reveal>
 
-        <section className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
           <ReflectionCard
             heading="Shipping my designs changed how I design."
             body="Once every state I sketched was mine to build and test, my components got simpler, and edge cases got named before the build instead of during it. Nothing teaches design restraint like implementing your own work."
             closing="Building from idea to pull request, I design with more intention."
           />
-        </section>
+        </Reveal>
 
-        <section className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
           <h2 className="font-display text-[36px] font-normal text-ink">Read more</h2>
           <div className="mx-auto mt-10 grid w-full grid-cols-1 gap-8 sm:grid-cols-2">
             <CaseStudy
@@ -392,8 +393,8 @@ export default function TanmigoCaseStudy() {
               imageWebp="/media/case-claude-code.webp"
               imagePng="/media/case-claude-code.png"
               imageAlt="Claude Code chat interface mid-conversation, showing a Bash tool call and a permission prompt to allow running git status"
-              headline="Developer's experience in Claude Code via VS Code"
-              body="Experimenting better sense of agency in an IDE editor environment for developers with functional prototype."
+              headline="Developer experience in Claude Code"
+              body="Restoring a sense of agency in AI coding tools, tested with a working prototype."
               tags={["Agentic Developer Experience", "Concept", "Prototype"]}
             />
             <CaseStudy
@@ -407,7 +408,7 @@ export default function TanmigoCaseStudy() {
               tags={["Internal Tools", "Hardware R&D", "Shipped", "NDA Protected"]}
             />
           </div>
-        </section>
+        </Reveal>
 
         <BackToTop />
       </main>

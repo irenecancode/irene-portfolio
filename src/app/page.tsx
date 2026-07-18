@@ -91,8 +91,8 @@ export default function Home() {
                 imageWebp="/media/case-claude-code.webp"
                 imagePng="/media/case-claude-code.png"
                 imageAlt="Claude Code chat interface mid-conversation, showing a Bash tool call and a permission prompt to allow running git status"
-                headline="Developer's experience in Claude Code via VS Code"
-                body="Experimenting better sense of agency in an IDE editor environment for developers with functional prototype."
+                headline="Developer experience in Claude Code"
+                body="Restoring a sense of agency in AI coding tools, tested with a working prototype."
                 tags={["Agentic Developer Experience", "Concept", "Prototype"]}
               />
             </div>

@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BackToTop } from "@/components/BackToTop";
 import { ReflectionCard } from "@/components/ReflectionCard";
+import { Reveal } from "@/components/Reveal";
 import { Lead } from "@/components/Lead";
 import { SummaryGrid, type SummaryField } from "@/components/SummaryGrid";
 import { ToolCard, ImageImpactCard, ListCard } from "@/components/OutlineCard";
@@ -17,7 +18,7 @@ import {
 } from "@/components/icons/SummaryIcons";
 
 export const metadata: Metadata = {
-  title: "Meta — Case Study",
+  title: "Meta · Irene Cheung",
   description: "The capture dashboard behind Meta's Codec Avatars: redesigning the internal tool that orchestrates 300+ camera and sensor streams at Meta Reality Labs.",
 };
 
@@ -131,7 +132,7 @@ export default function MetaCaseStudy() {
       </div>
 
       <main className="flex-1 bg-surface">
-        <section className="mx-auto w-full max-w-6xl px-6 py-12 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-12 sm:px-10">
           <SummaryGrid fields={SUMMARY_FIELDS} />
 
           <Lead className="mt-10">
@@ -157,9 +158,9 @@ export default function MetaCaseStudy() {
               items={["TPM", "Engineers", "System Integrators", "Research Operators"]}
             />
           </div>
-        </section>
+        </Reveal>
 
-        <section className="bg-[var(--color-reflection-bg)] px-6 py-16 sm:px-10">
+        <Reveal as="section" className="bg-[var(--color-reflection-bg)] px-6 py-16 sm:px-10">
           <div className="mx-auto max-w-3xl">
             <p className="font-nav text-sm font-medium text-muted uppercase">Background</p>
             <Lead className="mt-4">
@@ -202,9 +203,9 @@ export default function MetaCaseStudy() {
               Source
             </a>
           </div>
-        </section>
+        </Reveal>
 
-        <section className="w-full px-6 py-16 sm:px-10">
+        <Reveal as="section" className="w-full px-6 py-16 sm:px-10">
           <div className="mx-auto w-full max-w-6xl">
             <h2 className="font-display text-[36px] font-normal text-ink">
               For a bit of context
@@ -254,9 +255,9 @@ export default function MetaCaseStudy() {
               </p>
             </div>
           </div>
-        </section>
+        </Reveal>
 
-        <section className="bg-decision-bg px-6 py-16 sm:px-10">
+        <Reveal as="section" className="bg-decision-bg px-6 py-16 sm:px-10">
           <div className="mx-auto w-full max-w-6xl">
             <h2 className="font-display text-[36px] font-normal text-ink">How I ran it</h2>
             <Lead className="mx-auto mt-4">
@@ -316,9 +317,9 @@ export default function MetaCaseStudy() {
               </p>
             </div>
           </div>
-        </section>
+        </Reveal>
 
-        <section className="w-full px-6 py-16 sm:px-10">
+        <Reveal as="section" className="w-full px-6 py-16 sm:px-10">
           <div className="mx-auto w-full max-w-6xl">
             <h2 className="font-display text-[36px] font-normal text-ink">
               I design technical tools in three layers, from the backend up
@@ -358,9 +359,9 @@ export default function MetaCaseStudy() {
               </div>
             </div>
           </div>
-        </section>
+        </Reveal>
 
-        <section className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
           <ReflectionCard
             heading="Design became decisions the team could act on."
             body={'PMs, engineers, and designers speak different love languages. So I stopped presenting "UI" and started speaking the listener’s.'}
@@ -375,9 +376,9 @@ export default function MetaCaseStudy() {
               },
             ]}
           />
-        </section>
+        </Reveal>
 
-        <section className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
           <h2 className="font-display text-[36px] font-normal text-ink">Read more</h2>
           <div className="mx-auto mt-10 grid w-full grid-cols-1 gap-8 sm:grid-cols-2">
             <CaseStudy
@@ -396,12 +397,12 @@ export default function MetaCaseStudy() {
               imageWebp="/media/case-claude-code.webp"
               imagePng="/media/case-claude-code.png"
               imageAlt="Claude Code chat interface mid-conversation, showing a Bash tool call and a permission prompt to allow running git status"
-              headline="Developer's experience in Claude Code via VS Code"
-              body="Experimenting better sense of agency in an IDE editor environment for developers with functional prototype."
+              headline="Developer experience in Claude Code"
+              body="Restoring a sense of agency in AI coding tools, tested with a working prototype."
               tags={["Agentic Developer Experience", "Concept", "Prototype"]}
             />
           </div>
-        </section>
+        </Reveal>
 
         <BackToTop />
       </main>
