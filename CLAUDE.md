@@ -51,6 +51,16 @@ colors with any contrast checker before trusting them.
   This silently reverted my fonts twice before I wrote it down.
 - Turbopack ignores touch (mtime-only changes). To force a CSS rebuild,
   change real file content.
+- Transparent video is a three-trap pipeline. (1) Encoding: VP9 keeps
+  alpha only with -pix_fmt yuva420p and -auto-alt-ref 0; HEVC-alpha via
+  hevc_videotoolbox with -alpha_quality and -tag:v hvc1. (2) Probing:
+  ffprobe reports yuv420p even when alpha IS present (it's a side
+  plane) — verify by decoding a frame with -c:v libvpx-vp9 and checking
+  the PNG for transparent pixels, or the webm's alpha_mode tag.
+  (3) Browsers: Safari can't play VP9-alpha, Chrome can't play
+  HEVC-alpha — so source order must be hvc1 mp4 first, webm second,
+  plain mp4 last. Encode commands live in the git history
+  (fox-hero/doodle-brain, 2026-07-18).
 
 ## The no-GIF motion pattern (portable)
 

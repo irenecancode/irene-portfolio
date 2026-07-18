@@ -39,6 +39,9 @@ export function FoxHero() {
       poster="/media/fox-hero-poster.png"
       aria-label={FOX_ALT}
     >
+      {/* Order matters: Safari takes HEVC-alpha (hvc1), Chrome/Firefox skip it
+          and take VP9-alpha webm. Plain mp4 last is the opaque last resort. */}
+      <source src="/media/fox-hero-hevc.mp4" type='video/mp4; codecs="hvc1"' />
       <source src="/media/fox-hero.webm" type="video/webm" />
       <source src="/media/fox-hero.mp4" type="video/mp4" />
     </video>
