@@ -118,7 +118,7 @@ export default function Creative() {
                 Lately I&apos;ve started a new e-shop selling digital prints
                 on Etsy named{" "}
                 <a
-                  href="https://www.etsy.com/shop/BottegaLily?ref=shop-header-name&listing_id=4536033024&from_page=listing"
+                  href="https://www.etsy.com/shop/BottegaLily"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-accent-deep underline transition-opacity duration-200 hover:opacity-75 focus-visible:opacity-75"

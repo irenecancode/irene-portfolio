@@ -130,7 +130,7 @@ export default function TanmigoCaseStudy() {
             {TAGS.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-navy-tint px-3 py-1 text-xs font-medium text-navy"
+                className="rounded-full bg-navy-tint px-3 py-1 text-xs font-medium text-navy transition-colors duration-200 hover:bg-navy hover:text-white"
               >
                 {tag}
               </span>

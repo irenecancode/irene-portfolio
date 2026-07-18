@@ -21,9 +21,9 @@ export type CollageItem =
 const PRIORITY_COUNT = 8;
 
 // Matches the collage's column widths at each breakpoint (see
-// MasonryCollage's columns-2 / md:columns-3 / xl2:columns-4) so the
-// browser fetches an appropriately sized file instead of the largest one.
-const SIZES = "(min-width: 1440px) 273px, (min-width: 768px) 31vw, 46vw";
+// MasonryCollage's columns-2 / xl2:columns-3) so the browser fetches an
+// appropriately sized file instead of the largest one.
+const SIZES = "(min-width: 1440px) 344px, 46vw";
 
 function PlaceholderPiece({ slot, width, height }: { slot: number; width: number; height: number }) {
   return (
@@ -57,7 +57,12 @@ function ImagePiece({ item, priority }: { item: Extract<CollageItem, { type: "im
   if (item.href) {
     const isExternal = item.href.startsWith("http");
     return (
-      <a href={item.href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined}>
+      <a
+        href={item.href}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
+        className="block transition-opacity duration-200 hover:opacity-85 focus-visible:opacity-85"
+      >
         {image}
       </a>
     );
@@ -81,7 +86,12 @@ function VideoPiece({ item, priority }: { item: Extract<CollageItem, { type: "vi
   if (item.href) {
     const isExternal = item.href.startsWith("http");
     return (
-      <a href={item.href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined}>
+      <a
+        href={item.href}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
+        className="block transition-opacity duration-200 hover:opacity-85 focus-visible:opacity-85"
+      >
         {video}
       </a>
     );
@@ -92,7 +102,7 @@ function VideoPiece({ item, priority }: { item: Extract<CollageItem, { type: "vi
 
 export function MasonryCollage({ items }: { items: CollageItem[] }) {
   return (
-    <div className="columns-2 gap-5 md:columns-3 xl2:columns-4">
+    <div className="columns-2 gap-5 xl2:columns-3">
       {items.map((item, index) => {
         const priority = index < PRIORITY_COUNT;
         return (

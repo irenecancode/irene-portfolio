@@ -44,8 +44,10 @@ export function CreativeJumpNav({ sections }: { sections: JumpNavSection[] }) {
             key={s.id}
             href={`#${s.id}`}
             aria-current={active === s.id ? "location" : undefined}
-            className={`font-nav text-sm ${
-              active === s.id ? "font-medium text-nav-active" : "text-ink"
+            className={`font-nav text-sm transition-colors duration-200 ${
+              active === s.id
+                ? "font-medium text-nav-active"
+                : "text-ink hover:text-nav-active focus-visible:text-nav-active"
             }`}
           >
             {s.label}

@@ -121,7 +121,7 @@ export default function MetaCaseStudy() {
             {TAGS.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-navy-tint px-3 py-1 text-xs font-medium text-navy"
+                className="rounded-full bg-navy-tint px-3 py-1 text-xs font-medium text-navy transition-colors duration-200 hover:bg-navy hover:text-white"
               >
                 {tag}
               </span>
@@ -339,7 +339,7 @@ export default function MetaCaseStudy() {
                 {THREE_LAYERS.map((layer, i) => (
                   <div key={layer.label} className="text-center">
                     {i > 0 && <hr className="mb-10 border-accent/30" />}
-                    <span className="inline-block rounded-full bg-navy px-5 py-2 font-nav text-sm font-medium text-white">
+                    <span className="inline-block rounded-full bg-navy px-5 py-2 font-nav text-sm font-medium text-white transition-[filter] duration-200 hover:brightness-90">
                       {layer.label}
                     </span>
                     <p className="mt-4 text-xl leading-8 text-muted">{layer.question}</p>
@@ -347,7 +347,7 @@ export default function MetaCaseStudy() {
                       {layer.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full bg-navy-tint px-3 py-1 text-xs font-medium text-navy"
+                          className="rounded-full bg-navy-tint px-3 py-1 text-xs font-medium text-navy transition-colors duration-200 hover:bg-navy hover:text-white"
                         >
                           {tag}
                         </span>

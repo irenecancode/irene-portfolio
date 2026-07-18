@@ -15,7 +15,7 @@ export function Header({ active, titleAs = "p" }: HeaderProps) {
       <Link
         href="/"
         aria-label="Irene Cheung, home"
-        className="absolute top-6 left-6 sm:top-1/2 sm:left-10 sm:-translate-y-1/2"
+        className="absolute top-6 left-6 transition-opacity duration-200 hover:opacity-80 focus-visible:opacity-80 sm:top-1/2 sm:left-10 sm:-translate-y-1/2"
       >
         <Image
           src="/media/fox-logo.webp"
@@ -34,16 +34,22 @@ export function Header({ active, titleAs = "p" }: HeaderProps) {
       </div>
 
       <nav className="absolute top-6 right-6 flex items-center gap-6 font-nav text-sm sm:top-1/2 sm:right-10 sm:-translate-y-1/2">
-        <Link href="/" className={active === "home" ? "text-nav-active" : "text-ink"}>
+        <Link
+          href="/"
+          className={`transition-colors duration-200 ${active === "home" ? "text-nav-active" : "text-ink hover:text-nav-active focus-visible:text-nav-active"}`}
+        >
           Home
         </Link>
         <Link
           href="/creative"
-          className={active === "creative" ? "text-nav-active" : "text-ink"}
+          className={`transition-colors duration-200 ${active === "creative" ? "text-nav-active" : "text-ink hover:text-nav-active focus-visible:text-nav-active"}`}
         >
           Creative
         </Link>
-        <Link href="/about" className={active === "about" ? "text-nav-active" : "text-ink"}>
+        <Link
+          href="/about"
+          className={`transition-colors duration-200 ${active === "about" ? "text-nav-active" : "text-ink hover:text-nav-active focus-visible:text-nav-active"}`}
+        >
           About
         </Link>
       </nav>

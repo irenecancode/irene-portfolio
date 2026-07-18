@@ -116,7 +116,7 @@ export default function Home() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-navy px-3 py-1 text-xs font-medium text-navy"
+                        className="rounded-full border border-navy px-3 py-1 text-xs font-medium text-navy transition-colors duration-200 hover:bg-navy-tint"
                       >
                         {tag}
                       </span>
@@ -136,7 +136,14 @@ export default function Home() {
             <p className="mx-auto mt-4 max-w-2xl text-lg text-ink">
               Building a portfolio can be fun, but it&apos;s also tedious.
               I&apos;d rather we learn from each other. If you&apos;re a
-              designer who ships your own site, the repo is public.
+              designer who ships your own site,{" "}
+              <a
+                href="https://github.com/irenecancode/irene-portfolio"
+                className="text-navy underline-offset-4 transition-colors duration-200 hover:text-accent-deep hover:underline focus-visible:text-accent-deep focus-visible:underline"
+              >
+                the repo is public
+              </a>
+              .
             </p>
           </div>
         </div>
@@ -149,7 +156,10 @@ export default function Home() {
                 className="rounded-md bg-surface p-6 shadow-[0_20px_50px_-25px_rgba(0,0,0,0.15)]"
               >
                 {href ? (
-                  <a href={href} className="font-nav text-sm font-medium text-navy underline-offset-4 hover:underline">
+                  <a
+                    href={href}
+                    className="font-nav text-sm font-medium text-navy underline-offset-4 transition-colors duration-200 hover:text-accent-deep hover:underline focus-visible:text-accent-deep focus-visible:underline"
+                  >
                     {label}
                   </a>
                 ) : (

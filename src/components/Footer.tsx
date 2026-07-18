@@ -11,7 +11,7 @@ export function Footer() {
         </p>
         <a
           href="mailto:irenemycheung@gmail.com"
-          className="mt-3 inline-block text-accent-deep underline"
+          className="mt-3 inline-block text-accent-deep underline transition-opacity duration-200 hover:opacity-75 focus-visible:opacity-75"
         >
           irenemycheung@gmail.com
         </a>
@@ -25,7 +25,7 @@ export function Footer() {
               href="https://www.linkedin.com/in/irenemy"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg text-ink underline-offset-4 hover:underline"
+              className="text-lg text-ink underline-offset-4 transition-colors duration-200 hover:text-accent-deep hover:underline focus-visible:text-accent-deep focus-visible:underline"
             >
               LinkedIn
             </a>
@@ -35,7 +35,7 @@ export function Footer() {
               href="https://github.com/irenecancode"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg text-ink underline-offset-4 hover:underline"
+              className="text-lg text-ink underline-offset-4 transition-colors duration-200 hover:text-accent-deep hover:underline focus-visible:text-accent-deep focus-visible:underline"
             >
               GitHub
             </a>
@@ -45,7 +45,7 @@ export function Footer() {
               href="https://www.instagram.com/dayday_tipsy/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg text-ink underline-offset-4 hover:underline"
+              className="text-lg text-ink underline-offset-4 transition-colors duration-200 hover:text-accent-deep hover:underline focus-visible:text-accent-deep focus-visible:underline"
             >
               Instagram
             </a>

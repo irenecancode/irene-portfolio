@@ -57,7 +57,7 @@ export function Hero() {
             {BADGES.map(({ Icon, label }) => (
               <span
                 key={label}
-                className="inline-flex items-center gap-2 rounded-full border border-navy bg-surface px-4 py-2 text-sm text-navy"
+                className="inline-flex items-center gap-2 rounded-full border border-navy bg-surface px-4 py-2 text-sm text-navy transition-colors duration-200 hover:bg-navy-tint"
               >
                 <Icon />
                 {label}

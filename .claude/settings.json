@@ -134,7 +134,31 @@
       "Bash(NODE_PATH=/Users/irene/.npm/_npx/d71ea5ed3eabc9b3/node_modules node /private/tmp/claude-501/-Users-irene-code-irene-portfolio/3c07fbb4-7b2e-4882-b333-c6233904e211/scratchpad/verify-drawings.js)",
       "Bash(python3 /private/tmp/claude-501/-Users-irene-code-irene-portfolio/3c07fbb4-7b2e-4882-b333-c6233904e211/scratchpad/convert_ui.py)",
       "Bash(python3 /private/tmp/claude-501/-Users-irene-code-irene-portfolio/3c07fbb4-7b2e-4882-b333-c6233904e211/scratchpad/convert_bl.py)",
-      "Bash(NODE_PATH=/Users/irene/.npm/_npx/d71ea5ed3eabc9b3/node_modules node /private/tmp/claude-501/-Users-irene-code-irene-portfolio/3c07fbb4-7b2e-4882-b333-c6233904e211/scratchpad/verify-all.js)"
+      "Bash(NODE_PATH=/Users/irene/.npm/_npx/d71ea5ed3eabc9b3/node_modules node /private/tmp/claude-501/-Users-irene-code-irene-portfolio/3c07fbb4-7b2e-4882-b333-c6233904e211/scratchpad/verify-all.js)",
+      "Bash(ffmpeg -hide_banner -pix_fmts)",
+      "Bash(ffmpeg -y -f lavfi -i \"color=c=red@0.5:s=64x64:d=1,format=yuva420p\" -c:v libvpx-vp9 -pix_fmt yuva420p -auto-alt-ref 0 -b:v 500k test-alpha.webm)",
+      "Bash(rm -f /private/tmp/claude-501/-Users-irene-code-irene-portfolio/3c07fbb4-7b2e-4882-b333-c6233904e211/scratchpad/test-alpha.webm)",
+      "Bash(ffmpeg -y -i '/Users/irene/code/irene-portfolio/refs/creatives/drawings/Bonbonf 3.gif' -vf crop=772:1024:176:305,scale=640:850:flags=lanczos,format=yuva420p -an -c:v libvpx-vp9 -pix_fmt yuva420p -auto-alt-ref 0 -b:v 0 -crf 32 creative-video-1.webm)",
+      "Bash(echo \"video1 alpha webm exit=$?\")",
+      "Bash(ffmpeg -y -i '/Users/irene/code/irene-portfolio/refs/creatives/drawings/Untitled_Artwork 4.gif' -vf crop=1186:1435:312:572,scale=640:774:flags=lanczos,format=yuva420p -an -c:v libvpx-vp9 -pix_fmt yuva420p -auto-alt-ref 0 -b:v 0 -crf 32 creative-video-2.webm)",
+      "Bash(echo \"video2 alpha webm exit=$?\")",
+      "Bash(ffmpeg -y -i '/Users/irene/code/irene-portfolio/refs/creatives/drawings/Bonbonf 3.gif' -filter_complex '[0:v]crop=772:1024:176:305,scale=640:850:flags=lanczos,format=rgba[fg];color=c=0xFFF4F4:s=640x850[bg];[bg][fg]overlay=\\(W-w\\)/2:\\(H-h\\)/2:shortest=1:format=auto,format=yuv420p' -an -c:v libx264 -pix_fmt yuv420p -crf 26 creative-video-1.mp4)",
+      "Bash(echo \"video1 mp4 exit=$?\")",
+      "Bash(ffmpeg -y -i '/Users/irene/code/irene-portfolio/refs/creatives/drawings/Untitled_Artwork 4.gif' -filter_complex '[0:v]crop=1186:1435:312:572,scale=640:774:flags=lanczos,format=rgba[fg];color=c=0xFFF4F4:s=640x774[bg];[bg][fg]overlay=\\(W-w\\)/2:\\(H-h\\)/2:shortest=1:format=auto,format=yuv420p' -an -c:v libx264 -pix_fmt yuv420p -crf 26 creative-video-2.mp4)",
+      "Bash(python3 /private/tmp/claude-501/-Users-irene-code-irene-portfolio/3c07fbb4-7b2e-4882-b333-c6233904e211/scratchpad/posters.py)",
+      "Bash(curl -s \"http://localhost:3000/_next/image?url=%2Fmedia%2Fbottega-lily-logo.webp&w=750&q=75\" -o /private/tmp/claude-501/-Users-irene-code-irene-portfolio/3c07fbb4-7b2e-4882-b333-c6233904e211/scratchpad/optimized-logo.webp)",
+      "Bash(curl -s -H \"Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8\" \"http://localhost:3000/_next/image?url=%2Fmedia%2Fcreative-08.webp&w=384&q=75\" -o /private/tmp/claude-501/-Users-irene-code-irene-portfolio/3c07fbb4-7b2e-4882-b333-c6233904e211/scratchpad/opt-creative-08.webp)",
+      "Bash(curl -s -H \"Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8\" \"http://localhost:3000/_next/image?url=%2Fmedia%2Fbottega-lily-logo.webp&w=750&q=75\" -o /private/tmp/claude-501/-Users-irene-code-irene-portfolio/3c07fbb4-7b2e-4882-b333-c6233904e211/scratchpad/logo-recheck.webp)",
+      "Bash(command -v chromium-cli)",
+      "Read(//usr/local/bin/**)",
+      "Bash(npx --yes playwright screenshot http://localhost:3000 /private/tmp/claude-501/-Users-irene-code-irene-portfolio/6f160a20-98e5-4f1a-901a-d86da3d28474/scratchpad/home.png)",
+      "Bash(npx --yes playwright@1.61.1 install chromium --with-deps)",
+      "Bash(node /private/tmp/claude-501/-Users-irene-code-irene-portfolio/6f160a20-98e5-4f1a-901a-d86da3d28474/scratchpad/hover-check.js)",
+      "Bash(node /private/tmp/claude-501/-Users-irene-code-irene-portfolio/6f160a20-98e5-4f1a-901a-d86da3d28474/scratchpad/focus-check.js)",
+      "Bash(pkill -f \"npm run dev\")",
+      "Bash(rm -rf /private/tmp/claude-501/-Users-irene-code-irene-portfolio/6f160a20-98e5-4f1a-901a-d86da3d28474/scratchpad/*.png /private/tmp/claude-501/-Users-irene-code-irene-portfolio/6f160a20-98e5-4f1a-901a-d86da3d28474/scratchpad/*.js)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/creative --max-time 5)",
+      "Bash(curl -s -H \"Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8\" \"http://localhost:3000/_next/image?url=%2Fmedia%2Fui-icon-01.webp&w=384&q=75\" -o /private/tmp/claude-501/-Users-irene-code-irene-portfolio/3c07fbb4-7b2e-4882-b333-c6233904e211/scratchpad/icon-check.webp)"
     ]
   }
 }

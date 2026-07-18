@@ -15,7 +15,10 @@ export function SummaryGrid({ fields }: { fields: SummaryField[] }) {
 
       <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
         {fields.map(({ Icon, label, value, list, numbered }) => (
-          <div key={label} className="rounded-md bg-surface p-6">
+          <div
+            key={label}
+            className="rounded-md bg-surface p-6 transition-transform duration-200 motion-safe:hover:scale-110"
+          >
             <Icon className="h-6 w-6 text-ink" />
             <p className="mt-3 font-nav text-sm font-medium text-navy uppercase">{label}</p>
             {value && <p className="mt-1 text-base text-ink">{value}</p>}
