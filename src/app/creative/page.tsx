@@ -70,26 +70,29 @@ const DRAWING_ITEMS: CollageItem[] = [
   { type: "image", src: "/media/creative-06.webp", width: 800, height: 461, alt: "Illustration of a golden dog curled up asleep on a pillow" },
 ];
 
-// Charlie's Acres farm-animal line icon set.
-const UI_ICON_ITEMS: CollageItem[] = [
-  { type: "image", src: "/media/ui-icon-01.webp", width: 296, height: 400, alt: "Line icon of a duck, facing forward" },
-  { type: "image", src: "/media/ui-icon-02.webp", width: 322, height: 295, alt: "Line icon of a duck, side profile" },
-  { type: "image", src: "/media/ui-icon-03.webp", width: 249, height: 357, alt: "Line icon of a goose" },
-  { type: "image", src: "/media/ui-icon-04.webp", width: 294, height: 227, alt: "Line icon of a pig" },
-  { type: "image", src: "/media/ui-icon-05.webp", width: 216, height: 288, alt: "Line icon of a rooster" },
-  { type: "image", src: "/media/ui-icon-06.webp", width: 300, height: 216, alt: "Line icon of a cow" },
-  { type: "image", src: "/media/ui-icon-07.webp", width: 232, height: 250, alt: "Line icon of a sheep" },
-  { type: "image", src: "/media/ui-icon-08.webp", width: 206, height: 278, alt: "Line icon of a turkey" },
-  { type: "image", src: "/media/ui-icon-09.webp", width: 260, height: 278, alt: "Line icon of a child riding a balloon animal" },
-  { type: "image", src: "/media/ui-icon-10.webp", width: 296, height: 250, alt: "Line icon of a goat" },
+type GridImage = { src: string; width: number; height: number; alt: string };
+
+// Charlie's Acres farm-animal line icon set. Uniform library grid (not
+// masonry) — 4x2 at desktop, so exactly 8 icons. Removed the balloon-animal
+// icon and the duck side-profile (redundant with the front-facing duck) at
+// Irene's request.
+const UI_ICON_ITEMS: GridImage[] = [
+  { src: "/media/ui-icon-01.webp", width: 296, height: 400, alt: "Line icon of a duck, facing forward" },
+  { src: "/media/ui-icon-03.webp", width: 249, height: 357, alt: "Line icon of a goose" },
+  { src: "/media/ui-icon-04.webp", width: 294, height: 227, alt: "Line icon of a pig" },
+  { src: "/media/ui-icon-05.webp", width: 216, height: 288, alt: "Line icon of a rooster" },
+  { src: "/media/ui-icon-06.webp", width: 300, height: 216, alt: "Line icon of a cow" },
+  { src: "/media/ui-icon-07.webp", width: 232, height: 250, alt: "Line icon of a sheep" },
+  { src: "/media/ui-icon-08.webp", width: 206, height: 278, alt: "Line icon of a turkey" },
+  { src: "/media/ui-icon-10.webp", width: 296, height: 250, alt: "Line icon of a goat" },
 ];
 
-// Bottega Lily product mockups.
-const BOTTEGA_LILY_ITEMS: CollageItem[] = [
-  { type: "image", src: "/media/bottega-mockup-01.webp", width: 800, height: 600, alt: "Folded fabric swatches printed with the Bottega Lily character pattern in terracotta and blush" },
-  { type: "image", src: "/media/bottega-mockup-02.webp", width: 800, height: 600, alt: "Roll of wrapping paper printed with the Bottega Lily character pattern on pink" },
-  { type: "image", src: "/media/bottega-mockup-03.webp", width: 800, height: 533, alt: "Close-up of a tote bag printed with a bird character pattern in sage green" },
-  { type: "image", src: "/media/bottega-mockup-04.webp", width: 800, height: 533, alt: "Close-up of a tote bag printed with a bird character pattern in terracotta" },
+// Bottega Lily product mockups. Uniform 2x2 grid.
+const BOTTEGA_LILY_ITEMS: GridImage[] = [
+  { src: "/media/bottega-mockup-01.webp", width: 800, height: 600, alt: "Folded fabric swatches printed with the Bottega Lily character pattern in terracotta and blush" },
+  { src: "/media/bottega-mockup-02.webp", width: 800, height: 600, alt: "Roll of wrapping paper printed with the Bottega Lily character pattern on pink" },
+  { src: "/media/bottega-mockup-03.webp", width: 800, height: 533, alt: "Close-up of a tote bag printed with a bird character pattern in sage green" },
+  { src: "/media/bottega-mockup-04.webp", width: 800, height: 533, alt: "Close-up of a tote bag printed with a bird character pattern in terracotta" },
 ];
 
 export default function Creative() {
@@ -108,20 +111,30 @@ export default function Creative() {
                 Illustration and other work I make outside of product design.
               </p>
               <p className="mt-6 text-lg text-ink">
-                Placeholder copy. Some pieces are available in my shop,{" "}
-                <a href="#" className="text-accent-deep underline">
+                I enjoy illustration. It&apos;s always been my creative
+                outlet, and my therapy when I feel stressed.
+              </p>
+              <p className="mt-6 text-lg text-ink">
+                Lately I&apos;ve started a new e-shop selling digital prints
+                on Etsy named{" "}
+                <a
+                  href="https://www.etsy.com/shop/BottegaLily?ref=shop-header-name&listing_id=4536033024&from_page=listing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent-deep underline transition-opacity duration-200 hover:opacity-75 focus-visible:opacity-75"
+                >
                   Bottega Lily
                 </a>
-                . I post new work on{" "}
+                . You can follow my{" "}
                 <a
                   href="https://www.instagram.com/dayday_tipsy/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-accent-deep underline"
+                  className="text-accent-deep underline transition-opacity duration-200 hover:opacity-75 focus-visible:opacity-75"
                 >
                   Instagram
-                </a>
-                .
+                </a>{" "}
+                for new artwork.
               </p>
             </div>
 
@@ -129,8 +142,8 @@ export default function Creative() {
               <Image
                 src="/media/bottega-lily-logo.webp"
                 alt="Bottega Lily logo"
-                width={331}
-                height={400}
+                width={661}
+                height={800}
                 priority
                 className="h-auto w-full"
               />
@@ -150,15 +163,42 @@ export default function Creative() {
 
           <section id="ui-icons" className="scroll-mt-20 border-t border-ink/10 pt-16">
             <h2 className="font-display text-[30px] font-normal text-ink">UI Icons</h2>
-            <div className="mt-8">
-              <MasonryCollage items={UI_ICON_ITEMS} />
+            <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4">
+              {UI_ICON_ITEMS.map((item) => (
+                <div key={item.src} className="flex aspect-square items-center justify-center p-4">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    width={item.width}
+                    height={item.height}
+                    sizes="(min-width: 640px) 25vw, 45vw"
+                    loading="lazy"
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+              ))}
             </div>
           </section>
 
           <section id="bottega-lily" className="scroll-mt-20 border-t border-ink/10 py-16">
             <h2 className="font-display text-[30px] font-normal text-ink">Bottega Lily</h2>
-            <div className="mt-8">
-              <MasonryCollage items={BOTTEGA_LILY_ITEMS} />
+            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
+              {BOTTEGA_LILY_ITEMS.map((item) => (
+                <div
+                  key={item.src}
+                  className="overflow-hidden rounded-md bg-surface shadow-[0_20px_50px_-25px_rgba(0,0,0,0.15)]"
+                >
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    width={item.width}
+                    height={item.height}
+                    sizes="(min-width: 640px) 45vw, 90vw"
+                    loading="lazy"
+                    className="aspect-[4/3] h-auto w-full object-cover"
+                  />
+                </div>
+              ))}
             </div>
           </section>
         </div>
