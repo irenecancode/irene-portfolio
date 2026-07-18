@@ -51,6 +51,11 @@ colors with any contrast checker before trusting them.
   This silently reverted my fonts twice before I wrote it down.
 - Turbopack ignores touch (mtime-only changes). To force a CSS rebuild,
   change real file content.
+- next dev does NOT fail on TypeScript errors, but next build (and
+  therefore Vercel) does. A broken deploy doesn't show an error on the
+  site — Vercel silently keeps serving the last good deploy. If a push
+  hasn't appeared in production within a minute, run `npx next build`
+  locally; it reproduces the failure with the real error message.
 - Transparent video is a three-trap pipeline. (1) Encoding: VP9 keeps
   alpha only with -pix_fmt yuva420p and -auto-alt-ref 0; HEVC-alpha via
   hevc_videotoolbox with -alpha_quality and -tag:v hvc1. (2) Probing:
