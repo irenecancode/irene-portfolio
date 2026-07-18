@@ -6,6 +6,7 @@ export type CollageItem =
   | {
       type: "video";
       webm: string;
+      hevc?: string;
       mp4: string;
       posterPng: string;
       posterWebp: string;
@@ -113,6 +114,7 @@ function VideoPiece({ item, priority }: { item: Extract<CollageItem, { type: "vi
   const video = (
     <CollageVideo
       webm={item.webm}
+      hevc={item.hevc}
       mp4={item.mp4}
       posterPng={item.posterPng}
       posterWebp={item.posterWebp}
