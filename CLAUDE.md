@@ -120,7 +120,9 @@ Type: one family, Hanken Grotesk (Google Fonts via next/font), for
 everything — headings, body, nav, labels. Hierarchy comes from weight,
 size, and color, never from switching families. UI labels differentiate
 with uppercase + letter-spacing + smaller size. The header's site title
-is weight 900. Never use the "London Tube" font anywhere (unlicensed
+is weight 900, sized as a masthead at desktop: 26px title, 15px
+subtitle and nav, ~52px fox logo (mobile keeps its smaller tuned
+sizes — all desktop bumps are sm:-scoped in Header.tsx). Never use the "London Tube" font anywhere (unlicensed
 Johnston clone — its TTF must never be committed) and don't reintroduce
 Roboto.
 
