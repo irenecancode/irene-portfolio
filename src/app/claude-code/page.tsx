@@ -880,7 +880,7 @@ export default function ClaudeCodeCaseStudy() {
               imageWebp="/media/case-tanmigo.webp"
               imagePng="/media/case-tanmigo.png"
               imageAlt="Tanmigo interface showing a tango video paired with an annotation panel for tagging embrace, footwork, and axis"
-              headline="A 0-to-1 Video Annotation Platform for Dancers"
+              headline="A 0-to-1 video annotation platform for dancers"
               body="Bridging the gap between video discovery and physical practice with a seamless, one-stop annotation experience, designed and built in code with an engineer."
               tags={["TypeScript", "Front-End Development", "Live Product"]}
             />

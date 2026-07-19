@@ -119,7 +119,7 @@ export default function TanmigoCaseStudy() {
           </div>
 
           <h1 className="font-display mt-8 max-w-3xl text-[32px] leading-tight font-normal text-ink text-balance sm:text-[40px]">
-            A 0-to-1 Video Annotation Platform for Dancers
+            A 0-to-1 video annotation platform for dancers
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-7 text-ink">
             Bridging the gap between video discovery and physical practice
