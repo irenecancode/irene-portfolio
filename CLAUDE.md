@@ -57,8 +57,13 @@ colors with any contrast checker before trusting them.
   hasn't appeared in production within a minute, run `npx next build`
   locally; it reproduces the failure with the real error message.
 - Transparent video is a three-trap pipeline. (1) Encoding: VP9 keeps
-  alpha only with -pix_fmt yuva420p and -auto-alt-ref 0; HEVC-alpha via
-  hevc_videotoolbox with -alpha_quality and -tag:v hvc1. (2) Probing:
+  alpha only with -pix_fmt yuva420p and -auto-alt-ref 0; HEVC-alpha: do NOT
+  use ffmpeg's hevc_videotoolbox — its alpha layer is ignored by
+  iOS/macOS Safari (renders a white box: the base layer without its
+  alpha). The Safari-valid pipeline is Apple's own avconvert:
+  ffmpeg gif -> ProRes 4444 .mov (-c:v prores_ks -profile:v 4444
+  -pix_fmt yuva444p10le), then avconvert --preset
+  PresetHEVCHighestQualityWithAlpha. Keeps the hvc1 tag. (2) Probing:
   ffprobe reports yuv420p even when alpha IS present (it's a side
   plane) — verify by decoding a frame with -c:v libvpx-vp9 and checking
   the PNG for transparent pixels, or the webm's alpha_mode tag.
