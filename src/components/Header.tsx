@@ -37,7 +37,7 @@ export function Header({ active, titleAs = "p" }: HeaderProps) {
         <p className="-mt-0.5 text-lg leading-tight text-muted sm:text-2xl">Product Designer</p>
       </Link>
 
-      <nav className="absolute top-6 right-6 flex items-center gap-6 font-nav text-lg sm:gap-8 sm:text-2xl lg:top-1/2 lg:right-10 lg:-translate-y-1/2">
+      <nav className="absolute top-6 right-6 flex items-center gap-6 font-nav text-lg sm:gap-7 sm:text-[17px] lg:top-1/2 lg:right-10 lg:-translate-y-1/2">
         <Link
           href="/"
           className={`transition-colors duration-200 ${active === "home" ? "text-nav-active" : "text-ink hover:text-nav-active focus-visible:text-nav-active"}`}
