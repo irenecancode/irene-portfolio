@@ -352,7 +352,7 @@ export default function TanmigoCaseStudy() {
         <Reveal as="section" className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
           <hr className="mb-16 border-accent/30" />
 
-          <h2 className="font-display text-[36px] font-normal text-ink">Video Prototype</h2>
+          <h2 className="font-display text-[36px] font-normal text-ink">Live Product</h2>
           <p className="mt-4 text-lg leading-7 text-ink">
             YouTube → Tanmigo: A One-Stop Annotation Journey.
           </p>
