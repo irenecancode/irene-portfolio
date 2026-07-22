@@ -90,16 +90,6 @@ const RAPID_PROTOTYPING = [
   },
 ];
 
-function PlaceholderImage({ label, className = "" }: { label: string; className?: string }) {
-  return (
-    <div
-      className={`flex items-center justify-center rounded-md bg-[#d9d9d9] ${className}`}
-    >
-      <p className="px-4 text-center text-sm text-ink">{label}</p>
-    </div>
-  );
-}
-
 export default function TanmigoCaseStudy() {
   return (
     <div id="top" className="flex flex-1 flex-col">
@@ -367,12 +357,16 @@ export default function TanmigoCaseStudy() {
             YouTube → Tanmigo: A One-Stop Annotation Journey.
           </p>
 
-          <PlaceholderImage label="video prototype, thumbnail tbd" className="mt-6 aspect-video w-full" />
-
-          <p className="mt-4 text-center text-sm text-muted">
+          <p className="mt-4 text-sm text-muted">
             While these features are currently in active development, you
-            can explore the functional MVP. This prototype reflects the
-            foundational user journey mentioned above.
+            can explore the functional MVP at{" "}
+            <a
+              href="https://www.tanmigo.com"
+              className="text-accent-deep underline underline-offset-2 hover:no-underline"
+            >
+              www.tanmigo.com
+            </a>
+            .
           </p>
         </Reveal>
 
