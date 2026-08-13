@@ -33,9 +33,32 @@ function Station({ x, y }: { x: number; y: number }) {
 
 export function JourneyMap() {
   return (
+    <>
+      {/* The map is a wide subway diagram, so it cannot reflow to a phone: at
+          390px the labels rendered at 5.6px. It keeps a min width that holds
+          them near their desktop size and pans sideways instead. Focusable so
+          the keyboard can pan it, and it leaves the wheel alone. Everything the
+          diagram says is also in the svg's aria-label. */}
+      <div
+        tabIndex={0}
+        role="group"
+        aria-label="Design journey map, scrolls sideways"
+        className="mt-2 overflow-x-auto overscroll-x-contain"
+      >
+        <MapSvg />
+      </div>
+      <p className="mt-3 text-sm text-accent-deep min-[1016px]:hidden">
+        Scroll sideways to see the whole map.
+      </p>
+    </>
+  );
+}
+
+function MapSvg() {
+  return (
     <svg
       viewBox="0 0 1440 800"
-      className="h-auto w-full"
+      className="h-auto w-full min-w-[840px]"
       role="img"
       aria-label="A subway-map style diagram connecting Irene's location, field of study, cross-disciplinary experience, skills, and specialties: San Francisco; Human-computer Interaction Design; Psychological Research (cross-disciplinary experience); Internal Tools, Accessibility Design, Inclusive UX Research (specialty/skills); 0-to-1 Product Design, Agentic AI, Design System (specialty); Enterprise Platform, Physical AI, Front-end Implementation, Data-dense Dashboard, Rapid Prototyping"
     >
@@ -102,7 +125,9 @@ export function JourneyMap() {
       <Station x={1035} y={610} />
 
       {/* Labels */}
-      <g fontFamily="var(--font-roboto), sans-serif" fill="black">
+      {/* --font-roboto has never existed, so these labels were falling back to
+          the generic sans. One family, everywhere. */}
+      <g fontFamily="var(--font-hanken), sans-serif" fill="black">
         <text x={235} y={130} fontSize={15} textAnchor="middle">Location</text>
         <text x={235} y={160} fontSize={26} fontWeight={600} textAnchor="middle">San Francisco</text>
 
