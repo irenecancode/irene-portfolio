@@ -54,6 +54,15 @@ body {
   font-family: var(--font-hanken), sans-serif;
 }
 
+/* No orphans: supporting browsers avoid single-word last lines.
+   Stubborn cases get a manual &nbsp; between the last two words.
+   h3 is included because <Lead> paragraphs render as h3. */
+p,
+li,
+h3 {
+  text-wrap: pretty;
+}
+
 /* Font utilities written explicitly: the @theme inline tokens above were
    not generating .font-display/.font-nav, so headings silently fell back
    to Roboto. Plain CSS keeps this working regardless of Tailwind config. */

@@ -107,6 +107,10 @@ a crisp still, everyone else gets the loop, and nobody downloads 18MB.
 - Body text: max-width ~660px, 16–17px, line-height 1.6. Section titles
   32–40px+. Strong size contrast is the goal. The wider rule: containers
   scale with the viewport, text measure never does.
+- No orphans: a paragraph never ends with a single word alone on its
+  last line. p, li, and h3 get text-wrap: pretty in globals.css (h3
+  because <Lead> renders as h3). If a specific line still strands a
+  word, join the last two words with &nbsp; in the JSX.
 - One left rail: every section, including the footer and back-to-top
   band, shares the site container (max-w-6xl, px-6 sm:px-10). Footer
   and BackToTop own that wrapper internally — never nest them inside a
