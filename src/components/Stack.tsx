@@ -12,11 +12,14 @@ const TOOLS = [
 
 export function Stack() {
   return (
-    <div className="rounded-md bg-white p-8 shadow-[0_20px_50px_-25px_rgba(0,0,0,0.15)] sm:p-10">
+    <div>
       <h2 className="font-sans text-[30px] font-semibold text-accent">Stack</h2>
       <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3">
         {TOOLS.map((tool) => (
-          <div key={tool.name} className="flex flex-col items-center text-center">
+          <div
+            key={tool.name}
+            className="flex flex-col items-center rounded-lg bg-white/30 p-2 text-center backdrop-blur-[2px]"
+          >
             <picture>
               <source srcSet={`/media/stack-${tool.icon}.webp`} type="image/webp" />
               <img
