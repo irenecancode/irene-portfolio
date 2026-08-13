@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { JourneyMap } from "@/components/JourneyMap";
+import { PaperBacking } from "@/components/PaperBacking";
 import { Stack } from "@/components/Stack";
 import { Footer } from "@/components/Footer";
 import { BackToTop } from "@/components/BackToTop";
@@ -12,7 +13,12 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div id="top" className="bg-grid-paper flex flex-1 flex-col">
+    /* The scrapbook decorations (torn paper, the photo's backing) are meant to
+       run off the page edge. Between roughly 1000px and 1300px the container is
+       nearly as wide as the window, so that bleed used to push the document
+       wider than the viewport and scroll the whole page sideways. clip, not
+       hidden: it crops without creating a scroll container. */
+    <div id="top" className="bg-grid-paper flex flex-1 flex-col overflow-x-clip">
       <Header active="about" />
 
       <main className="flex-1">
@@ -50,10 +56,18 @@ export default function About() {
 
         <div className="mx-auto mt-14 mb-32 w-full max-w-6xl px-6 sm:px-10">
           <div className="relative">
-            <img
+            {/* Vertical bleed is fixed px, not a percentage: percentages track
+                the panel's height, so a tall mobile panel bled further and
+                further past the viewport. */}
+            <PaperBacking
               src="/media/journey-paper.png"
-              alt=""
-              className="absolute left-[-7%] top-[-4%] h-[108%] w-[114%] max-w-none"
+              naturalWidth={483}
+              naturalHeight={368}
+              topSlice={40}
+              bottomSlice={38}
+              fill="#F1EEE4"
+              fillInset={{ left: "0.5%", right: "0.5%" }}
+              className="inset-x-[-6%] -top-5 -bottom-6 sm:inset-x-[-7%] sm:-top-8 sm:-bottom-10"
             />
             <div className="relative px-[5%] pt-[4%] pb-[5%]">
               <h2 className="font-sans text-[30px] font-semibold text-accent">
@@ -66,10 +80,17 @@ export default function About() {
 
         <section className="mx-auto w-full max-w-4xl px-6 pt-16 pb-36 sm:px-10">
           <div className="relative">
-            <img
+            {/* The old -13% side bleed measured 431px inside a 390px viewport,
+                which was the page's only horizontal overflow. */}
+            <PaperBacking
               src="/media/stack-paper.png"
-              alt=""
-              className="absolute left-[-13%] top-[-10%] h-[122%] w-[126%] max-w-none"
+              naturalWidth={768}
+              naturalHeight={657}
+              topSlice={80}
+              bottomSlice={575}
+              fill="#F3EFE7"
+              fillInset={{ left: "11.1%", right: "8.9%" }}
+              className="inset-x-[-6%] -top-8 -bottom-10 sm:inset-x-[-13%] sm:-top-12 sm:-bottom-16"
             />
             <div className="relative px-[8%] pt-[7%] pb-[12%]">
               <Stack />
