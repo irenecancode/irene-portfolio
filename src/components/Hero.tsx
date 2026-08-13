@@ -69,8 +69,9 @@ export function Hero() {
         <div>
           <p className="max-w-[44ch] text-lg leading-7 text-ink">
             I design internal tools and data workflows for engineers and
-            researchers. Currently developing Wilde Backyard, a nationwide
-            wildlife reporting platform for research.
+            researchers. Currently building three things: Wilde Backyard, a
+            nationwide wildlife reporting platform; WildePod, an annotation
+            tool for its detection pipeline; and the Tanmigo beta.
           </p>
           <p className="mt-4 text-sm text-accent-deep">Designing since 2021</p>
         </div>
