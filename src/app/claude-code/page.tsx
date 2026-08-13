@@ -385,7 +385,7 @@ export default function ClaudeCodeCaseStudy() {
         <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
           <hr className="mb-16 border-accent/30" />
 
-          <h2 className="font-display text-[36px] font-normal text-ink">
+          <h2 className="font-display text-[36px] font-normal text-ink/80">
             The 3 things I changed
           </h2>
 
@@ -619,7 +619,7 @@ export default function ClaudeCodeCaseStudy() {
 
         <Reveal as="section" className="bg-decision-bg px-6 py-16 sm:px-10">
           <div className="mx-auto w-full max-w-6xl">
-            <h2 className="font-display text-[36px] font-normal text-ink">Use cases</h2>
+            <h2 className="font-display text-[36px] font-normal text-ink/80">Use cases</h2>
 
             <div className="flex flex-col gap-14">
               {USE_CASES.map((scenario) => (
@@ -676,7 +676,7 @@ export default function ClaudeCodeCaseStudy() {
         </Reveal>
 
         <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
-          <h2 className="font-display text-[36px] font-normal text-ink">Video Prototype</h2>
+          <h2 className="font-display text-[36px] font-normal text-ink/80">Video Prototype</h2>
           <p className="mt-4 max-w-2xl text-lg leading-7 text-ink">
             The feature development workflow demonstrates how you work with
             coding agents that provide more visibility into their actions.
@@ -707,7 +707,7 @@ export default function ClaudeCodeCaseStudy() {
         </Reveal>
 
         <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
-          <h2 className="font-display text-[36px] font-normal text-ink">Clickable Prototype</h2>
+          <h2 className="font-display text-[36px] font-normal text-ink/80">Clickable Prototype</h2>
 
           <p className="mt-4 font-nav text-sm font-medium text-muted uppercase">Guidelines</p>
           <ol className="mt-4 flex flex-col gap-3">
@@ -862,7 +862,7 @@ export default function ClaudeCodeCaseStudy() {
         </Reveal>
 
         <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
-          <h2 className="font-display text-[36px] font-normal text-ink">Read more</h2>
+          <h2 className="font-display text-[36px] font-normal text-ink/80">Read more</h2>
           <div className="mx-auto mt-10 grid w-full grid-cols-1 gap-8 sm:grid-cols-2">
             <CaseStudy
               attribution="Meta"

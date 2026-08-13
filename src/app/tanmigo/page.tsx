@@ -189,7 +189,7 @@ export default function TanmigoCaseStudy() {
         </Reveal>
 
         <Reveal as="section" className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
-          <h2 className="font-display text-[36px] font-normal text-ink">Design Strategy</h2>
+          <h2 className="font-display text-[36px] font-normal text-ink/80">Design Strategy</h2>
 
           <p className="mt-6 font-nav text-sm font-medium text-accent-deep uppercase">
             Designed the data before the screens
@@ -221,7 +221,7 @@ export default function TanmigoCaseStudy() {
         </Reveal>
 
         <Reveal as="section" className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
-          <h2 className="font-display text-[36px] font-normal text-ink">Rapid prototyping</h2>
+          <h2 className="font-display text-[36px] font-normal text-ink/80">Rapid prototyping</h2>
           <p className="mt-4 text-lg leading-7 text-ink">
             From first concept to usability testing in 8 hours. Early on,
             the UX audits and rebuild ideas felt abstract when I tried to
@@ -279,7 +279,7 @@ export default function TanmigoCaseStudy() {
         <Reveal as="section" className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
           <hr className="mb-16 border-accent/30" />
 
-          <h2 className="font-display text-[36px] font-normal text-ink">Visual Foundations</h2>
+          <h2 className="font-display text-[36px] font-normal text-ink/80">Visual Foundations</h2>
           <p className="mt-4 text-lg leading-7 text-ink">
             I still have my pixel-perfect moments: gathering design feedback
             on how things should look, moving blocks to test out ideas, and
@@ -320,7 +320,7 @@ export default function TanmigoCaseStudy() {
         <Reveal as="section" className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
           <hr className="mb-16 border-accent/30" />
 
-          <h2 className="font-display text-[36px] font-normal text-ink">The &quot;Failed&quot; Moment</h2>
+          <h2 className="font-display text-[36px] font-normal text-ink/80">The &quot;Failed&quot; Moment</h2>
 
           <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
             <picture>
@@ -352,7 +352,7 @@ export default function TanmigoCaseStudy() {
         <Reveal as="section" className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
           <hr className="mb-16 border-accent/30" />
 
-          <h2 className="font-display text-[36px] font-normal text-ink">Live Product</h2>
+          <h2 className="font-display text-[36px] font-normal text-ink/80">Live Product</h2>
           <p className="mt-4 text-lg leading-7 text-ink">
             YouTube → Tanmigo: A One-Stop Annotation Journey.
           </p>
@@ -379,7 +379,7 @@ export default function TanmigoCaseStudy() {
         </Reveal>
 
         <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
-          <h2 className="font-display text-[36px] font-normal text-ink">Read more</h2>
+          <h2 className="font-display text-[36px] font-normal text-ink/80">Read more</h2>
           <div className="mx-auto mt-10 grid w-full grid-cols-1 gap-8 sm:grid-cols-2">
             <CaseStudy
               attribution="Claude Code"

@@ -166,7 +166,7 @@ export default function MetaCaseStudy() {
             <Lead className="mt-4">
               Codec Avatars represent Meta&apos;s long-term research project
               to create photorealistic, real-time digital identities that use
-              neural networks to mirror human expression and presence in VR.
+              neural networks to mirror human expression and presence in&nbsp;VR.
             </Lead>
 
             <p className="mt-10 font-nav text-sm font-medium text-muted uppercase">Problem Space</p>
@@ -207,7 +207,7 @@ export default function MetaCaseStudy() {
 
         <Reveal as="section" className="w-full px-6 py-16 sm:px-10">
           <div className="mx-auto w-full max-w-6xl">
-            <h2 className="font-display text-[36px] font-normal text-ink">
+            <h2 className="font-display text-[36px] font-normal text-ink/80">
               For a bit of context
             </h2>
             <div className="mx-auto max-w-3xl">
@@ -259,7 +259,7 @@ export default function MetaCaseStudy() {
 
         <Reveal as="section" className="bg-decision-bg px-6 py-16 sm:px-10">
           <div className="mx-auto w-full max-w-6xl">
-            <h2 className="font-display text-[36px] font-normal text-ink">How I ran it</h2>
+            <h2 className="font-display text-[36px] font-normal text-ink/80">How I ran it</h2>
             <Lead className="mx-auto mt-4">
               Audit the existing dashboard → shadow and interview operators
               (myself included) → clickable prototypes → engineering review →
@@ -321,7 +321,7 @@ export default function MetaCaseStudy() {
 
         <Reveal as="section" className="w-full px-6 py-16 sm:px-10">
           <div className="mx-auto w-full max-w-6xl">
-            <h2 className="font-display text-[36px] font-normal text-ink">
+            <h2 className="font-display text-[36px] font-normal text-ink/80">
               I design technical tools in three layers, from the backend up
             </h2>
             <div className="mx-auto max-w-3xl">
@@ -379,7 +379,7 @@ export default function MetaCaseStudy() {
         </Reveal>
 
         <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
-          <h2 className="font-display text-[36px] font-normal text-ink">Read more</h2>
+          <h2 className="font-display text-[36px] font-normal text-ink/80">Read more</h2>
           <div className="mx-auto mt-10 grid w-full grid-cols-1 gap-8 sm:grid-cols-2">
             <CaseStudy
               attribution="tanmigo"
