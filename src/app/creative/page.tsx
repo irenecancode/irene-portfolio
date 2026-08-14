@@ -106,7 +106,7 @@ export default function Creative() {
         <section className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-10 md:py-16">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-[1fr_260px] md:items-start">
             <div className="max-w-xl">
-              <h1 className="font-display text-[38px] leading-tight font-normal text-ink text-balance">
+              <h1 className="font-display text-[27px] leading-tight font-normal text-ink text-balance sm:text-[38px]">
                 Creative
               </h1>
               <p className="mt-4 font-display text-xl font-normal text-ink">

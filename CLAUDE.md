@@ -144,11 +144,21 @@ Type: one family, Hanken Grotesk (Google Fonts via next/font), for
 everything — headings, body, nav, labels. Hierarchy comes from weight,
 size, and color, never from switching families. UI labels differentiate
 with uppercase + letter-spacing + smaller size. The header's site title
-is weight 900, sized as a masthead at desktop: 26px title, 15px
-subtitle and nav, ~52px fox logo (mobile keeps its smaller tuned
-sizes — all desktop bumps are sm:-scoped in Header.tsx). Never use the "London Tube" font anywhere (unlicensed
+is weight 900, sized as a masthead. The whole bar was scaled to 0.8x on
+2026-08-14 at my request, so the real numbers now are: desktop 26px
+title, 18px subtitle, 14px nav, ~42px fox logo; mobile 18px title, 13px
+subtitle, 14px nav, 32px fox logo. Desktop bumps stay sm:-scoped in
+Header.tsx. These had drifted above what this file claimed (the code
+was at 32/22/17), so the 0.8x pass brought the title back to the 26px
+this file always documented. Never use the "London Tube" font anywhere (unlicensed
 Johnston clone — its TTF must never be committed) and don't reintroduce
 Roboto.
+
+The big page h1s (About, Creative) are 27px on mobile and 38px from sm
+up. They used to be a flat 38px at every width, which was the only h1
+on the site with no mobile size at all; 0.7x on mobile was my call
+(2026-08-14). The case-study h1s are a separate, already-tuned pair of
+sizes (32px mobile, 40px desktop) and were deliberately left alone.
 
 Spacing: section gap 96–140px · heading-to-body 12–16px · paragraph
 gap 24px.

@@ -25,7 +25,7 @@ export default function About() {
         <section className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-10 md:py-16">
           <div className="grid items-center gap-10 md:grid-cols-[1fr_auto]">
             <div className="max-w-3xl">
-              <h1 className="font-display text-[38px] leading-tight font-normal text-ink">
+              <h1 className="font-display text-[27px] leading-tight font-normal text-ink sm:text-[38px]">
                 Product Designer &amp; Builder.
                 <br />
                 <span className="sm:whitespace-nowrap">Designing professionally since 2021.</span>
