@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Hanken_Grotesk } from "next/font/google";
+import { Hanken_Grotesk, Beth_Ellen } from "next/font/google";
 import "./globals.css";
 
 const hankenGrotesk = Hanken_Grotesk({
   variable: "--font-hanken",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "900"],
+});
+
+const bethEllen = Beth_Ellen({
+  variable: "--font-script",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -39,7 +45,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${hankenGrotesk.variable} h-full antialiased`}
+      className={`${hankenGrotesk.variable} ${bethEllen.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

@@ -9,7 +9,8 @@
 
 :root {
   /* Design tokens: see CLAUDE.md "Design tokens & reference" */
-  --color-bg: #fff4f4; /* blush */
+  --color-bg: #fffdfc; /* almost-white with a breath of warmth (quiet-background pass 2026-08-25; was blush #fff4f4) */
+  --color-grid-bg: #fff4f4; /* blush: now only the footer band's grid-paper base */
   --color-surface: #ffffff; /* card fill on top of the blush page */
   --color-ink: #000000; /* body text, headings: sampled pure black from the Figma source */
   --color-accent: #cc513b; /* terracotta: large headings 24px+, button fills, decoration */
@@ -22,6 +23,7 @@
   --color-card-from: #f1cdc6;
   --color-card-to: #f8e9e6;
   --color-decision-bg: #ffece6; /* pixel-sampled from Figma: case-study decision-card band background */
+  --color-chip: #ffece6; /* light-orange chip fill, 2026-08-25 chip restyle; pairs with accent-deep text */
   --color-reflection-bg: #f5ffda; /* pixel-sampled from Figma: "Becoming a better designer" reflection card + Background band */
   --grid-line: #f5dcd8; /* sampled from refs/grid reference.png: #ffffff cells, 80px pitch, this line color */
 }
@@ -40,6 +42,7 @@
   --color-card-from: var(--color-card-from);
   --color-card-to: var(--color-card-to);
   --color-decision-bg: var(--color-decision-bg);
+  --color-chip: var(--color-chip);
   --color-reflection-bg: var(--color-reflection-bg);
   --font-sans: var(--font-hanken);
   --font-nav: var(--font-hanken);
@@ -71,6 +74,11 @@ h3 {
 }
 .font-nav {
   font-family: var(--font-hanken), sans-serif;
+}
+/* Beth Ellen script: masthead wordmark, hero signature, About scrapbook
+   headings only (Irene's call, 2026-08-25). Never nav or body. */
+.font-script {
+  font-family: var(--font-script), cursive;
 }
 
 /* Accessibility: visible keyboard focus everywhere (CLAUDE.md a11y rules) */
@@ -160,7 +168,7 @@ h3 {
    --grid-line. Home and About apply this full-page; never place it behind
    paragraph text. */
 .bg-grid-paper {
-  background-color: var(--color-bg);
+  background-color: var(--color-grid-bg);
   background-image:
     repeating-linear-gradient(
       to right,

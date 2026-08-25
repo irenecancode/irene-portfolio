@@ -31,10 +31,10 @@ export function Header({ active, titleAs = "p" }: HeaderProps) {
         href="/"
         className="absolute top-[54px] left-1/2 -translate-x-1/2 text-center transition-opacity duration-200 hover:opacity-80 focus-visible:opacity-80 lg:top-1/2 lg:left-1/2 lg:-translate-y-1/2"
       >
-        <TitleTag className="font-display text-[18px] leading-tight font-black text-ink sm:text-[26px]">
-          Irene Cheung
+        <TitleTag className="font-script text-[24px] leading-tight text-ink sm:text-[34px]">
+          irene cheung
         </TitleTag>
-        <p className="-mt-0.5 text-[13px] leading-tight text-muted sm:text-[18px]">Product Designer</p>
+        <p className="mt-2 text-[13px] leading-tight text-muted sm:text-[18px]">Product Designer</p>
       </Link>
 
       <nav className="absolute top-[19px] right-[19px] flex items-center gap-[19px] font-nav text-[14px] sm:gap-[22px] sm:text-[14px] lg:top-1/2 lg:right-8 lg:-translate-y-1/2">
