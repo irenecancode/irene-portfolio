@@ -18,7 +18,7 @@ export default function About() {
        nearly as wide as the window, so that bleed used to push the document
        wider than the viewport and scroll the whole page sideways. clip, not
        hidden: it crops without creating a scroll container. */
-    <div id="top" className="bg-grid-paper flex flex-1 flex-col overflow-x-clip">
+    <div id="top" className="flex flex-1 flex-col overflow-x-clip">
       <Header active="about" />
 
       <main className="flex-1">
@@ -70,7 +70,7 @@ export default function About() {
               className="inset-x-[-6%] -top-5 -bottom-6 sm:inset-x-[-7%] sm:-top-8 sm:-bottom-10"
             />
             <div className="relative px-[5%] pt-[4%] pb-[5%]">
-              <h2 className="font-sans text-[30px] font-semibold text-accent">
+              <h2 className="font-script text-[34px] text-accent">
                 My Design Journey Map
               </h2>
               <JourneyMap />
@@ -109,7 +109,9 @@ export default function About() {
         <BackToTop />
       </main>
 
-      <Footer />
+      <div className="bg-grid-paper">
+        <Footer />
+      </div>
     </div>
   );
 }
