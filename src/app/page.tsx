@@ -19,11 +19,6 @@ const MORE_PROJECTS = [
 
 const RESOURCE_CARDS = [
   {
-    label: "CLAUDE.md",
-    href: "https://github.com/irenecancode/irene-portfolio/blob/main/CLAUDE.md",
-    lines: ["Accessibility Guidelines", "Design Tokens"],
-  },
-  {
     label: "Tech Stack",
     href: null,
     lines: ["Next.js + Tailwind + TypeScript"],
@@ -42,7 +37,7 @@ const RESOURCE_CARDS = [
 
 export default function Home() {
   return (
-    <div id="top" className="bg-grid-paper flex flex-1 flex-col">
+    <div id="top" className="flex flex-1 flex-col">
       <Header active="home" titleAs="h1" />
 
       <main className="flex-1">
@@ -54,15 +49,15 @@ export default function Home() {
               Case Studies
             </h2>
 
-            <div className="mx-auto mt-10 grid w-full grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10">
+            <div className="mx-auto mt-10 mb-16 grid w-full grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-10">
               <CaseStudy
                 attribution="Meta"
                 href="/meta"
                 imageWebp="/media/case-meta.webp"
                 imagePng="/media/case-meta.png"
-                imageAlt="MUGSY capture dome shown from inside: a 171-camera rig recording at 11MP and 90Hz"
+                imageAlt="Abstract wireframe dashboard with two tile grids side by side, marked NDA, with a close button in the corner"
                 headline="The capture dashboard behind Codec Avatars"
-                body="Redesigning the internal tool that orchestrates 300+ camera and sensor streams, as the team's only designer and a daily operator."
+                body="Redesigning the internal tool that orchestrates 300+ camera and sensor streams."
                 tags={["Internal Tools", "Hardware R&D", "Shipped", "NDA Protected"]}
               />
               <CaseStudy
@@ -70,26 +65,17 @@ export default function Home() {
                 href="/tanmigo"
                 imageWebp="/media/case-tanmigo.webp"
                 imagePng="/media/case-tanmigo.png"
-                imageAlt="Tanmigo interface showing a tango video paired with an annotation panel for tagging embrace, footwork, and axis"
+                imageAlt="Three recreated Tanmigo annotation cards: dancers' timestamped notes tagging moments like an ocho and a sacada, one card still empty"
                 headline="A 0-to-1 video annotation platform for dancers"
                 body="Bridging the gap between video discovery and physical practice, designed and built in code with an engineer."
                 tags={["TypeScript", "Front-End Development", "Live Product"]}
               />
               <CaseStudy
-                attribution="Felidae Conservation Fund"
-                imageWebp="/media/case-felidae.webp"
-                imagePng="/media/case-felidae.png"
-                imageAlt="Wildlife sighting report form, Media Upload step, with an uploaded photo of two ducks and auto-detected camera metadata"
-                headline="The submission flow behind Wilde Backyard"
-                body="Redesigning the multi-step flow where the public submits wildlife media for research, shipping the front-end myself."
-                tags={["Research Tool", "Front-end Development", "Live Product", "Case Study in Progress"]}
-              />
-              <CaseStudy
                 attribution="Claude Code"
                 href="/claude-code"
-                imageWebp="/media/claude-code-alt-proposed-ux.webp"
-                imagePng="/media/claude-code-alt-proposed-ux.png"
-                imageAlt="Claude Code chat interface mid-conversation, showing a Bash tool call and a permission prompt to allow running git status"
+                imageWebp="/media/case-claude-code.webp"
+                imagePng="/media/case-claude-code.png"
+                imageAlt="Recreated Context panel from the Claude Code redesign concept: a timestamped log of the agent's edits, each with a reset link"
                 headline="Developer experience in Claude Code"
                 body="Restoring a sense of agency in AI coding tools, tested with a working prototype."
                 tags={["Agentic Developer Experience", "Concept", "Prototype"]}
@@ -104,7 +90,7 @@ export default function Home() {
               More Projects
             </h2>
 
-            <div className="mx-auto mt-10 grid w-full grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10">
+            <div className="mx-auto mt-10 mb-16 grid w-full grid-cols-1 gap-x-16 gap-y-12 sm:grid-cols-2">
               {MORE_PROJECTS.map((project) => (
                 <div key={project.headline}>
                   <h3 className="font-display text-[22px] font-medium text-ink text-balance">
@@ -115,7 +101,7 @@ export default function Home() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-navy px-3 py-1 text-xs font-medium text-navy transition-colors duration-200 hover:bg-navy-tint"
+                        className="border border-accent-deep px-3 py-1 text-xs font-medium text-accent-deep transition-colors duration-200 hover:bg-chip"
                       >
                         {tag}
                       </span>
@@ -148,7 +134,7 @@ export default function Home() {
         </div>
 
         <div className="py-14">
-          <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 px-6 sm:grid-cols-2 sm:px-10 lg:grid-cols-4">
+          <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 px-6 sm:grid-cols-3 sm:px-10">
             {RESOURCE_CARDS.map(({ label, href, lines }) => (
               <div
                 key={label}
@@ -179,7 +165,9 @@ export default function Home() {
         <BackToTop />
       </main>
 
-      <Footer />
+      <div className="bg-grid-paper">
+        <Footer />
+      </div>
     </div>
   );
 }
