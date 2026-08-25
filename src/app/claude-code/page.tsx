@@ -308,13 +308,13 @@ export default function ClaudeCodeCaseStudy() {
         <Header active="none" />
 
         <section className="mx-auto w-full max-w-6xl px-6 pt-4 pb-16 sm:px-10 sm:pt-8 sm:pb-24">
-          <div className="card-gradient rounded-md p-6 shadow-[0_20px_50px_-25px_rgba(0,0,0,0.15)]">
+          <div className="py-6">
             <picture>
               <source srcSet="/media/case-claude-code.webp" type="image/webp" />
               <img
                 src="/media/case-claude-code.png"
                 alt="Claude Code chat interface mid-conversation, showing a Bash tool call and a permission prompt to allow running git status"
-                className="mx-auto w-full max-w-2xl"
+                className="mx-auto w-full max-w-[315px]"
               />
             </picture>
           </div>

@@ -97,13 +97,13 @@ export default function TanmigoCaseStudy() {
         <Header active="none" />
 
         <section className="mx-auto w-full max-w-6xl px-6 pt-4 pb-16 sm:px-10 sm:pt-8 sm:pb-24">
-          <div className="card-gradient rounded-md p-6 shadow-[0_20px_50px_-25px_rgba(0,0,0,0.15)]">
+          <div className="py-6">
             <picture>
               <source srcSet="/media/case-tanmigo.webp" type="image/webp" />
               <img
                 src="/media/case-tanmigo.png"
                 alt="Tanmigo interface showing a tango video paired with an annotation panel for tagging embrace, footwork, and axis"
-                className="mx-auto w-full max-w-2xl"
+                className="mx-auto w-full max-w-[384px]"
               />
             </picture>
           </div>
