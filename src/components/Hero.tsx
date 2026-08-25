@@ -25,7 +25,7 @@ export function Hero() {
               </span>
             ))}
           </div>
-          <p className="font-script mt-6 max-w-[40ch] text-[21px] leading-[1.7] text-ink">
+          <p className="font-script mt-6 max-w-[44ch] text-[18px] leading-[1.7] text-ink">
             I design internal tools and data workflows for engineers and
             researchers.
           </p>
