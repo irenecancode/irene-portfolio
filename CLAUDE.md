@@ -112,7 +112,8 @@ a crisp still, everyone else gets the loop, and nobody downloads 18MB.
   because <Lead> renders as h3). If a specific line still strands a
   word, join the last two words with &nbsp; in the JSX.
 - One left rail: every section, including the footer and back-to-top
-  band, shares the site container (max-w-6xl, px-6 sm:px-10). Footer
+  band, shares the site container (max-w-6xl, px-6 sm:px-10; the home
+  page's rail is max-w-7xl as of 2026-08-25 — see the build log). Footer
   and BackToTop own that wrapper internally — never nest them inside a
   page's narrower text column, or their edges drift off the rail. (This
   happened on /meta and /about before it became a rule.)
@@ -124,8 +125,9 @@ a crisp still, everyone else gets the loop, and nobody downloads 18MB.
   own row (see Header.tsx). An earlier grid-areas version measured
   centered but rendered off-center for me once; absolute positioning is
   the defensive choice either way.
-- "Case Studies" heading and its "Click to see more" caption: left-
-  aligned on the rail, not centered.
+- "Case Studies" heading: left-aligned on the rail, not centered. Its
+  old "Click to see more" caption was removed 2026-08-25 as redundant —
+  don't reintroduce it.
 - Back to top: navy (#3C5889) fill, white text, right-aligned within
   the site container, in its own grid-textured band above the footer.
   Always the shared <BackToTop> component.
@@ -241,6 +243,24 @@ the notes.
 - Paragraph lengths and wording on built pages are verified against
   Figma. Don't tighten or summarize them on sight, even if they look
   long for a portfolio.
+- Case cards restyled 2026-08 (Irene's call; supersedes the Figma
+  card look): fixed-height 280px media zone in plain white (bg-surface,
+  no tile or gradient) with the thumbnail flex-centered and capped at
+  225px tall (the <picture> wrapper needs className="contents" or the
+  centering breaks), rounded-xl card with ring + tight shadow and a
+  hover lift, uppercase attribution overline tight above the title,
+  15px body clamped to 2 lines (trim copy to fit rather than letting
+  the ellipsis cut mid-sentence), single-row nowrap pills (still
+  filled — the More Project outline-pill distinction stands), and a
+  motion-safe image zoom on hover.
+- The home page rail widened to max-w-7xl on 2026-08-25 (Irene's call)
+  so the hero headline, section headings, and the case-card grid share
+  one wider edge. Other pages stay on max-w-6xl.
+- Case-study hero images (2026-08-25): no background card — the image
+  sits directly on the hero band's grid paper. Width caps are 0.75x of
+  native and deliberate (Tanmigo/Meta 384px, Claude Code 315px): the
+  assets are only 455-571px wide, and anything above native renders
+  soft/compressed. Don't re-enlarge without a 2x recapture.
 - Case-study hero images double as homepage thumbnails: one
   case-<name>.webp/png per project in public/media, cropped from the
   Figma exports in refs/ (the exports had a soft blush card baked in;
