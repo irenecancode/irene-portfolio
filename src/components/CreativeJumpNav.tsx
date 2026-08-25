@@ -37,7 +37,7 @@ export function CreativeJumpNav({ sections }: { sections: JumpNavSection[] }) {
     <div className="sticky top-0 z-20 border-b border-ink/10 bg-bg/95 backdrop-blur-sm">
       <nav
         aria-label="Creative categories"
-        className="mx-auto flex w-full max-w-6xl gap-8 px-6 py-4 sm:px-10"
+        className="mx-auto flex w-full max-w-6xl justify-center gap-8 px-6 py-4 sm:px-10"
       >
         {sections.map((s) => (
           <a

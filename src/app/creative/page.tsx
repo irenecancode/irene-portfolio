@@ -22,36 +22,14 @@ const SECTIONS: JumpNavSection[] = [
 // few busier, full-background scenes are spaced out among the plain
 // isolated-subject pieces rather than clumped together. Reorder freely;
 // position is the only thing that determines both visual slot and tab
-// order (see MasonryCollage). "Untitled_Artwork 197" (the croissant piece)
-// was removed at Irene's request.
+// order (see MasonryCollage). Curated down to 8 dog drawings + the dog
+// animation on 2026-08-25 (Irene's call): full-background scenes and
+// non-dog pieces came out. The removed assets stay in public/media.
 const DRAWING_ITEMS: CollageItem[] = [
   { type: "image", src: "/media/creative-12.webp", width: 587, height: 800, alt: "Illustration of a fluffy white dog walking with a red toy in its mouth" },
-  { type: "image", src: "/media/creative-21.webp", width: 800, height: 725, alt: "Illustration of a gnome and a cat standing beneath a cherry blossom tree on a city street", size: "lg" },
-  { type: "image", src: "/media/creative-08.webp", width: 800, height: 620, alt: "Illustration of two ripe, spotted bananas" },
-  { type: "image", src: "/media/creative-17.webp", width: 734, height: 800, alt: "Illustration of a husky mid-leap" },
-  { type: "image", src: "/media/creative-04.webp", width: 800, height: 618, alt: "Illustration of a group of dogs dancing together at a party", size: "lg" },
-  { type: "image", src: "/media/creative-20.webp", width: 800, height: 668, alt: "Illustration of a gnome and a cat drinking beer together" },
-  { type: "image", src: "/media/creative-01.webp", width: 800, height: 709, alt: "Illustration of two wooden crates overflowing with apples" },
-  {
-    type: "video",
-    webm: "/media/creative-video-2.webm",
-    hevc: "/media/creative-video-2-hevc.mp4",
-    mp4: "/media/creative-video-2.mp4",
-    posterPng: "/media/creative-video-2-poster.png",
-    posterWebp: "/media/creative-video-2-poster.webp",
-    width: 640,
-    height: 640,
-    alt: "Looping animation of a girl in a yellow raincoat holding an umbrella in the rain",
-  },
-  { type: "image", src: "/media/creative-16.webp", width: 490, height: 800, alt: "Illustration of a shiba inu standing and smiling, tail curled up" },
-  { type: "image", src: "/media/creative-05.webp", width: 800, height: 618, alt: "Illustration of dogs working in a bakery decorated for Lunar New Year", size: "lg" },
   { type: "image", src: "/media/creative-13.webp", width: 800, height: 550, alt: "Illustration of a tricolor puppy lying on its back playfully" },
-  { type: "image", src: "/media/creative-24.webp", width: 800, height: 596, alt: "Illustration of three dogs wearing Santa hats" },
-  { type: "image", src: "/media/creative-09.webp", width: 800, height: 360, alt: "Illustration of a rainbow trout" },
-  { type: "image", src: "/media/creative-19.webp", width: 800, height: 672, alt: "Illustration of a girl with blue hair sweeping with a broom beside a black cat" },
-  { type: "image", src: "/media/creative-03.webp", width: 800, height: 618, alt: "Illustration of four dogs sitting nervously in a row, paws pressed together", size: "lg" },
-  { type: "image", src: "/media/creative-14.webp", width: 555, height: 800, alt: "Illustration of a golden retriever puppy portrait wearing an orange bandana" },
-  { type: "image", src: "/media/creative-11.webp", width: 800, height: 787, alt: "Illustration of two mandarin ducks in grass" },
+  { type: "image", src: "/media/creative-17.webp", width: 734, height: 800, alt: "Illustration of a husky mid-leap" },
+  { type: "image", src: "/media/creative-06.webp", width: 800, height: 461, alt: "Illustration of a golden dog curled up asleep on a pillow" },
   {
     type: "video",
     webm: "/media/creative-video-1.webm",
@@ -63,13 +41,10 @@ const DRAWING_ITEMS: CollageItem[] = [
     height: 882,
     alt: "Looping animation of a fluffy white dog pouring food into a bowl",
   },
+  { type: "image", src: "/media/creative-16.webp", width: 490, height: 800, alt: "Illustration of a shiba inu standing and smiling, tail curled up" },
   { type: "image", src: "/media/creative-07.webp", width: 800, height: 581, alt: "Illustration of a small brown dog curled up asleep" },
-  { type: "image", src: "/media/creative-22.webp", width: 800, height: 644, alt: "Illustration of dogs and cats working behind the counter of a shop" },
-  { type: "image", src: "/media/creative-02.webp", width: 632, height: 800, alt: "Illustration of a bundle of vegetables: kohlrabi, carrots, and kale tied together" },
-  { type: "image", src: "/media/creative-18.webp", width: 800, height: 408, alt: "Illustration of a spotted dog curled up asleep on a pink blanket" },
+  { type: "image", src: "/media/creative-14.webp", width: 555, height: 800, alt: "Illustration of a golden retriever puppy portrait wearing an orange bandana" },
   { type: "image", src: "/media/creative-10.webp", width: 800, height: 794, alt: "Illustration of a shiba inu standing in profile with a small flower marking" },
-  { type: "image", src: "/media/creative-23.webp", width: 800, height: 769, alt: "Illustration of three sheep and goat faces" },
-  { type: "image", src: "/media/creative-06.webp", width: 800, height: 461, alt: "Illustration of a golden dog curled up asleep on a pillow" },
 ];
 
 type GridImage = { src: string; width: number; height: number; alt: string };
@@ -99,7 +74,7 @@ const BOTTEGA_LILY_ITEMS: GridImage[] = [
 
 export default function Creative() {
   return (
-    <div id="top" className="bg-grid-paper flex flex-1 flex-col">
+    <div id="top" className="flex flex-1 flex-col">
       <Header active="creative" />
 
       <main className="flex-1">
@@ -208,7 +183,9 @@ export default function Creative() {
         <BackToTop />
       </main>
 
-      <Footer />
+      <div className="bg-grid-paper">
+        <Footer />
+      </div>
     </div>
   );
 }

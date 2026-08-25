@@ -31,14 +31,14 @@ const PRIORITY_COUNT = 8;
 // was bumped again to 1.1x of that 0.8x value at Irene's follow-up request
 // (110/140/170 -> 121/154/187).
 const HEIGHT_CLASS: Record<"sm" | "lg", string> = {
-  sm: "h-[121px] sm:h-[154px] xl2:h-[187px]",
+  sm: "h-[145px] sm:h-[185px] xl2:h-[224px]",
   lg: "h-[165px] sm:h-[210px] xl2:h-[255px]",
 };
 
 // [mobile, sm, xl2] px heights, mirrored from HEIGHT_CLASS above — Tailwind
 // needs the literal class strings, this feeds the `sizes` hint math.
 const TIER_HEIGHTS: Record<"sm" | "lg", [number, number, number]> = {
-  sm: [121, 154, 187],
+  sm: [145, 185, 224],
   lg: [165, 210, 255],
 };
 
@@ -143,7 +143,7 @@ function VideoPiece({ item, priority }: { item: Extract<CollageItem, { type: "vi
 
 export function MasonryCollage({ items }: { items: CollageItem[] }) {
   return (
-    <div className="flex flex-wrap gap-5">
+    <div className="flex flex-wrap gap-8">
       {items.map((item, index) => {
         const priority = index < PRIORITY_COUNT;
         const size = item.size ?? "sm";
@@ -152,10 +152,22 @@ export function MasonryCollage({ items }: { items: CollageItem[] }) {
             <PlaceholderPiece key={index} slot={item.slot} width={item.width} height={item.height} size={size} />
           );
         }
+        // Rows justify to the full rail: each slot grows in proportion to
+        // its piece's aspect ratio and the piece centers inside, so the
+        // leftover width spreads evenly instead of pooling on the right.
+        const grow = item.width / item.height;
         if (item.type === "video") {
-          return <VideoPiece key={index} item={item} priority={priority} />;
+          return (
+            <div key={index} className="flex shrink-0 justify-center" style={{ flexGrow: grow }}>
+              <VideoPiece item={item} priority={priority} />
+            </div>
+          );
         }
-        return <ImagePiece key={index} item={item} priority={priority} />;
+        return (
+          <div key={index} className="flex shrink-0 justify-center" style={{ flexGrow: grow }}>
+            <ImagePiece item={item} priority={priority} />
+          </div>
+        );
       })}
     </div>
   );
