@@ -14,46 +14,48 @@ type CaseStudyProps = {
 export function CaseStudy(props: CaseStudyProps) {
   const { attribution, headline, body, tags, href } = props;
   const className =
-    "flex flex-col rounded-md bg-surface p-6 shadow-[0_20px_50px_-25px_rgba(0,0,0,0.15)] sm:p-8";
+    "flex flex-col overflow-hidden rounded-xl bg-surface ring-1 ring-black/5 shadow-[0_16px_40px_-24px_rgba(0,0,0,0.18)]";
   const linkClassName =
     className +
-    " group transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_25px_60px_-20px_rgba(0,0,0,0.25)] focus-visible:-translate-y-1 focus-visible:shadow-[0_25px_60px_-20px_rgba(0,0,0,0.25)]";
+    " group transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_28px_60px_-24px_rgba(0,0,0,0.28)] focus-visible:-translate-y-1 focus-visible:shadow-[0_28px_60px_-24px_rgba(0,0,0,0.28)]";
 
   const content = (
     <>
       {props.placeholder ? (
-        <div className="flex aspect-[4/3] items-center justify-center rounded-md bg-[#d9d9d9]">
+        <div className="flex h-[280px] items-center justify-center bg-surface">
           <p className="text-sm text-ink">thumbnail, tbd</p>
         </div>
       ) : (
-        <div className="card-gradient rounded-md p-6">
-          <picture>
+        <div className="flex h-[280px] items-center justify-center overflow-hidden bg-surface px-6 sm:px-8">
+          <picture className="contents">
             <source srcSet={props.imageWebp} type="image/webp" />
             <img
               src={props.imagePng}
               alt={props.imageAlt}
-              className="mx-auto aspect-[4/3] w-full max-w-2xl object-contain"
+              className="max-h-[225px] w-auto max-w-[86%] object-contain transition-transform duration-300 motion-safe:group-hover:scale-[1.04] motion-safe:group-focus-visible:scale-[1.04]"
               loading="lazy"
             />
           </picture>
         </div>
       )}
 
-      <h3 className="font-display mt-6 text-[22px] font-medium text-ink text-balance transition-colors duration-200 group-hover:text-accent-deep group-focus-visible:text-accent-deep">
+      <div className="px-5 pt-4 pb-5 sm:px-6">
+      <p className="font-nav text-xs font-medium tracking-[0.08em] text-muted uppercase">{attribution}</p>
+      <h3 className="font-display mt-0.5 text-[22px] font-medium text-ink text-balance transition-colors duration-200 group-hover:text-accent-deep group-focus-visible:text-accent-deep">
         {headline}
       </h3>
-      <p className="mt-1 font-nav text-sm text-muted">{attribution}</p>
-      <p className="mt-3 text-base leading-6 text-ink">{body}</p>
+      <p className="mt-2.5 line-clamp-2 text-[15px] leading-6 text-ink">{body}</p>
 
-      <div className="mt-4 flex flex-wrap gap-2">
+      <div className="mt-3.5 flex flex-nowrap gap-2 overflow-hidden">
         {tags.map((tag) => (
           <span
             key={tag}
-            className="rounded-full bg-navy-tint px-3 py-1 text-xs font-medium text-navy transition-colors duration-200 group-hover:bg-navy group-hover:text-white group-focus-visible:bg-navy group-focus-visible:text-white"
+            className="whitespace-nowrap rounded-full bg-navy-tint px-2.5 py-0.5 text-[11px] font-medium text-navy transition-colors duration-200 group-hover:bg-navy group-hover:text-white group-focus-visible:bg-navy group-focus-visible:text-white"
           >
             {tag}
           </span>
         ))}
+      </div>
       </div>
     </>
   );
