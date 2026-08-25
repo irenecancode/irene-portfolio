@@ -48,12 +48,11 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
 
-        <div className="mx-auto w-full max-w-6xl px-6 sm:px-10">
+        <div className="mx-auto w-full max-w-7xl px-6 sm:px-10">
           <div className="border-t border-ink/10 pt-16">
             <h2 className="font-display text-[30px] font-normal text-ink">
               Case Studies
             </h2>
-            <p className="mt-1 text-base text-ink">Click to see more</p>
 
             <div className="mx-auto mt-10 grid w-full grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10">
               <CaseStudy
@@ -63,7 +62,7 @@ export default function Home() {
                 imagePng="/media/case-meta.png"
                 imageAlt="MUGSY capture dome shown from inside: a 171-camera rig recording at 11MP and 90Hz"
                 headline="The capture dashboard behind Codec Avatars"
-                body="Redesigning the internal tool that orchestrates 300+ camera and sensor streams, as the team's only designer and a daily operator of the system. (Details abstracted under NDA)"
+                body="Redesigning the internal tool that orchestrates 300+ camera and sensor streams, as the team's only designer and a daily operator."
                 tags={["Internal Tools", "Hardware R&D", "Shipped", "NDA Protected"]}
               />
               <CaseStudy
@@ -73,7 +72,7 @@ export default function Home() {
                 imagePng="/media/case-tanmigo.png"
                 imageAlt="Tanmigo interface showing a tango video paired with an annotation panel for tagging embrace, footwork, and axis"
                 headline="A 0-to-1 video annotation platform for dancers"
-                body="Bridging the gap between video discovery and physical practice with a seamless, one-stop annotation experience, designed and built in code with an engineer."
+                body="Bridging the gap between video discovery and physical practice, designed and built in code with an engineer."
                 tags={["TypeScript", "Front-End Development", "Live Product"]}
               />
               <CaseStudy
@@ -82,14 +81,14 @@ export default function Home() {
                 imagePng="/media/case-felidae.png"
                 imageAlt="Wildlife sighting report form, Media Upload step, with an uploaded photo of two ducks and auto-detected camera metadata"
                 headline="The submission flow behind Wilde Backyard"
-                body="Redesigning the multi-step flow where the public submits trail-camera, home-security, and phone media for wildlife research, shipping the front-end myself. Full case study in progress."
+                body="Redesigning the multi-step flow where the public submits wildlife media for research, shipping the front-end myself."
                 tags={["Research Tool", "Front-end Development", "Live Product", "Case Study in Progress"]}
               />
               <CaseStudy
                 attribution="Claude Code"
                 href="/claude-code"
-                imageWebp="/media/case-claude-code.webp"
-                imagePng="/media/case-claude-code.png"
+                imageWebp="/media/claude-code-alt-proposed-ux.webp"
+                imagePng="/media/claude-code-alt-proposed-ux.png"
                 imageAlt="Claude Code chat interface mid-conversation, showing a Bash tool call and a permission prompt to allow running git status"
                 headline="Developer experience in Claude Code"
                 body="Restoring a sense of agency in AI coding tools, tested with a working prototype."
@@ -99,7 +98,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mx-auto w-full max-w-6xl px-6 sm:px-10">
+        <div className="mx-auto w-full max-w-7xl px-6 sm:px-10">
           <div className="border-t border-ink/10 pt-16">
             <h2 className="font-display text-[30px] font-normal text-ink">
               More Projects
@@ -128,7 +127,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mx-auto w-full max-w-6xl px-6 sm:px-10">
+        <div className="mx-auto w-full max-w-7xl px-6 sm:px-10">
           <div className="border-t border-ink/10 pt-16 pb-4 text-center">
             <h2 className="font-display text-[30px] font-normal text-ink">
               Open Resource
@@ -149,7 +148,7 @@ export default function Home() {
         </div>
 
         <div className="py-14">
-          <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-6 px-6 sm:grid-cols-2 sm:px-10 lg:grid-cols-4">
+          <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 px-6 sm:grid-cols-2 sm:px-10 lg:grid-cols-4">
             {RESOURCE_CARDS.map(({ label, href, lines }) => (
               <div
                 key={label}

@@ -43,7 +43,7 @@ const BADGES = [
 
 export function Hero() {
   return (
-    <section className="mx-auto w-full max-w-6xl px-6 pt-4 pb-20 sm:px-10 sm:pt-8 sm:pb-28">
+    <section className="mx-auto w-full max-w-7xl px-6 pt-4 pb-20 sm:px-10 sm:pt-8 sm:pb-28">
       <div className="mx-auto w-full max-w-xs sm:max-w-sm">
         <FoxHero />
       </div>
@@ -64,14 +64,17 @@ export function Hero() {
               </span>
             ))}
           </div>
+          <p className="mt-5 max-w-[40ch] text-[17px] leading-7 text-ink">
+            I design internal tools and data workflows for engineers and
+            researchers.
+          </p>
         </div>
 
         <div>
           <p className="max-w-[44ch] text-lg leading-7 text-ink">
-            I design internal tools and data workflows for engineers and
-            researchers. Currently building three things: Wilde Backyard, a
-            nationwide wildlife reporting platform; WildePod, an annotation
-            tool for its detection pipeline; and the Tanmigo beta.
+            Currently building three things: Wilde Backyard, a nationwide
+            wildlife reporting platform; WildePod, an annotation tool for its
+            detection pipeline; and the Tanmigo beta.
           </p>
           <p className="mt-4 text-sm text-accent-deep">Designing since 2021</p>
         </div>
