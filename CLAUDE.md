@@ -95,11 +95,14 @@ a crisp still, everyone else gets the loop, and nobody downloads 18MB.
 
 ## Design rules
 
-- Grid-paper background: Home, About, and Creative get it full-page,
-  with the header content sitting inside the grid. Case study pages get
-  it only on the hero band and the footer; the main content between
-  them is explicit white (bg-surface). Never put the grid behind
-  paragraph text — texture frames reading, it shouldn't accompany it.
+- Quiet background (my call, 2026-08-25, part of the consumer-facing
+  pass): every page body is almost-white (--color-bg #fffdfc). The
+  grid-paper texture appears in exactly one place — the footer band on
+  every page, which keeps the old blush base (--color-grid-bg #fff4f4).
+  This replaced the full-page grid on Home/About/Creative and the
+  case-page hero-band grid; don't reintroduce grid anywhere else.
+  Never put the grid behind paragraph text — texture frames reading,
+  it shouldn't accompany it.
 - The grid is drawn in CSS (fixed 80x80px tiles — see .bg-grid-paper in
   globals.css), never a stretched image, so cells stay square at every
   viewport width. If the lines ever fight legibility, lower --grid-line,
@@ -128,9 +131,11 @@ a crisp still, everyone else gets the loop, and nobody downloads 18MB.
 - "Case Studies" heading: left-aligned on the rail, not centered. Its
   old "Click to see more" caption was removed 2026-08-25 as redundant —
   don't reintroduce it.
-- Back to top: navy (#3C5889) fill, white text, right-aligned within
-  the site container, in its own grid-textured band above the footer.
-  Always the shared <BackToTop> component.
+- Back to top (quieted 2026-08-25, my call): a small circular
+  icon-only button — surface fill, thin ring, gray up arrow, subtle
+  lift on hover — right-aligned within the site container, above the
+  footer. The old navy filled button is retired. Always the shared
+  <BackToTop> component; keep the aria-label.
 - Footer: left-aligned on the rail. Name in terracotta, body in ink,
   gray uppercase "Social" label, then LinkedIn / GitHub / Instagram as
   plain stacked text links (not icon buttons), plus the mailto link.
@@ -144,15 +149,24 @@ tokens live in globals.css with usage comments.
 
 Type: one family, Hanken Grotesk (Google Fonts via next/font), for
 everything — headings, body, nav, labels. Hierarchy comes from weight,
-size, and color, never from switching families. UI labels differentiate
-with uppercase + letter-spacing + smaller size. The header's site title
-is weight 900, sized as a masthead. The whole bar was scaled to 0.8x on
-2026-08-14 at my request, so the real numbers now are: desktop 26px
-title, 18px subtitle, 14px nav, ~42px fox logo; mobile 18px title, 13px
-subtitle, 14px nav, 32px fox logo. Desktop bumps stay sm:-scoped in
-Header.tsx. These had drifted above what this file claimed (the code
-was at 32/22/17), so the 0.8x pass brought the title back to the 26px
-this file always documented. Never use the "London Tube" font anywhere (unlicensed
+size, and color, never from switching families. One exception (my
+call, 2026-08-25, part of making the site read consumer-facing): Beth
+Ellen, a handwriting script via next/font (--font-script, .font-script
+in globals.css), used in exactly two places — the header wordmark and
+the hero signature line — and never for nav, headings, or body. The
+wordmark is lowercase "irene cheung" on purpose: Beth Ellen's swashy
+capital I misreads, and lowercase is the consumer-brand register I
+want. Script needs ~1.3x the size of the sans it replaced, so the
+wordmark is 24px mobile / 34px desktop (it replaced the 18/26px
+Hanken 900 masthead) and the signature is 21px. The "Product
+Designer" subtitle stays Hanken. Legibility was compared against
+Betania Patmos and Homemade Apple before picking Beth Ellen. UI labels
+differentiate with uppercase + letter-spacing + smaller size. The whole bar was scaled to 0.8x on
+2026-08-14 at my request; the title later became the Beth Ellen
+wordmark (see above), so the real numbers now are: desktop 34px script
+title, 18px subtitle, 14px nav, ~42px fox logo; mobile 24px script
+title, 13px subtitle, 14px nav, 32px fox logo. Desktop bumps stay
+sm:-scoped in Header.tsx. Never use the "London Tube" font anywhere (unlicensed
 Johnston clone — its TTF must never be committed) and don't reintroduce
 Roboto.
 
@@ -195,21 +209,34 @@ the notes.
 - The repo is public now: github.com/irenecancode/irene-portfolio. The
   Open Resource cards (CLAUDE.md, Disclaimer) and the footer GitHub
   link all point at it.
-- Home page structure: Hero → Case Studies (2x2 grid) → More Project
-  (2 plain cards) → Open Resource (intro + 4 info cards) → Back to top
-  → Footer. The Figma content shifts over time (Blue Bottle moved from
+- Home page structure: Hero → Case Studies (three covers in one row,
+  since 2026-08-25) → More Project (2 plain cards) → Open Resource
+  (intro + 4 info cards) → Back to top → Footer. The Felidae / Wilde
+  Backyard card was cut from Case Studies 2026-08-25 (my call: no case
+  page, project not shipped, little UI to show) — its assets stay in
+  public/media for when the case study exists. The Figma content shifts over time (Blue Bottle moved from
   Case Studies to More Project; a Claude Code card replaced it) — re-
   check the Figma before assuming a card's section.
 - More Project cards are deliberately plain: headline + body + outlined
-  tag pills (border-navy, transparent fill) directly on the page
-  background. No white card, no shadow, no image, no attribution. The
-  outline pills are part of what signals "secondary" — don't let this
-  section drift back into the filled-pill <CaseStudy> look (it did
-  once; caught 2026-07-16). Implemented inline in page.tsx.
+  tag pills (border-accent-deep, transparent fill, square corners since
+  the 2026-08-25 chip restyle) directly on the page background. No
+  white card, no shadow, no image, no attribution. The outline pills
+  are part of what signals "secondary" — don't let this section drift
+  back into the filled-pill <CaseStudy> look (it did once; caught
+  2026-07-16). Implemented inline in page.tsx.
+- Chip restyle 2026-08-25 (my call, part of the consumer-facing pass):
+  every chip on the site is now a square-cornered rectangle (no
+  border-radius) in light orange — bg --color-chip #ffece6 with
+  accent-deep text, hover inverts to accent-deep/white. This replaced
+  the rounded navy-tint pills everywhere: case-card tags, case-page
+  hero tags, More Project outline pills (outline went navy →
+  accent-deep), and the hero badges (outline → filled). The one
+  exception is /meta's Data/Logic/UX framework section, which keeps
+  its navy rounded pills — don't convert it.
 - Case-study pages built: /meta, /tanmigo, /claude-code. Cards link via
   the href prop on <CaseStudy>. Felidae and Blue Bottle have no pages
-  yet — Felidae's card keeps its in-progress copy and no href until the
-  case study exists.
+  yet — Felidae's card was removed from the home grid 2026-08-25 and
+  returns when its case study exists.
 - The shared case-study skeleton (the only parts that must repeat):
   hero band with grid texture → h1/subtitle/tags → <SummaryGrid> (six
   fields, each with its own semantic icon — the Figma's single repeated
@@ -243,16 +270,18 @@ the notes.
 - Paragraph lengths and wording on built pages are verified against
   Figma. Don't tighten or summarize them on sight, even if they look
   long for a portfolio.
-- Case cards restyled 2026-08 (Irene's call; supersedes the Figma
-  card look): fixed-height 280px media zone in plain white (bg-surface,
-  no tile or gradient) with the thumbnail flex-centered and capped at
-  225px tall (the <picture> wrapper needs className="contents" or the
-  centering breaks), rounded-xl card with ring + tight shadow and a
-  hover lift, uppercase attribution overline tight above the title,
-  15px body clamped to 2 lines (trim copy to fit rather than letting
-  the ellipsis cut mid-sentence), single-row nowrap pills (still
-  filled — the More Project outline-pill distinction stands), and a
-  motion-safe image zoom on hover.
+- Case cards restyled again 2026-08-25 (Irene's call; supersedes both
+  the Figma card look and the earlier white-box restyle): no bounding
+  box at all. Each card is a bare 16:9 cover (aspect-video, full-bleed
+  object-cover; transparent/odd-ratio assets use fit="contain" with a
+  mediaBg field) with the text stacked under it — uppercase
+  attribution overline, 22px title, 15px body clamped to 2 lines (trim
+  copy to fit rather than letting the ellipsis cut mid-sentence),
+  single-row nowrap tags (filled — the More Project outline
+  distinction stands), and a motion-safe cover zoom + lift on hover.
+  Covers are art-directed compositions, not raw captures — sources in
+  refs/*-cover.html, rendered at 2x via headless Chrome (see the
+  case-meta note below for the command).
 - The home page rail widened to max-w-7xl on 2026-08-25 (Irene's call)
   so the hero headline, section headings, and the case-card grid share
   one wider edge. Other pages stay on max-w-6xl.
@@ -265,7 +294,17 @@ the notes.
   case-<name>.webp/png per project in public/media, cropped from the
   Figma exports in refs/ (the exports had a soft blush card baked in;
   crops keep only the opaque content so the site's own wrapper supplies
-  the card look). Remaining PlaceholderImage usage (Tanmigo's video
+  the card look). Exception: all three covers are art-directed compositions,
+  not captures, rendered at 2x from refs/*-cover.html via headless
+  Chrome (add --default-background-color=00000000 for the transparent
+  ones). case-meta is a deliberate NDA joke (my call, 2026-08-25): a
+  skeleton wireframe dashboard — line chart, two tile grids, a lone
+  close button — with NDA stamped in the middle; nothing real is
+  shown by construction. case-tanmigo recreates three annotation
+  cards from the live product; case-claude-code recreates the
+  Context-panel concept. Regenerate with:
+  chrome --headless --screenshot --window-size=1120,630
+  --force-device-scale-factor=2 refs/<name>-cover.html. Remaining PlaceholderImage usage (Tanmigo's video
   prototype, some Claude Code screenshots) still needs real assets.
 - /meta history worth knowing: its "three layers" heading was corrected
   2026-07-16 from retired copy ("Three Layers to demystify the AI Black
