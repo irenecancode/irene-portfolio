@@ -6,7 +6,7 @@ export function Lead({
   className?: string;
 }) {
   return (
-    <h3 className={`font-display max-w-3xl text-[28px] font-medium text-ink ${className}`}>
+    <h3 className={`font-display w-full text-[28px] font-medium text-ink ${className}`}>
       {children}
     </h3>
   );

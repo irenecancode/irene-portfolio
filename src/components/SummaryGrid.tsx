@@ -17,7 +17,7 @@ export function SummaryGrid({ fields }: { fields: SummaryField[] }) {
         {fields.map(({ Icon, label, value, list, numbered }) => (
           <div
             key={label}
-            className="relative rounded-md bg-surface p-6 transition-[transform,box-shadow] duration-200 motion-safe:hover:z-10 motion-safe:hover:scale-110 motion-safe:hover:shadow-[0_18px_45px_-18px_rgba(0,0,0,0.16)]"
+            className="rounded-md bg-surface p-6 ring-inset transition-shadow duration-200 hover:ring-1 hover:ring-navy-tint"
           >
             <Icon className="h-6 w-6 text-ink" />
             <p className="mt-3 font-nav text-sm font-medium text-navy uppercase">{label}</p>

@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { BackToTop } from "@/components/BackToTop";
 import { ReflectionCard } from "@/components/ReflectionCard";
 import { Reveal } from "@/components/Reveal";
+import { CollageVideo } from "@/components/CollageVideo";
 import { Lead } from "@/components/Lead";
 import { SummaryGrid, type SummaryField } from "@/components/SummaryGrid";
 import { ToolCard, ListCard } from "@/components/OutlineCard";
@@ -304,25 +305,15 @@ function AnnotationHook({
 export default function ClaudeCodeCaseStudy() {
   return (
     <div id="top" className="flex flex-1 flex-col">
-      <div className="bg-grid-paper">
+      <div>
         <Header active="none" />
 
         <section className="mx-auto w-full max-w-6xl px-6 pt-4 pb-16 sm:px-10 sm:pt-8 sm:pb-24">
-          <div className="py-6">
-            <picture>
-              <source srcSet="/media/case-claude-code.webp" type="image/webp" />
-              <img
-                src="/media/case-claude-code.png"
-                alt="Claude Code chat interface mid-conversation, showing a Bash tool call and a permission prompt to allow running git status"
-                className="mx-auto w-full max-w-[315px]"
-              />
-            </picture>
-          </div>
 
-          <h1 className="font-display mt-8 max-w-3xl text-[32px] leading-tight font-normal text-ink text-balance sm:text-[40px]">
+          <h1 className="font-display mt-8 w-full text-[32px] leading-tight font-normal text-ink sm:text-[40px] lg:whitespace-nowrap">
             Developer experience in Claude Code
           </h1>
-          <p className="mt-4 max-w-2xl text-lg leading-7 text-ink">
+          <p className="mt-4 w-full text-lg leading-7 text-ink">
             Restoring a sense of agency in AI coding tools, tested with a
             working prototype.
           </p>
@@ -331,7 +322,7 @@ export default function ClaudeCodeCaseStudy() {
             {TAGS.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-navy-tint px-3 py-1 text-xs font-medium text-navy transition-colors duration-200 hover:bg-navy hover:text-white"
+                className="bg-chip px-3 py-1 text-xs font-medium text-accent-deep transition-colors duration-200 hover:bg-accent-deep hover:text-white"
               >
                 {tag}
               </span>
@@ -341,7 +332,7 @@ export default function ClaudeCodeCaseStudy() {
       </div>
 
       <main className="flex-1 bg-surface">
-        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-12 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-8 sm:px-10">
           <SummaryGrid fields={SUMMARY_FIELDS} />
 
           <Lead className="mt-10">
@@ -349,7 +340,7 @@ export default function ClaudeCodeCaseStudy() {
             feeling of being forced to approve walls of commands before
             understanding them.
           </Lead>
-          <p className="mt-4 max-w-2xl text-lg leading-7 text-ink">
+          <p className="mt-4 w-full text-lg leading-7 text-ink">
             I started a concept project to reimagine how we can maintain
             agency and control while coding with AI agents.
           </p>
@@ -360,10 +351,10 @@ export default function ClaudeCodeCaseStudy() {
           </div>
         </Reveal>
 
-        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-10">
           <p className="font-nav text-sm font-medium text-muted uppercase">Problem Space</p>
           <Lead className="mt-4">Users lose their sense of agency when:</Lead>
-          <ol className="mt-6 flex max-w-3xl flex-col gap-3">
+          <ol className="mt-6 flex flex-col gap-3">
             {PROBLEM_SPACE.map((item, i) => (
               <li key={item} className="text-base text-ink">
                 <span className="text-muted">{String(i + 1).padStart(2, "0")}</span>{" "}
@@ -372,18 +363,18 @@ export default function ClaudeCodeCaseStudy() {
             ))}
           </ol>
 
-          <h3 className="font-display mt-10 max-w-3xl text-[28px] font-medium text-ink">
+          <h3 className="font-display mt-10 text-[28px] font-medium text-ink">
             Constraints
           </h3>
-          <p className="mt-2 max-w-3xl text-lg leading-7 text-ink">
+          <p className="mt-2 text-lg leading-7 text-ink">
             Stay inside Claude Code&apos;s existing design system and the VS
             Code environment, so the changes work for every expertise level
             with minimal disruption.
           </p>
         </Reveal>
 
-        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
-          <hr className="mb-16 border-accent/30" />
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-10">
+          <hr className="mb-16 border-ink/10" />
 
           <h2 className="font-display text-[36px] font-normal text-ink/80">
             The 3 things I changed
@@ -392,7 +383,7 @@ export default function ClaudeCodeCaseStudy() {
           <div className="mt-12 flex flex-col gap-16">
             {CHANGES.map((step, i) => (
               <div key={step.number}>
-                {i > 0 && <hr className="mb-16 border-accent/30" />}
+                {i > 0 && <hr className="mb-16 border-ink/10" />}
 
                 <p className="font-display text-3xl font-medium text-accent-deep">
                   {step.number}
@@ -492,14 +483,14 @@ export default function ClaudeCodeCaseStudy() {
             ))}
 
             <div>
-              <hr className="mb-16 border-accent/30" />
+              <hr className="mb-16 border-ink/10" />
 
               <p className="font-display text-3xl font-medium text-accent-deep">
                 {NEW_FEATURE.number}
               </p>
               <p className="mt-1 font-nav text-xs font-medium text-muted uppercase">New Feature</p>
 
-              <div className="mt-8 flex max-w-2xl flex-col gap-4">
+              <div className="mt-8 flex flex-col gap-4">
                 {NEW_FEATURE.items.map(({ Icon, label, prefix, emphasis, suffix }) => (
                   <p key={label} className="flex items-start gap-3 text-xl leading-8 text-ink">
                     <Icon className="mt-1.5 h-6 w-6 shrink-0 text-ink" />
@@ -617,7 +608,7 @@ export default function ClaudeCodeCaseStudy() {
           </div>
         </Reveal>
 
-        <Reveal as="section" className="bg-decision-bg px-6 py-16 sm:px-10">
+        <Reveal as="section" className="bg-decision-bg px-6 py-14 sm:px-10 sm:py-16">
           <div className="mx-auto w-full max-w-6xl">
             <h2 className="font-display text-[36px] font-normal text-ink/80">Use cases</h2>
 
@@ -675,24 +666,22 @@ export default function ClaudeCodeCaseStudy() {
           </div>
         </Reveal>
 
-        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-10">
           <h2 className="font-display text-[36px] font-normal text-ink/80">Video Prototype</h2>
-          <p className="mt-4 max-w-2xl text-lg leading-7 text-ink">
+          <p className="mt-4 w-full text-lg leading-7 text-ink">
             The feature development workflow demonstrates how you work with
             coding agents that provide more visibility into their actions.
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-8 sm:flex-row sm:justify-center">
-            <video
+            <CollageVideo
               className="aspect-[850/1168] w-full max-w-sm rounded-md"
               controls
-              muted
-              playsInline
-              poster="/media/claude-code-feature-workflow-poster.png"
-            >
-              <source src="/media/claude-code-feature-workflow.webm" type="video/webm" />
-              <source src="/media/claude-code-feature-workflow.mp4" type="video/mp4" />
-            </video>
+              webm="/media/claude-code-feature-workflow.webm"
+              mp4="/media/claude-code-feature-workflow.mp4"
+              posterPng="/media/claude-code-feature-workflow-poster.png"
+              alt="Screen recording of the proposed feature development workflow in Claude Code"
+            />
             <video
               className="aspect-[844/1150] w-full max-w-sm rounded-md"
               controls
@@ -706,13 +695,13 @@ export default function ClaudeCodeCaseStudy() {
           </div>
         </Reveal>
 
-        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-10">
           <h2 className="font-display text-[36px] font-normal text-ink/80">Clickable Prototype</h2>
 
           <p className="mt-4 font-nav text-sm font-medium text-muted uppercase">Guidelines</p>
           <ol className="mt-4 flex flex-col gap-3">
             {GUIDELINES.map((item, i) => (
-              <li key={item} className="max-w-2xl text-base text-ink">
+              <li key={item} className="text-base text-ink">
                 <span className="text-muted">{String(i + 1).padStart(2, "0")}</span> {item}
               </li>
             ))}
@@ -748,7 +737,7 @@ export default function ClaudeCodeCaseStudy() {
           </div>
         </Reveal>
 
-        <Reveal as="section" className="bg-decision-bg px-6 py-16 sm:px-10">
+        <Reveal as="section" className="bg-decision-bg px-6 py-14 sm:px-10 sm:py-16">
           <div className="mx-auto w-full max-w-6xl">
             <p className="font-nav text-sm font-medium text-muted uppercase">
               The Alternative Experiment
@@ -841,11 +830,11 @@ export default function ClaudeCodeCaseStudy() {
 
             <p className="mt-10 font-nav text-sm font-medium text-muted uppercase">Summary</p>
             <ol className="mt-4 flex flex-col gap-3">
-              <li className="max-w-2xl text-base text-ink">
+              <li className="text-base text-ink">
                 <span className="text-muted">01</span> Coding agent UX is more than just text
                 prompts and responses. UI changes are needed too.
               </li>
-              <li className="max-w-2xl text-base text-ink">
+              <li className="text-base text-ink">
                 <span className="text-muted">02</span> These complement CLAUDE.md files instead
                 of competing with them.
               </li>
@@ -853,7 +842,7 @@ export default function ClaudeCodeCaseStudy() {
           </div>
         </Reveal>
 
-        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-10">
           <ReflectionCard
             heading="I challenge my own answer before anyone else can."
             body="Before proposing any UI, I tested the counterargument: could better CLAUDE.md instructions solve this with no interface changes at all? Mapping exactly where they fall short is what made the final design defensible instead of just plausible."
@@ -861,7 +850,7 @@ export default function ClaudeCodeCaseStudy() {
           />
         </Reveal>
 
-        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-10">
           <h2 className="font-display text-[36px] font-normal text-ink/80">Read more</h2>
           <div className="mx-auto mt-10 grid w-full grid-cols-1 gap-8 sm:grid-cols-2">
             <CaseStudy

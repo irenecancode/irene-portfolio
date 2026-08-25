@@ -94,25 +94,15 @@ function PlaceholderImage({ label, className = "" }: { label: string; className?
 export default function MetaCaseStudy() {
   return (
     <div id="top" className="flex flex-1 flex-col">
-      <div className="bg-grid-paper">
+      <div>
         <Header active="none" />
 
         <section className="mx-auto w-full max-w-6xl px-6 pt-4 pb-16 sm:px-10 sm:pt-8 sm:pb-24">
-          <div className="py-6">
-            <picture>
-              <source srcSet="/media/case-meta.webp" type="image/webp" />
-              <img
-                src="/media/case-meta.png"
-                alt="MUGSY capture dome shown from inside: a 171-camera rig recording at 11MP and 90Hz"
-                className="mx-auto w-full max-w-[384px]"
-              />
-            </picture>
-          </div>
 
-          <h1 className="font-display mt-8 max-w-3xl text-[32px] leading-tight font-normal text-ink text-balance sm:text-[40px]">
+          <h1 className="font-display mt-8 w-full text-[32px] leading-tight font-normal text-ink sm:text-[40px] lg:whitespace-nowrap">
             The capture dashboard behind Meta&apos;s Codec Avatars
           </h1>
-          <p className="mt-4 max-w-2xl text-lg leading-7 text-ink">
+          <p className="mt-4 w-full text-lg leading-7 text-ink">
             Redesigning the internal tool that orchestrates 300+ camera and
             sensor streams, as the team&apos;s only designer and a daily
             operator of the system.
@@ -122,7 +112,7 @@ export default function MetaCaseStudy() {
             {TAGS.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-navy-tint px-3 py-1 text-xs font-medium text-navy transition-colors duration-200 hover:bg-navy hover:text-white"
+                className="bg-chip px-3 py-1 text-xs font-medium text-accent-deep transition-colors duration-200 hover:bg-accent-deep hover:text-white"
               >
                 {tag}
               </span>
@@ -132,14 +122,14 @@ export default function MetaCaseStudy() {
       </div>
 
       <main className="flex-1 bg-surface">
-        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-12 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-8 sm:px-10">
           <SummaryGrid fields={SUMMARY_FIELDS} />
 
           <Lead className="mt-10">
             Hired to run the captures, I became the team&apos;s only
             designer and redesigned the dashboard I used every day.
           </Lead>
-          <p className="mt-4 max-w-2xl text-lg leading-7 text-ink">
+          <p className="mt-4 w-full text-lg leading-7 text-ink">
             The redesigned flows let operators resolve pipeline failures
             themselves instead of stopping a session to pull in engineers.
           </p>
@@ -160,8 +150,8 @@ export default function MetaCaseStudy() {
           </div>
         </Reveal>
 
-        <Reveal as="section" className="bg-[var(--color-reflection-bg)] px-6 py-16 sm:px-10">
-          <div className="mx-auto max-w-3xl">
+        <Reveal as="section" className="bg-[var(--color-reflection-bg)] px-6 py-14 sm:px-10 sm:py-16">
+          <div className="mx-auto w-full max-w-6xl">
             <p className="font-nav text-sm font-medium text-muted uppercase">Background</p>
             <Lead className="mt-4">
               Codec Avatars represent Meta&apos;s long-term research project
@@ -205,12 +195,12 @@ export default function MetaCaseStudy() {
           </div>
         </Reveal>
 
-        <Reveal as="section" className="w-full px-6 py-16 sm:px-10">
+        <Reveal as="section" className="w-full px-6 py-10 sm:px-10">
           <div className="mx-auto w-full max-w-6xl">
             <h2 className="font-display text-[36px] font-normal text-ink/80">
               For a bit of context
             </h2>
-            <div className="mx-auto max-w-3xl">
+            <div>
               <Lead className="mt-4">
                 This is the exact physical infrastructure I designed for, and
                 operated daily. A capture session inside this dome runs 300+
@@ -257,7 +247,7 @@ export default function MetaCaseStudy() {
           </div>
         </Reveal>
 
-        <Reveal as="section" className="bg-decision-bg px-6 py-16 sm:px-10">
+        <Reveal as="section" className="bg-decision-bg px-6 py-14 sm:px-10 sm:py-16">
           <div className="mx-auto w-full max-w-6xl">
             <h2 className="font-display text-[36px] font-normal text-ink/80">How I ran it</h2>
             <Lead className="mx-auto mt-4">
@@ -319,12 +309,12 @@ export default function MetaCaseStudy() {
           </div>
         </Reveal>
 
-        <Reveal as="section" className="w-full px-6 py-16 sm:px-10">
+        <Reveal as="section" className="w-full px-6 py-10 sm:px-10">
           <div className="mx-auto w-full max-w-6xl">
             <h2 className="font-display text-[36px] font-normal text-ink/80">
               I design technical tools in three layers, from the backend up
             </h2>
-            <div className="mx-auto max-w-3xl">
+            <div>
               <Lead className="mt-4">
                 This project taught me to think in layers. The dashboard itself
                 stays under NDA, so what I can show is the thinking: how I broke
@@ -339,7 +329,7 @@ export default function MetaCaseStudy() {
               <div className="mt-10 flex flex-col gap-10">
                 {THREE_LAYERS.map((layer, i) => (
                   <div key={layer.label} className="text-center">
-                    {i > 0 && <hr className="mb-10 border-accent/30" />}
+                    {i > 0 && <hr className="mb-10 border-ink/10" />}
                     <span className="inline-block rounded-full bg-navy px-5 py-2 font-nav text-sm font-medium text-white transition-[filter] duration-200 hover:brightness-90">
                       {layer.label}
                     </span>
@@ -361,7 +351,7 @@ export default function MetaCaseStudy() {
           </div>
         </Reveal>
 
-        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-10">
           <ReflectionCard
             heading="Design became decisions the team could act on."
             body={'PMs, engineers, and designers speak different love languages. So I stopped presenting "UI" and started speaking the listener’s.'}
@@ -378,7 +368,7 @@ export default function MetaCaseStudy() {
           />
         </Reveal>
 
-        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-10">
           <h2 className="font-display text-[36px] font-normal text-ink/80">Read more</h2>
           <div className="mx-auto mt-10 grid w-full grid-cols-1 gap-8 sm:grid-cols-2">
             <CaseStudy

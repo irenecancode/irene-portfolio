@@ -93,25 +93,15 @@ const RAPID_PROTOTYPING = [
 export default function TanmigoCaseStudy() {
   return (
     <div id="top" className="flex flex-1 flex-col">
-      <div className="bg-grid-paper">
+      <div>
         <Header active="none" />
 
         <section className="mx-auto w-full max-w-6xl px-6 pt-4 pb-16 sm:px-10 sm:pt-8 sm:pb-24">
-          <div className="py-6">
-            <picture>
-              <source srcSet="/media/case-tanmigo.webp" type="image/webp" />
-              <img
-                src="/media/case-tanmigo.png"
-                alt="Tanmigo interface showing a tango video paired with an annotation panel for tagging embrace, footwork, and axis"
-                className="mx-auto w-full max-w-[384px]"
-              />
-            </picture>
-          </div>
 
-          <h1 className="font-display mt-8 max-w-3xl text-[32px] leading-tight font-normal text-ink text-balance sm:text-[40px]">
+          <h1 className="font-display mt-8 w-full text-[32px] leading-tight font-normal text-ink sm:text-[40px] lg:whitespace-nowrap">
             A 0-to-1 video annotation platform for dancers
           </h1>
-          <p className="mt-4 max-w-2xl text-lg leading-7 text-ink">
+          <p className="mt-4 w-full text-lg leading-7 text-ink">
             Bridging the gap between video discovery and physical practice
             with a seamless, one-stop annotation experience, designed and
             built in code with an engineer.
@@ -121,7 +111,7 @@ export default function TanmigoCaseStudy() {
             {TAGS.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-navy-tint px-3 py-1 text-xs font-medium text-navy transition-colors duration-200 hover:bg-navy hover:text-white"
+                className="bg-chip px-3 py-1 text-xs font-medium text-accent-deep transition-colors duration-200 hover:bg-accent-deep hover:text-white"
               >
                 {tag}
               </span>
@@ -131,14 +121,13 @@ export default function TanmigoCaseStudy() {
       </div>
 
       <main className="flex-1 bg-surface">
-        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-12 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-8 sm:px-10">
           <SummaryGrid fields={SUMMARY_FIELDS} />
 
-          <p className="mt-10 max-w-2xl text-xl leading-8 font-medium text-ink">
+          <p className="mt-10 text-xl leading-8 font-medium text-ink">
             As a designer, builder, and tango dancer, I designed the
             end-to-end experience and shipped the front-end myself.
           </p>
-          <p className="mt-4 text-lg text-ink">TBD</p>
 
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
             <ToolCard title="Tool" tools={TOOLS} />
@@ -146,8 +135,8 @@ export default function TanmigoCaseStudy() {
           </div>
         </Reveal>
 
-        <Reveal as="section" className="bg-[var(--color-reflection-bg)] px-6 py-16 sm:px-10">
-          <div className="mx-auto max-w-3xl">
+        <Reveal as="section" className="bg-[var(--color-reflection-bg)] px-6 py-14 sm:px-10 sm:py-16">
+          <div className="mx-auto w-full max-w-6xl">
             <p className="font-nav text-sm font-medium text-muted uppercase">Background</p>
             <p className="mt-4 text-lg leading-7 text-ink">
               Tango is a dance where you can practice for ten years, and
@@ -174,7 +163,7 @@ export default function TanmigoCaseStudy() {
                 <img
                   src="/media/tanmigo-background.png"
                   alt="A tango couple mid-dance, annotated with labels pointing to axis, disassociation, weight transfer, intention, and interpretation of music"
-                  className="aspect-[4/5] w-full rounded-md object-cover"
+                  className="w-full rounded-md"
                 />
               </picture>
               <div>
@@ -188,7 +177,7 @@ export default function TanmigoCaseStudy() {
           </div>
         </Reveal>
 
-        <Reveal as="section" className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-10">
           <h2 className="font-display text-[36px] font-normal text-ink/80">Design Strategy</h2>
 
           <p className="mt-6 font-nav text-sm font-medium text-accent-deep uppercase">
@@ -220,7 +209,7 @@ export default function TanmigoCaseStudy() {
           </picture>
         </Reveal>
 
-        <Reveal as="section" className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-10">
           <h2 className="font-display text-[36px] font-normal text-ink/80">Rapid prototyping</h2>
           <p className="mt-4 text-lg leading-7 text-ink">
             From first concept to usability testing in 8 hours. Early on,
@@ -255,7 +244,7 @@ export default function TanmigoCaseStudy() {
             ))}
           </div>
 
-          <hr className="my-10 border-accent/30" />
+          <hr className="my-10 border-ink/10" />
 
           <h3 className="font-display text-xl font-medium text-ink">
             The risk of building high-fidelity so quickly — here is how I see things.
@@ -276,8 +265,8 @@ export default function TanmigoCaseStudy() {
           </p>
         </Reveal>
 
-        <Reveal as="section" className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
-          <hr className="mb-16 border-accent/30" />
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-10">
+          <hr className="mb-16 border-ink/10" />
 
           <h2 className="font-display text-[36px] font-normal text-ink/80">Visual Foundations</h2>
           <p className="mt-4 text-lg leading-7 text-ink">
@@ -294,7 +283,7 @@ export default function TanmigoCaseStudy() {
                 <img
                   src="/media/tanmigo-visual-foundation-left.png"
                   alt="Tanmigo interface exploration testing layout and interaction variations"
-                  className="aspect-[376/433] w-full rounded-md object-cover"
+                  className="mx-auto w-full max-w-[376px] rounded-md"
                 />
               </picture>
               <p className="mt-2 text-center text-sm text-muted">
@@ -307,7 +296,7 @@ export default function TanmigoCaseStudy() {
                 <img
                   src="/media/tanmigo-visual-foundation-right.png"
                   alt="Tanmigo design system tokens for color, type, and spacing"
-                  className="aspect-[338/432] w-full rounded-md object-cover"
+                  className="mx-auto w-full max-w-[338px] rounded-md"
                 />
               </picture>
               <p className="mt-2 text-center text-sm text-muted">
@@ -317,8 +306,8 @@ export default function TanmigoCaseStudy() {
           </div>
         </Reveal>
 
-        <Reveal as="section" className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
-          <hr className="mb-16 border-accent/30" />
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-10">
+          <hr className="mb-16 border-ink/10" />
 
           <h2 className="font-display text-[36px] font-normal text-ink/80">The &quot;Failed&quot; Moment</h2>
 
@@ -328,7 +317,7 @@ export default function TanmigoCaseStudy() {
               <img
                 src="/media/tanmigo-failed-moment.png"
                 alt="Abandoned annotation timeline design with a sequential panel and horizontal annotation strips shown at once"
-                className="aspect-[487/320] w-full self-start rounded-md object-cover"
+                className="w-full max-w-[487px] self-start rounded-md"
               />
             </picture>
             <div>
@@ -349,8 +338,8 @@ export default function TanmigoCaseStudy() {
           </div>
         </Reveal>
 
-        <Reveal as="section" className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10">
-          <hr className="mb-16 border-accent/30" />
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-10">
+          <hr className="mb-16 border-ink/10" />
 
           <h2 className="font-display text-[36px] font-normal text-ink/80">Live Product</h2>
           <p className="mt-4 text-lg leading-7 text-ink">
@@ -370,7 +359,7 @@ export default function TanmigoCaseStudy() {
           </p>
         </Reveal>
 
-        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-10">
           <ReflectionCard
             heading="Shipping my designs changed how I design."
             body="Once every state I sketched was mine to build and test, my components got simpler, and edge cases got named before the build instead of during it. Nothing teaches design restraint like implementing your own work."
@@ -378,7 +367,7 @@ export default function TanmigoCaseStudy() {
           />
         </Reveal>
 
-        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10">
+        <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-10">
           <h2 className="font-display text-[36px] font-normal text-ink/80">Read more</h2>
           <div className="mx-auto mt-10 grid w-full grid-cols-1 gap-8 sm:grid-cols-2">
             <CaseStudy

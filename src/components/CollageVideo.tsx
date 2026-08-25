@@ -10,13 +10,15 @@ export function CollageVideo({
   posterWebp,
   alt,
   priority,
+  controls,
   className = "block h-auto w-full rounded-md",
 }: {
   webm: string;
   hevc?: string;
   mp4: string;
   posterPng: string;
-  posterWebp: string;
+  posterWebp?: string;
+  controls?: boolean;
   alt: string;
   priority?: boolean;
   className?: string;
@@ -28,14 +30,14 @@ export function CollageVideo({
   if (!allowMotion) {
     return (
       <picture>
-        <source srcSet={posterWebp} type="image/webp" />
+        {posterWebp ? <source srcSet={posterWebp} type="image/webp" /> : null}
         <img src={posterPng} alt={alt} className={className} loading={priority ? "eager" : "lazy"} />
       </picture>
     );
   }
 
   return (
-    <video className={className} autoPlay loop muted playsInline poster={posterPng} aria-label={alt}>
+    <video className={className} autoPlay loop muted playsInline controls={controls} poster={posterPng} aria-label={alt}>
       {/* Safari takes HEVC-alpha first; Chrome/Firefox skip to VP9-alpha webm. */}
       {hevc ? <source src={hevc} type='video/mp4; codecs="hvc1"' /> : null}
       <source src={webm} type="video/webm" />
