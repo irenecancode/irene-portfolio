@@ -296,7 +296,7 @@ export default function TanmigoCaseStudy() {
                 <tr>
                   <th scope="row" rowSpan={2} className="border-b border-ink/10 px-5 py-3 font-nav font-medium text-ink">Ideation</th>
                   <td className="border-l border-ink/10 px-4 py-3 text-ink">Sketch wireframes</td>
-                  <td className="border-l border-ink/10 px-4 py-3 font-medium text-ink">Figma, sometimes paper</td>
+                  <td className="border-b border-l border-ink/10 px-4 py-3 font-medium text-ink">Figma, sometimes paper</td>
                 </tr>
                 <tr>
                   <td className="border-b border-l border-ink/10 px-4 py-3 text-ink">Showcase variations</td>
@@ -305,7 +305,7 @@ export default function TanmigoCaseStudy() {
                 <tr>
                   <th scope="row" rowSpan={2} className="border-b border-ink/10 px-5 py-3 font-nav font-medium text-ink">Design</th>
                   <td className="border-l border-ink/10 px-4 py-3 text-ink">New components</td>
-                  <td rowSpan={6} className="border-l border-ink/10 px-4 py-3 align-middle font-medium text-ink">Claude Code via VS Code</td>
+                  <td rowSpan={6} className="border-b border-l border-ink/10 px-4 py-3 align-middle font-medium text-ink">Claude Code via VS Code</td>
                 </tr>
                 <tr>
                   <td className="border-b border-l border-ink/10 px-4 py-3 text-ink">New features</td>
