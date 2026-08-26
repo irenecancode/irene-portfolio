@@ -18,9 +18,8 @@ export function Hero() {
             {BADGES.map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center gap-2.5 bg-chip px-4 py-2 text-sm text-accent-deep transition duration-200 hover:brightness-[0.97]"
+                className="inline-flex items-center bg-chip px-4 py-2 text-sm text-accent-deep transition duration-200 hover:brightness-[0.97]"
               >
-                <span aria-hidden="true" className="h-2 w-2 shrink-0 rounded-full bg-accent" />
                 {label}
               </span>
             ))}
@@ -50,7 +49,7 @@ export function Hero() {
               </li>
             ))}
           </ul>
-          <p className="mt-5 text-right text-sm text-muted">Designing since 2021</p>
+          <p className="mt-5 text-right text-sm text-accent-deep">Designing since 2021</p>
         </div>
       </div>
     </section>
