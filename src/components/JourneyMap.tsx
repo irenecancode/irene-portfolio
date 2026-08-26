@@ -102,9 +102,11 @@ function MapSvg() {
         strokeLinecap="round"
       />
 
-      {/* Capsule connector: Design System <-> Rapid Prototyping */}
-      <path d="M 1035 500 L 1035 610" fill="none" stroke="white" strokeWidth={22} />
-      <path d="M 1035 500 L 1035 610" fill="none" stroke="black" strokeWidth={6} />
+      {/* Capsule connector: Design System <-> Rapid Prototyping. A real
+          bordered interchange capsule — the old version was a wide white
+          stroke behind a black line, which read as a stray white stripe
+          once the map moved onto the cream journey paper. */}
+      <rect x={1016} y={481} width={38} height={148} rx={19} fill="white" stroke="black" strokeWidth={6} />
 
       {/* Ticks */}
       <Tick x={235} y={190} color={ORANGE} />
