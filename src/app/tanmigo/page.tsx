@@ -296,11 +296,11 @@ export default function TanmigoCaseStudy() {
                 <tr>
                   <th scope="row" rowSpan={2} className="px-5 py-3 font-nav font-medium text-ink">Ideation</th>
                   <td className="border-l border-ink/10 px-4 py-3 text-ink">Sketch wireframes</td>
-                  <td className="py-3 pl-0 font-medium text-ink">Figma, sometimes paper</td>
+                  <td className="border-l border-ink/10 px-4 py-3 font-medium text-ink">Figma, sometimes paper</td>
                 </tr>
                 <tr>
                   <td className="border-l border-ink/10 px-4 py-3 text-ink">Showcase variations</td>
-                  <td className="py-3 pl-0 font-medium text-ink">Figma</td>
+                  <td className="border-l border-ink/10 px-4 py-3 font-medium text-ink">Figma</td>
                 </tr>
                 <tr>
                   <th scope="row" rowSpan={2} className="px-5 py-3 font-nav font-medium text-ink">Design</th>
@@ -326,7 +326,7 @@ export default function TanmigoCaseStudy() {
                 </tr>
                 <tr>
                   <td className="border-l border-ink/10 px-4 py-3 text-ink">Test with real users</td>
-                  <td className="py-3 pl-0 font-medium text-ink">FigJam</td>
+                  <td className="border-l border-ink/10 px-4 py-3 font-medium text-ink">FigJam</td>
                 </tr>
                 <tr>
                   <th scope="row" rowSpan={2} className="px-5 py-3 font-nav font-medium text-ink">Collaboration</th>
