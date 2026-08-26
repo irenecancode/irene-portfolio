@@ -61,7 +61,7 @@ export function CaseStudy(props: CaseStudyProps) {
           {tags.map((tag) => (
             <span
               key={tag}
-              className="whitespace-nowrap bg-chip px-2.5 py-0.5 text-[11px] font-medium text-accent-deep transition-colors duration-200 group-hover:bg-accent-deep group-hover:text-white group-focus-visible:bg-accent-deep group-focus-visible:text-white"
+              className="whitespace-nowrap bg-chip px-2.5 py-0.5 text-[11px] font-medium text-accent-deep transition-colors duration-200 group-hover:bg-rust group-hover:text-white group-focus-visible:bg-rust group-focus-visible:text-white"
             >
               {tag}
             </span>

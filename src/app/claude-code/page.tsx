@@ -322,7 +322,7 @@ export default function ClaudeCodeCaseStudy() {
             {TAGS.map((tag) => (
               <span
                 key={tag}
-                className="bg-chip px-3 py-1 text-xs font-medium text-accent-deep transition-colors duration-200 hover:bg-accent-deep hover:text-white"
+                className="bg-chip px-3 py-1 text-xs font-medium text-accent-deep transition-colors duration-200 hover:bg-rust hover:text-white"
               >
                 {tag}
               </span>
@@ -385,7 +385,7 @@ export default function ClaudeCodeCaseStudy() {
               <div key={step.number}>
                 {i > 0 && <hr className="mb-16 border-ink/10" />}
 
-                <p className="font-display text-3xl font-medium text-accent-deep">
+                <p className="font-display text-3xl font-medium text-accent">
                   {step.number}
                 </p>
 
@@ -468,7 +468,7 @@ export default function ClaudeCodeCaseStudy() {
                       {step.takeaways.map((t, j) => (
                         <p key={t} className="text-base text-ink">
                           {!step.hideNumerals && (
-                            <span className="font-medium text-accent-deep">
+                            <span className="font-medium text-muted">
                               {String(j + 1).padStart(2, "0")}
                             </span>
                           )}
@@ -485,7 +485,7 @@ export default function ClaudeCodeCaseStudy() {
             <div>
               <hr className="mb-16 border-ink/10" />
 
-              <p className="font-display text-3xl font-medium text-accent-deep">
+              <p className="font-display text-3xl font-medium text-accent">
                 {NEW_FEATURE.number}
               </p>
               <p className="mt-1 font-nav text-xs font-medium text-muted uppercase">New Feature</p>
@@ -557,7 +557,7 @@ export default function ClaudeCodeCaseStudy() {
                   <ul className="flex flex-col gap-4">
                     {NEW_FEATURE.takeaways.map((t, j) => (
                       <li key={t} className="text-base text-ink">
-                        <span className="font-medium text-accent-deep">
+                        <span className="font-medium text-muted">
                           {String(j + 1).padStart(2, "0")}
                         </span>{" "}
                         {t}
@@ -596,7 +596,7 @@ export default function ClaudeCodeCaseStudy() {
                 <ul className="mx-auto flex w-full max-w-md flex-col gap-4">
                   {NEW_FEATURE.takeaways.map((t, j) => (
                     <li key={t} className="text-base text-ink">
-                      <span className="font-medium text-accent-deep">
+                      <span className="font-medium text-muted">
                         {String(j + 1).padStart(2, "0")}
                       </span>{" "}
                       {t}
@@ -615,7 +615,7 @@ export default function ClaudeCodeCaseStudy() {
             <div className="flex flex-col gap-14">
               {USE_CASES.map((scenario) => (
                 <div key={scenario.number} className="mt-10">
-                  <p className="font-nav text-sm font-medium text-accent-deep uppercase">
+                  <p className="font-nav text-sm font-medium text-muted uppercase">
                     Scenario {scenario.number}
                   </p>
                   <h3 className="font-display mt-1 text-xl font-medium text-ink">

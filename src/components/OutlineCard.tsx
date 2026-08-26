@@ -7,7 +7,7 @@ type ToolEntry = {
 export function ToolCard({ title, tools }: { title: string; tools: ToolEntry[] }) {
   return (
     <div className="rounded-md border border-accent/30 p-6">
-      <p className="font-nav text-sm font-medium text-accent-deep uppercase">{title}</p>
+      <p className="font-nav text-sm font-medium text-muted uppercase">{title}</p>
       <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
         {tools.map((tool) => (
           <div key={tool.name} className="flex items-start gap-3">
@@ -34,7 +34,7 @@ export function ToolCard({ title, tools }: { title: string; tools: ToolEntry[] }
 export function ListCard({ title, items }: { title: string; items: string[] }) {
   return (
     <div className="rounded-md border border-accent/30 p-6">
-      <p className="font-nav text-sm font-medium text-accent-deep uppercase">{title}</p>
+      <p className="font-nav text-sm font-medium text-muted uppercase">{title}</p>
       <ul className="mt-4 flex flex-col gap-2">
         {items.map((item) => (
           <li key={item} className="text-base text-ink">
@@ -55,7 +55,7 @@ export function ImageImpactCard({
 }) {
   return (
     <div className="rounded-md border border-accent/30 p-6">
-      <p className="font-nav text-sm font-medium text-accent-deep uppercase">{title}</p>
+      <p className="font-nav text-sm font-medium text-muted uppercase">{title}</p>
       <div className="mt-4 flex flex-col gap-4">
         {items.map((item) => (
           <div key={item.label} className="flex items-center gap-3">

@@ -47,7 +47,7 @@ export function JourneyMap() {
       >
         <MapSvg />
       </div>
-      <p className="mt-3 text-sm text-accent-deep min-[1016px]:hidden">
+      <p className="mt-3 text-sm text-muted min-[1016px]:hidden">
         Scroll sideways to see the whole map.
       </p>
     </>

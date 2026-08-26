@@ -29,7 +29,12 @@ colors with any contrast checker before trusting them.
   its background; large text (24px+, or roughly 19px bold) needs 3:1.
   [mine] Terracotta #CC513B measures 4.37:1 on white — fails for body
   text, fine for large headings and button fills. Small text uses deep
-  terracotta #923626 (7.56:1). Tanmigo blue #1DB2E5 is never text on a
+  terracotta #923626 (7.56:1). De-warning pass 2026-08-25 (my call):
+  deep terracotta is for interactive text only — links, active nav,
+  chip text; non-interactive labels (eyebrows, TOOL/journey headers,
+  list numerals, captions) use --color-muted gray so small dark-red
+  text stops reading as a warning. Chip hover fills use --color-rust
+  #8a4a2e (6.8:1 with white). Tanmigo blue #1DB2E5 is never text on a
   light background.
 - Keyboard: everything reachable by tab, in a sensible order, with a
   visible :focus-visible outline.

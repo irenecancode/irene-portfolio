@@ -111,7 +111,7 @@ export default function TanmigoCaseStudy() {
             {TAGS.map((tag) => (
               <span
                 key={tag}
-                className="bg-chip px-3 py-1 text-xs font-medium text-accent-deep transition-colors duration-200 hover:bg-accent-deep hover:text-white"
+                className="bg-chip px-3 py-1 text-xs font-medium text-accent-deep transition-colors duration-200 hover:bg-rust hover:text-white"
               >
                 {tag}
               </span>
@@ -180,7 +180,7 @@ export default function TanmigoCaseStudy() {
         <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-10">
           <h2 className="font-display text-[36px] font-normal text-ink/80">Design Strategy</h2>
 
-          <p className="mt-6 font-nav text-sm font-medium text-accent-deep uppercase">
+          <p className="mt-6 font-nav text-sm font-medium text-muted uppercase">
             Designed the data before the screens
           </p>
           <p className="mt-2 text-lg leading-7 text-ink">
@@ -190,7 +190,7 @@ export default function TanmigoCaseStudy() {
             ended up deciding most of the UI for me.
           </p>
 
-          <p className="mt-6 font-nav text-sm font-medium text-accent-deep uppercase">
+          <p className="mt-6 font-nav text-sm font-medium text-muted uppercase">
             Information Architecture
           </p>
           <p className="mt-2 text-lg leading-7 text-ink">
@@ -227,7 +227,7 @@ export default function TanmigoCaseStudy() {
                 className="grid grid-cols-1 items-center gap-6 sm:grid-cols-2"
               >
                 <div>
-                  <p className="font-nav text-sm font-medium text-accent-deep">{step.time}</p>
+                  <p className="font-nav text-sm font-medium text-muted">{step.time}</p>
                   <p className="mt-1 text-xl font-medium text-ink">{step.title}</p>
                   <p className="mt-2 text-lg leading-7 text-ink">{step.body}</p>
                 </div>

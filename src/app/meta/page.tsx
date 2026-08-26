@@ -112,7 +112,7 @@ export default function MetaCaseStudy() {
             {TAGS.map((tag) => (
               <span
                 key={tag}
-                className="bg-chip px-3 py-1 text-xs font-medium text-accent-deep transition-colors duration-200 hover:bg-accent-deep hover:text-white"
+                className="bg-chip px-3 py-1 text-xs font-medium text-accent-deep transition-colors duration-200 hover:bg-rust hover:text-white"
               >
                 {tag}
               </span>

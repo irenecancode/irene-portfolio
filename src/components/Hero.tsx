@@ -50,7 +50,7 @@ export function Hero() {
               </li>
             ))}
           </ul>
-          <p className="mt-5 text-right text-sm text-accent-deep">Designing since 2021</p>
+          <p className="mt-5 text-right text-sm text-muted">Designing since 2021</p>
         </div>
       </div>
     </section>
