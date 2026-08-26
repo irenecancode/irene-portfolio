@@ -817,7 +817,7 @@ export default function ClaudeCodeCaseStudy() {
                       {row.values.map((value, j) => (
                         <td
                           key={j}
-                          className={value === "Yes" ? "py-3 pr-4 text-accent-deep" : "py-3 pr-4 text-muted"}
+                          className={value === "Yes" ? "py-3 pr-4 font-medium text-ink" : "py-3 pr-4 text-muted"}
                         >
                           {value}
                         </td>
