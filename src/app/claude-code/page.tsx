@@ -275,25 +275,25 @@ function ListIcon({ className = "h-5 w-5 shrink-0" }: { className?: string }) {
  * the trail line's end point and the stroke reads as one unbroken line.
  */
 function AnnotationHook({
-  className = "h-6 w-6",
+  className = "h-6 w-10",
   style,
 }: {
   className?: string;
   style?: CSSProperties;
 }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} style={style} aria-hidden="true">
+    <svg viewBox="0 0 40 24" fill="none" className={className} style={style} aria-hidden="true">
       <path
-        d="M0 0 V9 Q0 17 9 17 H13"
+        d="M0 0 V9 Q0 17 9 17 H31"
         stroke="currentColor"
-        strokeWidth="1.6"
+        strokeWidth="2"
         strokeLinecap="round"
         fill="none"
       />
       <path
-        d="M10 13 L15 17 L10 21"
+        d="M25 10.5 L32.5 17 L25 23.5"
         stroke="currentColor"
-        strokeWidth="1.6"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"
@@ -455,7 +455,7 @@ export default function ClaudeCodeCaseStudy() {
                             />
                           ))}
                           <AnnotationHook
-                            className="absolute h-6 w-6 text-navy"
+                            className="absolute h-6 w-10 text-navy"
                             style={{ top: "calc(100% + 70px)", left: 0 }}
                           />
                         </div>
@@ -464,7 +464,7 @@ export default function ClaudeCodeCaseStudy() {
 
                     <p className="mt-3 text-center text-sm text-muted">{step.afterCaption}</p>
 
-                    <div className={`mt-10 flex flex-col gap-4 ${step.hideNumerals ? "pl-1" : "pl-6"}`}>
+                    <div className={`mt-10 flex flex-col gap-4 ${step.annotationDots ? "pl-12" : step.hideNumerals ? "pl-1" : "pl-12"}`}>
                       {step.takeaways.map((t, j) => (
                         <p key={t} className="text-base text-ink">
                           {!step.hideNumerals && (
@@ -549,11 +549,11 @@ export default function ClaudeCodeCaseStudy() {
                   style={{ left: 450, top: 17, height: 100 }}
                 />
                 <AnnotationHook
-                  className="absolute h-6 w-6 text-navy"
+                  className="absolute h-6 w-10 text-navy"
                   style={{ left: 450, top: 17 + 100 }}
                 />
 
-                <div className="absolute" style={{ left: 473, top: 124, width: 860 - 473 }}>
+                <div className="absolute" style={{ left: 498, top: 124, width: 860 - 498 }}>
                   <ul className="flex flex-col gap-4">
                     {NEW_FEATURE.takeaways.map((t, j) => (
                       <li key={t} className="text-base text-ink">
