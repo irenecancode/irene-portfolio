@@ -294,39 +294,39 @@ export default function TanmigoCaseStudy() {
               </thead>
               <tbody className="align-top">
                 <tr>
-                  <th scope="row" rowSpan={2} className="px-5 py-3 font-nav font-medium text-ink">Ideation</th>
+                  <th scope="row" rowSpan={2} className="border-b border-ink/10 px-5 py-3 font-nav font-medium text-ink">Ideation</th>
                   <td className="border-l border-ink/10 px-4 py-3 text-ink">Sketch wireframes</td>
                   <td className="border-l border-ink/10 px-4 py-3 font-medium text-ink">Figma, sometimes paper</td>
                 </tr>
                 <tr>
-                  <td className="border-l border-ink/10 px-4 py-3 text-ink">Showcase variations</td>
-                  <td className="border-l border-ink/10 px-4 py-3 font-medium text-ink">Figma</td>
+                  <td className="border-b border-l border-ink/10 px-4 py-3 text-ink">Showcase variations</td>
+                  <td className="border-b border-l border-ink/10 px-4 py-3 font-medium text-ink">Figma</td>
                 </tr>
                 <tr>
-                  <th scope="row" rowSpan={2} className="px-5 py-3 font-nav font-medium text-ink">Design</th>
+                  <th scope="row" rowSpan={2} className="border-b border-ink/10 px-5 py-3 font-nav font-medium text-ink">Design</th>
                   <td className="border-l border-ink/10 px-4 py-3 text-ink">New components</td>
                   <td rowSpan={6} className="border-l border-ink/10 px-4 py-3 align-middle font-medium text-ink">Claude Code via VS Code</td>
                 </tr>
                 <tr>
-                  <td className="border-l border-ink/10 px-4 py-3 text-ink">New features</td>
+                  <td className="border-b border-l border-ink/10 px-4 py-3 text-ink">New features</td>
                 </tr>
                 <tr>
-                  <th scope="row" rowSpan={2} className="px-5 py-3 font-nav font-medium text-ink">Maintenance</th>
+                  <th scope="row" rowSpan={2} className="border-b border-ink/10 px-5 py-3 font-nav font-medium text-ink">Maintenance</th>
                   <td className="border-l border-ink/10 px-4 py-3 text-ink">Design system maintenance</td>
                 </tr>
                 <tr>
-                  <td className="border-l border-ink/10 px-4 py-3 text-ink">Documentation</td>
+                  <td className="border-b border-l border-ink/10 px-4 py-3 text-ink">Documentation</td>
                 </tr>
                 <tr>
-                  <th scope="row" rowSpan={3} className="px-5 py-3 font-nav font-medium text-ink">Test</th>
+                  <th scope="row" rowSpan={3} className="border-b border-ink/10 px-5 py-3 font-nav font-medium text-ink">Test</th>
                   <td className="border-l border-ink/10 px-4 py-3 text-ink">Manual test new feature</td>
                 </tr>
                 <tr>
                   <td className="border-l border-ink/10 px-4 py-3 text-ink">Test with automation and edge cases</td>
                 </tr>
                 <tr>
-                  <td className="border-l border-ink/10 px-4 py-3 text-ink">Test with real users</td>
-                  <td className="border-l border-ink/10 px-4 py-3 font-medium text-ink">FigJam</td>
+                  <td className="border-b border-l border-ink/10 px-4 py-3 text-ink">Test with real users</td>
+                  <td className="border-b border-l border-ink/10 px-4 py-3 font-medium text-ink">FigJam</td>
                 </tr>
                 <tr>
                   <th scope="row" rowSpan={2} className="px-5 py-3 font-nav font-medium text-ink">Collaboration</th>
