@@ -152,8 +152,10 @@ everything — headings, body, nav, labels. Hierarchy comes from weight,
 size, and color, never from switching families. One exception (my
 call, 2026-08-25, part of making the site read consumer-facing): Beth
 Ellen, a handwriting script via next/font (--font-script, .font-script
-in globals.css), used in exactly two places — the header wordmark and
-the hero signature line — and never for nav, headings, or body. The
+in globals.css), used in exactly four places — the header wordmark,
+the hero signature line, the About page's scrapbook headings (journey
+map + stack), and the footer's sign-off name — and never for nav or
+body text. The
 wordmark is lowercase "irene cheung" on purpose: Beth Ellen's swashy
 capital I misreads, and lowercase is the consumer-brand register I
 want. Script needs ~1.3x the size of the sans it replaced, so the
