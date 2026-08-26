@@ -2,8 +2,8 @@ export function Footer() {
   return (
     <footer className="mx-auto w-full max-w-6xl px-6 pb-20 sm:px-10">
       <div className="border-t border-black/10 pt-14">
-        <h2 className="font-display text-[24px] font-medium text-accent sm:text-[28px]">
-          Irene Cheung
+        <h2 className="font-script text-[26px] text-accent sm:text-[30px]">
+          irene cheung
         </h2>
         <p className="mt-5 max-w-xl text-[17px] leading-7 text-ink">
           I enjoy building the tools other designers find boring. If your

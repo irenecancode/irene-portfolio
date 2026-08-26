@@ -84,9 +84,6 @@ export default function Creative() {
               <h1 className="font-display text-[27px] leading-tight font-normal text-ink text-balance sm:text-[38px]">
                 Creative
               </h1>
-              <p className="mt-4 font-display text-xl font-normal text-ink">
-                Illustration and other work I make outside of product design.
-              </p>
               <p className="mt-6 text-lg text-ink">
                 I enjoy illustration. It&apos;s always been my creative
                 outlet, and my therapy when I feel stressed.
