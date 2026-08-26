@@ -2,10 +2,10 @@ export function Footer() {
   return (
     <footer className="mx-auto w-full max-w-6xl px-6 pb-20 sm:px-10">
       <div className="border-t border-black/10 pt-14">
-        <h2 className="font-display text-[32px] font-medium text-accent sm:text-[40px]">
+        <h2 className="font-display text-[24px] font-medium text-accent sm:text-[28px]">
           Irene Cheung
         </h2>
-        <p className="mt-6 max-w-xl text-2xl text-ink">
+        <p className="mt-5 max-w-xl text-[17px] leading-7 text-ink">
           I enjoy building the tools other designers find boring. If your
           team has one, let&apos;s talk.
         </p>
@@ -25,7 +25,7 @@ export function Footer() {
               href="https://www.linkedin.com/in/irenemy"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg text-ink underline-offset-4 transition-colors duration-200 hover:text-accent-deep hover:underline focus-visible:text-accent-deep focus-visible:underline"
+              className="text-base text-ink underline-offset-4 transition-colors duration-200 hover:text-accent-deep hover:underline focus-visible:text-accent-deep focus-visible:underline"
             >
               LinkedIn
             </a>
@@ -35,7 +35,7 @@ export function Footer() {
               href="https://github.com/irenecancode"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg text-ink underline-offset-4 transition-colors duration-200 hover:text-accent-deep hover:underline focus-visible:text-accent-deep focus-visible:underline"
+              className="text-base text-ink underline-offset-4 transition-colors duration-200 hover:text-accent-deep hover:underline focus-visible:text-accent-deep focus-visible:underline"
             >
               GitHub
             </a>
@@ -45,7 +45,7 @@ export function Footer() {
               href="https://www.instagram.com/dayday_tipsy/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg text-ink underline-offset-4 transition-colors duration-200 hover:text-accent-deep hover:underline focus-visible:text-accent-deep focus-visible:underline"
+              className="text-base text-ink underline-offset-4 transition-colors duration-200 hover:text-accent-deep hover:underline focus-visible:text-accent-deep focus-visible:underline"
             >
               Instagram
             </a>
