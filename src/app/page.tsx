@@ -101,7 +101,7 @@ export default function Home() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="border border-accent-deep px-3 py-1 text-xs font-medium text-accent-deep transition-colors duration-200 hover:bg-chip"
+                        className="border border-accent-deep/40 px-2.5 py-0.5 text-[11px] font-medium text-accent-deep transition-colors duration-200 hover:bg-chip"
                       >
                         {tag}
                       </span>
