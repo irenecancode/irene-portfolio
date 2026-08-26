@@ -163,7 +163,7 @@ export default function TanmigoCaseStudy() {
                 <img
                   src="/media/tanmigo-background.png"
                   alt="A tango couple mid-dance, annotated with labels pointing to axis, disassociation, weight transfer, intention, and interpretation of music"
-                  className="w-full rounded-md"
+                  className="w-[70%] rounded-md"
                 />
               </picture>
               <div>

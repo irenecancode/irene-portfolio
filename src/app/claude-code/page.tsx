@@ -284,7 +284,7 @@ function AnnotationHook({
   return (
     <svg viewBox="0 0 40 24" fill="none" className={className} style={style} aria-hidden="true">
       <path
-        d="M0 0 V9 Q0 17 9 17 H31"
+        d="M1 0 V9 Q1 17 9 17 H31"
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
