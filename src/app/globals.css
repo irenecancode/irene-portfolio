@@ -78,7 +78,7 @@ h3 {
   font-family: var(--font-hanken), sans-serif;
 }
 /* Beth Ellen script: masthead wordmark, hero signature, About scrapbook
-   headings only (Irene's call, 2026-08-25). Never nav or body. */
+   headings, footer sign-off only (Irene's call, 2026-08-25). Never nav or body. */
 .font-script {
   font-family: var(--font-script), cursive;
 }

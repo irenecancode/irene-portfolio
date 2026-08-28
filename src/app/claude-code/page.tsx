@@ -389,13 +389,15 @@ export default function ClaudeCodeCaseStudy() {
                   {step.number}
                 </p>
 
-                <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
-                  <div>
-                    <p className="font-nav text-xs font-medium text-muted uppercase">Before</p>
-                    <h3 className="font-display mt-1 text-2xl font-medium text-ink">
-                      {step.beforeLabel}
-                    </h3>
-                    <picture>
+                <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:grid-rows-[auto_auto_auto_1fr]">
+                  <div className="sm:grid sm:grid-rows-subgrid sm:row-span-4">
+                    <div>
+                      <p className="font-nav text-xs font-medium text-muted uppercase">Before</p>
+                      <h3 className="font-display mt-1 text-2xl font-medium text-ink">
+                        {step.beforeLabel}
+                      </h3>
+                    </div>
+                    <picture className="sm:self-end">
                       <source srcSet={`/media/${step.beforeImage}.webp`} type="image/webp" />
                       <img
                         src={`/media/${step.beforeImage}.png`}
@@ -415,13 +417,15 @@ export default function ClaudeCodeCaseStudy() {
                       </blockquote>
                     )}
                   </div>
-                  <div className="relative">
-                    <p className="font-nav text-xs font-medium text-muted uppercase">After</p>
-                    <h3 className="font-display mt-1 text-2xl font-medium text-ink">
-                      {step.afterLabel}
-                    </h3>
+                  <div className="relative sm:grid sm:grid-rows-subgrid sm:row-span-4">
+                    <div>
+                      <p className="font-nav text-xs font-medium text-muted uppercase">After</p>
+                      <h3 className="font-display mt-1 text-2xl font-medium text-ink">
+                        {step.afterLabel}
+                      </h3>
+                    </div>
 
-                    <div className="relative mt-6">
+                    <div className="relative mt-6 sm:self-end">
                       <picture>
                         <source srcSet={`/media/${step.afterImage}.webp`} type="image/webp" />
                         <img
@@ -622,7 +626,7 @@ export default function ClaudeCodeCaseStudy() {
                     {scenario.question}
                   </h3>
 
-                  <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:grid-rows-[auto_auto_auto_1fr]">
                     <picture className="sm:col-start-1 sm:row-start-1">
                       <source srcSet={`/media/${scenario.images[0].src}.webp`} type="image/webp" />
                       <img
