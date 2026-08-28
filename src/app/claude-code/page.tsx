@@ -128,7 +128,7 @@ const CHANGES: ChangeStep[] = [
       attribution: "Gen AI prototyper, Claude Code user",
     },
     takeaways: [
-      "Provide a high-level summary of what the command is about to do",
+      "Provide a high-level summary of what the command is about to\u00A0do",
       "2-sentence risk assessment beforehand, colored with yellow for low risk, red for high risk",
       "Technical part comes last",
     ],
@@ -194,7 +194,7 @@ const USE_CASES: UseCase[] = [
       },
     ],
     consequence:
-      "If the user clicks reset for log B, mutations that happened after B (C, D, E, F, G) would be reset as well. It shows up as a Modify action in the chat.",
+      "If the user clicks reset for log B, mutations that happened after B (C, D, E, F, G) would be reset as well. It shows up as a Modify action in the\u00A0chat.",
     guardrail: "The user is warned and needs to explicitly confirm the state reset.",
   },
   {
@@ -849,7 +849,7 @@ export default function ClaudeCodeCaseStudy() {
         <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-10">
           <ReflectionCard
             heading="I challenge my own answer before anyone else can."
-            body="Before proposing any UI, I tested the counterargument: could better CLAUDE.md instructions solve this with no interface changes at all? Mapping exactly where they fall short is what made the final design defensible instead of just plausible."
+            body="Before proposing any UI, I tested the counterargument: could better CLAUDE.md instructions solve this with no interface changes at all? Mapping exactly where they fall short is what made the final design defensible instead of just plausible."
             closing="Given more time, I'd design what the change log becomes when you share it: a structured session summary a developer can hand to teammates, covering what changed, why, and what needs review, instead of a raw list of results."
           />
         </Reveal>
