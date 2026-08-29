@@ -59,7 +59,7 @@ export function PhaseTabs({ tabs }: { tabs: PhaseTab[] }) {
       <div
         role="tablist"
         aria-label="Design process phases"
-        className="sticky top-0 z-10 flex flex-wrap gap-2 bg-surface py-4"
+        className="sticky top-0 z-10 flex flex-wrap justify-center gap-2 bg-surface py-4"
       >
         {tabs.map((tab, i) => (
           <button
