@@ -363,7 +363,7 @@ export default function ClaudeCodeCaseStudy() {
             ))}
           </ol>
 
-          <h3 className="font-display mt-10 text-[28px] font-medium text-ink">
+          <h3 className="font-display mt-10 text-xl font-medium text-ink">
             Constraints
           </h3>
           <p className="mt-2 text-lg leading-7 text-ink">
@@ -392,7 +392,7 @@ export default function ClaudeCodeCaseStudy() {
                 <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:grid-rows-[auto_auto_auto_1fr]">
                   <div className="sm:grid sm:grid-rows-subgrid sm:row-span-4">
                     <div>
-                      <p className="font-nav text-xs font-medium text-muted uppercase">Before</p>
+                      <p className="font-nav text-sm font-medium text-muted uppercase">Before</p>
                       <h3 className="font-display mt-1 text-2xl font-medium text-ink">
                         {step.beforeLabel}
                       </h3>
@@ -419,7 +419,7 @@ export default function ClaudeCodeCaseStudy() {
                   </div>
                   <div className="relative sm:grid sm:grid-rows-subgrid sm:row-span-4">
                     <div>
-                      <p className="font-nav text-xs font-medium text-muted uppercase">After</p>
+                      <p className="font-nav text-sm font-medium text-muted uppercase">After</p>
                       <h3 className="font-display mt-1 text-2xl font-medium text-ink">
                         {step.afterLabel}
                       </h3>
@@ -472,7 +472,7 @@ export default function ClaudeCodeCaseStudy() {
                       {step.takeaways.map((t, j) => (
                         <p key={t} className="text-base text-ink">
                           {!step.hideNumerals && (
-                            <span className="font-medium text-muted">
+                            <span className="text-muted">
                               {String(j + 1).padStart(2, "0")}
                             </span>
                           )}
@@ -492,7 +492,7 @@ export default function ClaudeCodeCaseStudy() {
               <p className="font-display text-3xl font-medium text-accent">
                 {NEW_FEATURE.number}
               </p>
-              <p className="mt-1 font-nav text-xs font-medium text-muted uppercase">New Feature</p>
+              <p className="mt-1 font-nav text-sm font-medium text-muted uppercase">New Feature</p>
 
               <div className="mt-8 flex flex-col gap-4">
                 {NEW_FEATURE.items.map(({ Icon, label, prefix, emphasis, suffix }) => (
@@ -540,7 +540,7 @@ export default function ClaudeCodeCaseStudy() {
                     <img
                       src={`/media/${NEW_FEATURE.closeUpImage}.png`}
                       alt={NEW_FEATURE.closeUpAlt}
-                      className="w-full"
+                      className="w-full rounded-md"
                       style={{ aspectRatio: NEW_FEATURE.closeUpAspect }}
                     />
                   </picture>
@@ -561,7 +561,7 @@ export default function ClaudeCodeCaseStudy() {
                   <ul className="flex flex-col gap-4">
                     {NEW_FEATURE.takeaways.map((t, j) => (
                       <li key={t} className="text-base text-ink">
-                        <span className="font-medium text-muted">
+                        <span className="text-muted">
                           {String(j + 1).padStart(2, "0")}
                         </span>{" "}
                         {t}
@@ -591,7 +591,7 @@ export default function ClaudeCodeCaseStudy() {
                         src={`/media/${NEW_FEATURE.closeUpImage}.png`}
                         alt={NEW_FEATURE.closeUpAlt}
                         style={{ aspectRatio: NEW_FEATURE.closeUpAspect }}
-                        className="w-full"
+                        className="w-full rounded-md"
                       />
                     </picture>
                   </div>
@@ -600,7 +600,7 @@ export default function ClaudeCodeCaseStudy() {
                 <ul className="mx-auto flex w-full max-w-md flex-col gap-4">
                   {NEW_FEATURE.takeaways.map((t, j) => (
                     <li key={t} className="text-base text-ink">
-                      <span className="font-medium text-muted">
+                      <span className="text-muted">
                         {String(j + 1).padStart(2, "0")}
                       </span>{" "}
                       {t}
@@ -612,8 +612,8 @@ export default function ClaudeCodeCaseStudy() {
           </div>
         </Reveal>
 
-        <Reveal as="section" className="bg-decision-bg px-6 py-14 sm:px-10 sm:py-16">
-          <div className="mx-auto w-full max-w-6xl">
+        <Reveal as="section" className="bg-decision-bg py-14 sm:py-16">
+          <div className="mx-auto w-full max-w-6xl px-6 sm:px-10">
             <h2 className="font-display text-[36px] font-normal text-ink/80">Use cases</h2>
 
             <div className="flex flex-col gap-14">
@@ -726,7 +726,7 @@ export default function ClaudeCodeCaseStudy() {
               href="https://irenecancode.github.io/Claude-Code-Re-design/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-muted underline"
+              className="text-sm text-accent-deep underline underline-offset-2 hover:no-underline"
             >
               Live prototype ↗
             </a>
@@ -734,15 +734,15 @@ export default function ClaudeCodeCaseStudy() {
               href="https://github.com/irenecancode/Claude-Code-Re-design"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-muted underline"
+              className="text-sm text-accent-deep underline underline-offset-2 hover:no-underline"
             >
               GitHub repo ↗
             </a>
           </div>
         </Reveal>
 
-        <Reveal as="section" className="bg-decision-bg px-6 py-14 sm:px-10 sm:py-16">
-          <div className="mx-auto w-full max-w-6xl">
+        <Reveal as="section" className="bg-decision-bg py-14 sm:py-16">
+          <div className="mx-auto w-full max-w-6xl px-6 sm:px-10">
             <p className="font-nav text-sm font-medium text-muted uppercase">
               The Alternative Experiment
             </p>
@@ -803,7 +803,7 @@ export default function ClaudeCodeCaseStudy() {
                       Problem
                     </th>
                     {COMPARISON_COLUMNS.map((col) => (
-                      <th key={col} scope="col" className="py-3 pr-4 font-nav font-medium text-ink">
+                      <th key={col} scope="col" className="border-l border-ink/10 py-3 pr-4 pl-4 font-nav font-medium text-ink">
                         {col}
                       </th>
                     ))}
@@ -811,17 +811,14 @@ export default function ClaudeCodeCaseStudy() {
                 </thead>
                 <tbody>
                   {COMPARISON_ROWS.map((row, i) => (
-                    <tr
-                      key={row.label}
-                      className={i < COMPARISON_ROWS.length - 1 ? "border-b border-ink/10" : ""}
-                    >
+                    <tr key={row.label}>
                       <th scope="row" className="py-3 pr-4 font-nav font-medium text-ink">
                         {row.label}
                       </th>
                       {row.values.map((value, j) => (
                         <td
                           key={j}
-                          className={value === "Yes" ? "py-3 pr-4 font-medium text-ink" : "py-3 pr-4 text-muted"}
+                          className={value === "Yes" ? "border-l border-ink/10 py-3 pr-4 pl-4 font-medium text-ink" : "border-l border-ink/10 py-3 pr-4 pl-4 text-muted"}
                         >
                           {value}
                         </td>

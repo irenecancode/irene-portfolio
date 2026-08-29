@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { BackToTop } from "@/components/BackToTop";
 import { ReflectionCard } from "@/components/ReflectionCard";
 import { Reveal } from "@/components/Reveal";
+import { Lead } from "@/components/Lead";
 import { SummaryGrid, type SummaryField } from "@/components/SummaryGrid";
 import { ToolCard, ListCard } from "@/components/OutlineCard";
 import { CaseStudy } from "@/components/CaseStudy";
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   description: "A 0-to-1 video annotation platform for dancers: bridging video discovery and physical practice, designed and built in code with an engineer.",
 };
 
-const TAGS = ["Data Annotation", "Type Script", "Front-End Development", "Live Product"];
+const TAGS = ["Data Annotation", "TypeScript", "Front-End Development", "Live Product"];
 
 const SUMMARY_FIELDS: SummaryField[] = [
   { Icon: TagIcon, label: "Category", value: "Data Annotation" },
@@ -113,10 +114,10 @@ export default function TanmigoCaseStudy() {
         <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-8 sm:px-10">
           <SummaryGrid fields={SUMMARY_FIELDS} />
 
-          <p className="mt-10 text-xl leading-8 font-medium text-ink">
+          <Lead className="mt-10">
             As a designer, builder, and tango dancer, I designed the
             end-to-end experience and shipped the front-end myself.
-          </p>
+          </Lead>
 
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2">
             <ToolCard title="Tool" tools={TOOLS} />
@@ -124,8 +125,8 @@ export default function TanmigoCaseStudy() {
           </div>
         </Reveal>
 
-        <Reveal as="section" className="bg-[var(--color-reflection-bg)] px-6 py-14 sm:px-10 sm:py-16">
-          <div className="mx-auto w-full max-w-6xl">
+        <Reveal as="section" className="bg-reflection-bg py-14 sm:py-16">
+          <div className="mx-auto w-full max-w-6xl px-6 sm:px-10">
             <p className="font-nav text-sm font-medium text-muted uppercase">Background</p>
             <p className="mt-4 text-lg leading-7 text-ink">
               Tango is a dance where you can practice for ten years, and
@@ -152,7 +153,7 @@ export default function TanmigoCaseStudy() {
                 <img
                   src="/media/tanmigo-background.png"
                   alt="A tango couple mid-dance, annotated with labels pointing to axis, disassociation, weight transfer, intention, and interpretation of music"
-                  className="w-[70%] rounded-md"
+                  className="mx-auto w-[70%] rounded-md"
                 />
               </picture>
               <div>
@@ -237,17 +238,17 @@ export default function TanmigoCaseStudy() {
 
         </Reveal>
 
-        <Reveal as="section" className="bg-decision-bg px-6 py-14 sm:px-10 sm:py-16">
-          <div className="mx-auto w-full max-w-6xl">
+        <Reveal as="section" className="bg-decision-bg py-14 sm:py-16">
+          <div className="mx-auto w-full max-w-6xl px-6 sm:px-10">
           <h2 className="font-display text-[36px] font-normal text-ink/80">
             3 reasons I adopted a new workflow with agents
           </h2>
-          <h3 className="font-display mt-8 max-w-4xl text-[28px] leading-snug font-medium text-ink">
+          <p className="mt-4 w-full max-w-3xl text-lg leading-7 text-ink">
             Risks come after the power it brings to me, for example: code
             conflicts, the wrong base for a PR, and reinvented wheels when I
             ignored shadcn components by accident. These are lessons I
             learned by doing this project.
-          </h3>
+          </p>
           <ol className="mt-10 flex flex-col gap-10">
             {[
               {
