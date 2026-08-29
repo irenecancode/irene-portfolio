@@ -15,7 +15,7 @@
   --color-ink: #000000; /* body text, headings: sampled pure black from the Figma source */
   --color-accent: #cc513b; /* terracotta: large headings 24px+, button fills, decoration */
   --color-accent-deep: #923626; /* deep terracotta: links, active nav, chip text (7.56:1). Non-interactive labels use --color-muted instead (2026-08-25 de-warning pass) */
-  --color-rust: #8a4a2e; /* warm rust. chip hover fills only (6.8:1 with white text) */
+  --color-rust: #8a4a2e; /* warm rust -> chip hover fills only (6.8:1 with white text) */
   --color-nav-active: var(--color-accent-deep);
   --color-navy: #3c5889; /* UI blue: badges, tag pills, Back to top button fill (sampled from Figma; distinct from tanmigo-blue) */
   --color-navy-tint: #d1dcf0; /* tag pill fill */

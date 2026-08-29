@@ -88,7 +88,13 @@ const THREE_LAYERS = [
    outcomes. Sits inside the phase flow's white card. */
 function ResearchPhaseTree() {
   return (
-    <div className="overflow-x-auto">
+    <>
+    <div
+      tabIndex={0}
+      role="group"
+      aria-label="Research-phase decision tree, scrolls sideways"
+      className="overflow-x-auto overscroll-x-contain"
+    >
     <svg
       viewBox="0 0 940 1140"
       role="img"
@@ -175,6 +181,10 @@ function ResearchPhaseTree() {
       </g>
     </svg>
     </div>
+    <p className="mt-3 text-sm text-muted min-[760px]:hidden">
+      Scroll sideways to see the whole diagram.
+    </p>
+    </>
   );
 }
 
@@ -185,7 +195,13 @@ function ResearchPhaseTree() {
    answer a feasibility question). Same Tanmigo tree language. */
 function DesignPhaseTree() {
   return (
-    <div className="overflow-x-auto">
+    <>
+    <div
+      tabIndex={0}
+      role="group"
+      aria-label="Design-phase decision tree, scrolls sideways"
+      className="overflow-x-auto overscroll-x-contain"
+    >
     <svg
       viewBox="0 -100 940 1850"
       role="img"
@@ -299,6 +315,10 @@ function DesignPhaseTree() {
       </g>
     </svg>
     </div>
+    <p className="mt-3 text-sm text-muted min-[760px]:hidden">
+      Scroll sideways to see the whole diagram.
+    </p>
+    </>
   );
 }
 
@@ -308,7 +328,13 @@ function DesignPhaseTree() {
    the error-rate gate closes the loop with the research phase's metrics. */
 function TestingPhaseTree() {
   return (
-    <div className="overflow-x-auto">
+    <>
+    <div
+      tabIndex={0}
+      role="group"
+      aria-label="Testing-phase decision tree, scrolls sideways"
+      className="overflow-x-auto overscroll-x-contain"
+    >
     <svg
       viewBox="0 0 940 1350"
       role="img"
@@ -417,6 +443,10 @@ function TestingPhaseTree() {
       <text x="470" y="1172" textAnchor="middle" fontSize="15" fontWeight="500" fill="var(--color-ink)">Ship in increments</text>
     </svg>
     </div>
+    <p className="mt-3 text-sm text-muted min-[760px]:hidden">
+      Scroll sideways to see the whole diagram.
+    </p>
+    </>
   );
 }
 

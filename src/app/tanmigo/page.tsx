@@ -359,7 +359,12 @@ export default function TanmigoCaseStudy() {
               Spine runs down the center; NO/secondary branches exit the
               diamond side-vertices; parallel outcomes merge on a bus before
               the next decision. Colors come from the runtime :root tokens. */}
-          <div className="mt-10 overflow-x-auto">
+          <div
+            tabIndex={0}
+            role="group"
+            aria-label="Annotation-card decision tree, scrolls sideways"
+            className="mt-10 overflow-x-auto overscroll-x-contain"
+          >
           <svg
             viewBox="0 0 940 1900"
             role="img"
@@ -474,6 +479,9 @@ export default function TanmigoCaseStudy() {
             <text x="690" y="1843" textAnchor="middle" fontSize="15" fill="var(--color-ink)">Rest state</text>
           </svg>
           </div>
+          <p className="mt-3 text-sm text-muted min-[760px]:hidden">
+            Scroll sideways to see the whole diagram.
+          </p>
 
           <picture>
             <source srcSet="/media/tanmigo-annotation-page.webp" type="image/webp" />
