@@ -6,7 +6,7 @@ type ToolEntry = {
 
 export function ToolCard({ title, tools }: { title: string; tools: ToolEntry[] }) {
   return (
-    <div className="rounded-md border border-accent/30 p-6 transition-shadow duration-200 hover:shadow-[0_0_20px_rgba(209,220,240,0.5)]">
+    <div className="rounded-md border border-accent/30 p-6 transition-shadow duration-200 hover:shadow-[0_0_20px_rgba(204,81,59,0.2)]">
       <p className="font-nav text-sm font-medium text-muted uppercase">{title}</p>
       <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
         {tools.map((tool) => (
@@ -33,7 +33,7 @@ export function ToolCard({ title, tools }: { title: string; tools: ToolEntry[] }
 
 export function ListCard({ title, items }: { title: string; items: string[] }) {
   return (
-    <div className="rounded-md border border-accent/30 p-6 transition-shadow duration-200 hover:shadow-[0_0_20px_rgba(209,220,240,0.5)]">
+    <div className="rounded-md border border-accent/30 p-6 transition-shadow duration-200 hover:shadow-[0_0_20px_rgba(204,81,59,0.2)]">
       <p className="font-nav text-sm font-medium text-muted uppercase">{title}</p>
       <ul className="mt-4 flex flex-col gap-2">
         {items.map((item) => (
@@ -54,7 +54,7 @@ export function ImageImpactCard({
   items: { label: string; icon?: string }[];
 }) {
   return (
-    <div className="rounded-md border border-accent/30 p-6 transition-shadow duration-200 hover:shadow-[0_0_20px_rgba(209,220,240,0.5)]">
+    <div className="rounded-md border border-accent/30 p-6 transition-shadow duration-200 hover:shadow-[0_0_20px_rgba(204,81,59,0.2)]">
       <p className="font-nav text-sm font-medium text-muted uppercase">{title}</p>
       <div className="mt-4 flex flex-col gap-4">
         {items.map((item) => (
