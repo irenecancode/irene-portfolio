@@ -88,11 +88,12 @@ const THREE_LAYERS = [
    outcomes. Sits inside the phase flow's white card. */
 function ResearchPhaseTree() {
   return (
+    <div className="overflow-x-auto">
     <svg
       viewBox="0 0 940 1140"
       role="img"
       aria-label="Research-phase decision tree: a pain point spotted in the lab is first checked for repetition. One-off pain is triaged by severity into a guardrail or a watchlist. Repetitive pain is checked against tracked metrics, and a miss means fixing the measurement first. Evidence that supports the PM or engineer's claim is attached to the claim; evidence that contradicts it must be reproduced, then shown in the listener's language, leading into the design phase."
-      className="mx-auto block h-auto w-full max-w-2xl"
+      className="mx-auto block h-auto w-full min-w-[680px] max-w-4xl"
     >
       <defs>
         <marker id="res-arrow" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto">
@@ -173,6 +174,7 @@ function ResearchPhaseTree() {
         <text x="470" y="1122" textAnchor="middle" fontSize="12" letterSpacing="1" textDecoration="underline" fill="var(--color-accent-deep)">DESIGN PHASE</text>
       </g>
     </svg>
+    </div>
   );
 }
 
@@ -183,11 +185,12 @@ function ResearchPhaseTree() {
    answer a feasibility question). Same Tanmigo tree language. */
 function DesignPhaseTree() {
   return (
+    <div className="overflow-x-auto">
     <svg
       viewBox="0 -100 940 1850"
       role="img"
       aria-label="Design-phase decision tree: a new design is first checked against technical constraints, and a failure exits to an engineer sync asking whether the limit is hard or negotiable. Then gates for covered edge cases, the design already considering how to handle unknown edge cases (a no means keeping a human in the loop and making the system communicate the unknown well for error handling, then continuing), users knowing how to recover from errors, users knowing when to pull in an engineer, the design holding across all three rigs, and reusing an existing pattern versus inventing one (inventing must be justified or fall back to the design system). Failed gates loop back through a shared Iterate node. The final gate, being able to explain what the added code does, leads to the testing phase; failing it means revising the code."
-      className="mx-auto block h-auto w-full max-w-2xl"
+      className="mx-auto block h-auto w-full min-w-[680px] max-w-4xl"
     >
       <defs>
         <marker id="des-arrow" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto">
@@ -295,6 +298,7 @@ function DesignPhaseTree() {
         <text x="470" y="1730" textAnchor="middle" fontSize="12" letterSpacing="1" textDecoration="underline" fill="var(--color-accent-deep)">TESTING PHASE</text>
       </g>
     </svg>
+    </div>
   );
 }
 
@@ -304,11 +308,12 @@ function DesignPhaseTree() {
    the error-rate gate closes the loop with the research phase's metrics. */
 function TestingPhaseTree() {
   return (
+    <div className="overflow-x-auto">
     <svg
       viewBox="0 0 940 1350"
       role="img"
       aria-label="Testing-phase decision tree: a prototype must be tested in a real session rather than a demo, users must understand it without explanation (a no goes back to the design phase), and the error rate must move against the baseline; if it does not, the follow-up asks whether the fix or the metric was wrong, routing back to the design or research phase. Trade-offs that break a non-negotiable mean redesigning around it. If someone's wishlist is not achievable, the tree asks whether they would be happy with an alternative: yes offers the alternative, no renegotiates the scope. Passing every gate ends at ship in increments."
-      className="mx-auto block h-auto w-full max-w-2xl"
+      className="mx-auto block h-auto w-full min-w-[680px] max-w-4xl"
     >
       <defs>
         <marker id="test-arrow" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto">
@@ -411,6 +416,7 @@ function TestingPhaseTree() {
       <rect x="350" y="1138" width="240" height="56" rx="8" fill="var(--color-surface)" stroke="#57534e" strokeWidth="1.5" />
       <text x="470" y="1172" textAnchor="middle" fontSize="15" fontWeight="500" fill="var(--color-ink)">Ship in increments</text>
     </svg>
+    </div>
   );
 }
 

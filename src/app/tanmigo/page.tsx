@@ -359,11 +359,12 @@ export default function TanmigoCaseStudy() {
               Spine runs down the center; NO/secondary branches exit the
               diamond side-vertices; parallel outcomes merge on a bus before
               the next decision. Colors come from the runtime :root tokens. */}
+          <div className="mt-10 overflow-x-auto">
           <svg
             viewBox="0 0 940 1900"
             role="img"
             aria-label="Decision tree for rendering an annotation card: empty notes reserve a timestamp layout; tagged text checks whether the tag was seen before and reuses its rail color or assigns the next hue family; untagged text uses the standard layout; notes longer than the preview cap truncate with Show more; videos with several dancers show the author's avatar and name; and the annotation currently playing gets an active highlight synced to the timeline"
-            className="mx-auto mt-10 block h-auto w-full max-w-2xl"
+            className="mx-auto block h-auto w-full min-w-[680px] max-w-4xl"
           >
             <defs>
               <marker id="tree-arrow" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto">
@@ -472,6 +473,7 @@ export default function TanmigoCaseStudy() {
             <rect x="615" y="1806" width="150" height="64" rx="8" fill="var(--color-reflection-bg)" stroke="rgba(0,0,0,0.08)" />
             <text x="690" y="1843" textAnchor="middle" fontSize="15" fill="var(--color-ink)">Rest state</text>
           </svg>
+          </div>
 
           <picture>
             <source srcSet="/media/tanmigo-annotation-page.webp" type="image/webp" />
