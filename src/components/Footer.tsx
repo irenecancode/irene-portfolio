@@ -6,8 +6,7 @@ export function Footer() {
           irene cheung
         </h2>
         <p className="mt-5 max-w-xl text-[17px] leading-7 text-ink">
-          I enjoy building the tools other designers find boring. If your
-          team has one, let&apos;s talk.
+          I enjoy building the tools other designers find boring.
         </p>
         <a
           href="mailto:irenemycheung@gmail.com"
