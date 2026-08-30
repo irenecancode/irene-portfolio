@@ -132,10 +132,10 @@ function MapSvg() {
         <text x={235} y={130} fontSize={15} textAnchor="middle">Location</text>
         <text x={235} y={160} fontSize={26} fontWeight={600} textAnchor="middle">San Francisco</text>
 
-        <text x={495} y={75} fontSize={15} textAnchor="middle">Field of Study</text>
+        <text x={495} y={103} fontSize={15} textAnchor="middle">Field of Study</text>
         <text fontSize={26} fontWeight={600} textAnchor="middle">
-          <tspan x={495} y={102}>Human-computer</tspan>
-          <tspan x={495} y={132}>Interaction Design</tspan>
+          <tspan x={495} y={130}>Human-computer</tspan>
+          <tspan x={495} y={160}>Interaction Design</tspan>
         </text>
 
         <text fontSize={15} textAnchor="middle">
