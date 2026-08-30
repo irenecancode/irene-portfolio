@@ -163,7 +163,7 @@ function MapSvg() {
           <tspan x={1184} y={205}>Product Design</tspan>
         </text>
 
-        <text x={1153} y={356} fontSize={26} fontWeight={600} textAnchor="start">Agentic AI</text>
+        <text x={1065} y={358} fontSize={26} fontWeight={600} textAnchor="start">Agentic AI</text>
         <text x={1060} y={496} fontSize={26} fontWeight={600} textAnchor="start">Design System</text>
 
         <text x={1098} y={655} fontSize={15} textAnchor="middle">Specialty</text>
