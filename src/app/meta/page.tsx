@@ -553,6 +553,10 @@ export default function MetaCaseStudy() {
                 className="mt-8 aspect-[3/2] w-full max-w-2xl rounded-md object-cover"
               />
             </picture>
+            {/* DRAFT captions this section: Irene to edit */}
+            <p className="mt-2 w-full max-w-2xl text-center text-sm text-muted">
+              Codec Avatar renders above the source photos of the same people.
+            </p>
             <a
               href="https://mixed-news.com/en/meta-codec-avatars-gaussian-splatting/"
               target="_blank"
@@ -584,6 +588,9 @@ export default function MetaCaseStudy() {
                   className="mt-6 aspect-video w-full rounded-md object-cover"
                 />
               </picture>
+              <p className="mt-2 text-center text-sm text-muted">
+                Inside the MUGSY capture dome.
+              </p>
               <div className="mt-4 grid grid-cols-2 gap-4">
                 <picture>
                   <source srcSet="/media/meta-camera-array-1.webp" type="image/webp" />
@@ -602,6 +609,9 @@ export default function MetaCaseStudy() {
                   />
                 </picture>
               </div>
+              <p className="mt-2 text-center text-sm text-muted">
+                A subject seen by the synchronized camera array.
+              </p>
 
               <p className="mt-6 text-lg leading-7 text-ink">
                 One dashboard had to work for three very different capture rigs.

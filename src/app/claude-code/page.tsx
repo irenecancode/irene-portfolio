@@ -571,6 +571,10 @@ export default function ClaudeCodeCaseStudy() {
                 </div>
                </div>
               </div>
+              {/* DRAFT caption: Irene to edit; matches 01/02's caption idiom */}
+              <p className="mt-3 hidden text-center text-sm text-muted lg:block">
+                Proposed React Simulator
+              </p>
 
               {/* Mobile/tablet: simple stacked fallback, no connector illustration */}
               <div className="mt-12 flex flex-col gap-8 lg:hidden">
@@ -596,6 +600,9 @@ export default function ClaudeCodeCaseStudy() {
                     </picture>
                   </div>
                 </div>
+                <p className="-mt-4 text-center text-sm text-muted">
+                  Proposed React Simulator
+                </p>
 
                 <ul className="mx-auto flex w-full max-w-md flex-col gap-4">
                   {NEW_FEATURE.takeaways.map((t, j) => (
