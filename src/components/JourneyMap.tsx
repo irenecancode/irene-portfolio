@@ -129,60 +129,60 @@ function MapSvg() {
       {/* --font-roboto has never existed, so these labels were falling back to
           the generic sans. One family, everywhere. */}
       <g fontFamily="var(--font-hanken), sans-serif" fill="black">
-        <text x={235} y={130} fontSize={15} textAnchor="middle">Location</text>
+        <text x={235} y={126} fontSize={15} textAnchor="middle">Location</text>
         <text x={235} y={160} fontSize={26} fontWeight={600} textAnchor="middle">San Francisco</text>
 
-        <text x={495} y={103} fontSize={15} textAnchor="middle">Field of Study</text>
+        <text x={495} y={98} fontSize={15} textAnchor="middle">Field of Study</text>
         <text fontSize={26} fontWeight={600} textAnchor="middle">
-          <tspan x={495} y={130}>Human-computer</tspan>
+          <tspan x={495} y={132}>Human-computer</tspan>
           <tspan x={495} y={160}>Interaction Design</tspan>
         </text>
 
         <text fontSize={15} textAnchor="middle">
-          <tspan x={460} y={370}>Cross-disciplinary</tspan>
-          <tspan x={460} y={388}>experience</tspan>
+          <tspan x={460} y={363}>Cross-disciplinary</tspan>
+          <tspan x={460} y={381}>experience</tspan>
         </text>
         <text x={460} y={415} fontSize={26} fontWeight={600} textAnchor="middle">Psychological Research</text>
 
-        <text x={745} y={288} fontSize={15} textAnchor="middle">Specialty</text>
+        <text x={745} y={278} fontSize={15} textAnchor="middle">Specialty</text>
         <text x={745} y={312} fontSize={26} fontWeight={600} textAnchor="middle">Internal Tools</text>
 
-        <text x={680} y={495} fontSize={15} textAnchor="middle">Skills</text>
+        <text x={680} y={489} fontSize={15} textAnchor="middle">Skills</text>
         <text fontSize={26} fontWeight={600} textAnchor="middle">
-          <tspan x={680} y={521}>Accessibility</tspan>
+          <tspan x={680} y={523}>Accessibility</tspan>
           <tspan x={680} y={551}>Design</tspan>
         </text>
 
         <text fontSize={26} fontWeight={600} textAnchor="middle">
-          <tspan x={898} y={521}>Inclusive UX</tspan>
+          <tspan x={898} y={523}>Inclusive UX</tspan>
           <tspan x={898} y={551}>Research</tspan>
         </text>
 
         <text fontSize={26} fontWeight={600} textAnchor="middle">
-          <tspan x={1184} y={175}>0-to-1</tspan>
+          <tspan x={1184} y={177}>0-to-1</tspan>
           <tspan x={1184} y={205}>Product Design</tspan>
         </text>
 
         <text x={1065} y={358} fontSize={26} fontWeight={600} textAnchor="start">Agentic AI</text>
         <text x={1060} y={496} fontSize={26} fontWeight={600} textAnchor="start">Design System</text>
 
-        <text x={1098} y={655} fontSize={15} textAnchor="middle">Specialty</text>
+        <text x={1098} y={649} fontSize={15} textAnchor="middle">Specialty</text>
         <text fontSize={26} fontWeight={600} textAnchor="middle">
-          <tspan x={1098} y={681}>Rapid</tspan>
+          <tspan x={1098} y={683}>Rapid</tspan>
           <tspan x={1098} y={711}>Prototyping</tspan>
         </text>
 
         <text fontSize={26} fontWeight={600} textAnchor="middle">
-          <tspan x={260} y={745}>Enterprise</tspan>
+          <tspan x={260} y={747}>Enterprise</tspan>
           <tspan x={260} y={775}>Platform</tspan>
         </text>
         <text x={490} y={760} fontSize={26} fontWeight={600} textAnchor="middle">Physical AI</text>
         <text fontSize={26} fontWeight={600} textAnchor="middle">
-          <tspan x={720} y={745}>Front-end</tspan>
+          <tspan x={720} y={747}>Front-end</tspan>
           <tspan x={720} y={775}>Implementation</tspan>
         </text>
         <text fontSize={26} fontWeight={600} textAnchor="middle">
-          <tspan x={953} y={745}>Data-dense</tspan>
+          <tspan x={953} y={747}>Data-dense</tspan>
           <tspan x={953} y={775}>Dashboard</tspan>
         </text>
       </g>
