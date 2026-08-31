@@ -555,16 +555,16 @@ export default function MetaCaseStudy() {
             </picture>
             {/* DRAFT captions this section: Irene to edit */}
             <p className="mt-2 w-full max-w-2xl text-center text-sm text-muted">
-              Codec Avatar renders above the source photos of the same people.
+              Codec Avatar renders above the source photos of the same people.{" "}
+              <a
+                href="https://mixed-news.com/en/meta-codec-avatars-gaussian-splatting/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent-deep underline underline-offset-2 hover:no-underline"
+              >
+                (source)
+              </a>
             </p>
-            <a
-              href="https://mixed-news.com/en/meta-codec-avatars-gaussian-splatting/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 inline-block text-sm text-accent-deep underline underline-offset-2 hover:no-underline"
-            >
-              Source
-            </a>
           </div>
         </Reveal>
 
@@ -600,18 +600,20 @@ export default function MetaCaseStudy() {
                     className="aspect-[6/7] w-full rounded-md object-cover"
                   />
                 </picture>
-                <picture>
-                  <source srcSet="/media/meta-camera-array-2.webp" type="image/webp" />
-                  <img
-                    src="/media/meta-camera-array-2.png"
-                    alt="Color camera-array capture grid showing a subject's face and shoulders from many synchronized angles"
-                    className="aspect-[8/5] w-full rounded-md object-cover"
-                  />
-                </picture>
+                <div>
+                  <picture>
+                    <source srcSet="/media/meta-camera-array-2.webp" type="image/webp" />
+                    <img
+                      src="/media/meta-camera-array-2.png"
+                      alt="Color camera-array capture grid showing a subject's face and shoulders from many synchronized angles"
+                      className="aspect-[8/5] w-full rounded-md object-cover"
+                    />
+                  </picture>
+                  <p className="mt-2 text-center text-sm text-muted">
+                    A subject seen by the synchronized camera array.
+                  </p>
+                </div>
               </div>
-              <p className="mt-2 text-center text-sm text-muted">
-                A subject seen by the synchronized camera array.
-              </p>
 
               <p className="mt-6 text-lg leading-7 text-ink">
                 One dashboard had to work for three very different capture rigs.
