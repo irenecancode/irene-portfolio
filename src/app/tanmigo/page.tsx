@@ -506,14 +506,20 @@ export default function TanmigoCaseStudy() {
           <h2 className="font-display text-[36px] font-normal text-ink/80">The &quot;Failed&quot; Moment</h2>
 
           <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
-            <picture>
-              <source srcSet="/media/tanmigo-failed-moment.webp" type="image/webp" />
-              <img
-                src="/media/tanmigo-failed-moment.png"
-                alt="Abandoned annotation timeline design with a sequential panel and horizontal annotation strips shown at once"
-                className="w-full max-w-[487px] self-start rounded-md"
-              />
-            </picture>
+            <div>
+              <picture>
+                <source srcSet="/media/tanmigo-failed-moment.webp" type="image/webp" />
+                <img
+                  src="/media/tanmigo-failed-moment.png"
+                  alt="Abandoned annotation timeline design with a sequential panel and horizontal annotation strips shown at once"
+                  className="w-full max-w-[487px] rounded-md"
+                />
+              </picture>
+              {/* DRAFT caption: Irene to edit */}
+              <p className="mt-2 max-w-[487px] text-center text-sm text-muted">
+                The abandoned iteration, tested on Lovable.
+              </p>
+            </div>
             <div>
               <p className="text-lg leading-7 text-ink">
                 There is one iteration I eventually gave up on, but it taught
