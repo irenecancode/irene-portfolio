@@ -296,7 +296,7 @@ export default function TanmigoCaseStudy() {
               <tbody className="align-top">
                 <tr>
                   <th scope="row" rowSpan={2} className="border-b border-ink/10 px-5 py-3 font-nav font-medium text-ink">Ideation</th>
-                  <td className="border-l border-ink/10 px-4 py-3 text-ink">Sketch wireframes</td>
+                  <td className="border-b border-l border-ink/10 px-4 py-3 text-ink">Sketch wireframes</td>
                   <td className="border-b border-l border-ink/10 px-4 py-3 font-medium text-ink">Figma, sometimes paper</td>
                 </tr>
                 <tr>
@@ -305,7 +305,7 @@ export default function TanmigoCaseStudy() {
                 </tr>
                 <tr>
                   <th scope="row" rowSpan={2} className="border-b border-ink/10 px-5 py-3 font-nav font-medium text-ink">Design</th>
-                  <td className="border-l border-ink/10 px-4 py-3 text-ink">New components</td>
+                  <td className="border-b border-l border-ink/10 px-4 py-3 text-ink">New components</td>
                   <td rowSpan={6} className="border-b border-l border-ink/10 px-4 py-3 align-middle font-medium text-ink">Claude Code via VS Code</td>
                 </tr>
                 <tr>
@@ -313,17 +313,17 @@ export default function TanmigoCaseStudy() {
                 </tr>
                 <tr>
                   <th scope="row" rowSpan={2} className="border-b border-ink/10 px-5 py-3 font-nav font-medium text-ink">Maintenance</th>
-                  <td className="border-l border-ink/10 px-4 py-3 text-ink">Design system maintenance</td>
+                  <td className="border-b border-l border-ink/10 px-4 py-3 text-ink">Design system maintenance</td>
                 </tr>
                 <tr>
                   <td className="border-b border-l border-ink/10 px-4 py-3 text-ink">Documentation</td>
                 </tr>
                 <tr>
                   <th scope="row" rowSpan={3} className="border-b border-ink/10 px-5 py-3 font-nav font-medium text-ink">Test</th>
-                  <td className="border-l border-ink/10 px-4 py-3 text-ink">Manual test new feature</td>
+                  <td className="border-b border-l border-ink/10 px-4 py-3 text-ink">Manual test new feature</td>
                 </tr>
                 <tr>
-                  <td className="border-l border-ink/10 px-4 py-3 text-ink">Test with automation and edge cases</td>
+                  <td className="border-b border-l border-ink/10 px-4 py-3 text-ink">Test with automation and edge cases</td>
                 </tr>
                 <tr>
                   <td className="border-b border-l border-ink/10 px-4 py-3 text-ink">Test with real users</td>
@@ -331,7 +331,7 @@ export default function TanmigoCaseStudy() {
                 </tr>
                 <tr>
                   <th scope="row" rowSpan={2} className="px-5 py-3 font-nav font-medium text-ink">Collaboration</th>
-                  <td className="border-l border-ink/10 px-4 py-3 text-ink">Sync with engineer</td>
+                  <td className="border-b border-l border-ink/10 px-4 py-3 text-ink">Sync with engineer</td>
                   <td rowSpan={2} className="border-l border-ink/10 px-4 py-3 align-middle font-medium text-ink">GitHub</td>
                 </tr>
                 <tr>
