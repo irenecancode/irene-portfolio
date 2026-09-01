@@ -510,9 +510,9 @@ export default function ClaudeCodeCaseStudy() {
               {/* Desktop: annotated screenshot with connector line into the takeaways timeline */}
               <div
                 className="relative mx-auto mt-16 hidden lg:block"
-                style={{ width: 860 * 1.15, height: 560 * 1.15 }}
+                style={{ width: 860 * 1.15, height: 310 * 1.15 }}
               >
-               <div style={{ width: 860, height: 560, transform: "scale(1.15)", transformOrigin: "top left" }}>
+               <div style={{ width: 860, height: 310, transform: "scale(1.15)", transformOrigin: "top left" }}>
                 <picture>
                   <source srcSet={`/media/${NEW_FEATURE.image}.webp`} type="image/webp" />
                   <img
@@ -570,11 +570,15 @@ export default function ClaudeCodeCaseStudy() {
                   </ul>
                 </div>
                </div>
+                {/* DRAFT caption: Irene to edit; matches 01/02's caption idiom.
+                    Absolutely anchored under the scaled screenshot. */}
+                <p
+                  className="absolute text-center text-sm text-muted"
+                  style={{ top: "calc(100% + 12px)", left: 0, width: 460 * 1.15 }}
+                >
+                  Proposed React Simulator
+                </p>
               </div>
-              {/* DRAFT caption: Irene to edit; matches 01/02's caption idiom */}
-              <p className="mt-3 hidden text-center text-sm text-muted lg:block">
-                Proposed React Simulator
-              </p>
 
               {/* Mobile/tablet: simple stacked fallback, no connector illustration */}
               <div className="mt-12 flex flex-col gap-8 lg:hidden">
