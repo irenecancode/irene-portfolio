@@ -9,7 +9,7 @@ export function Hero() {
         <FoxHero />
       </div>
 
-      <div className="hero-fade-up mt-12 grid grid-cols-1 gap-10 sm:mt-16 sm:grid-cols-[1fr_1.45fr] sm:gap-10 lg:gap-14">
+      <div className="hero-fade-up mt-12 grid grid-cols-1 gap-10 sm:mt-16 sm:grid-cols-[1fr_1.45fr] sm:gap-16 lg:gap-20">
         <div>
           <h2 className="hero-caret font-display text-[32px] leading-tight font-medium text-accent text-balance sm:text-[40px]">
             Designer who builds and ships code.
@@ -31,24 +31,26 @@ export function Hero() {
         </div>
 
         <div>
-          <p className="font-nav text-xs font-medium tracking-[0.14em] text-muted uppercase">
-            Currently building
-          </p>
-          <ul className="mt-3 border-t border-black/10">
-            {[
-              ["Wilde Backyard", "a nationwide wildlife reporting platform"],
-              ["WildePod", "an annotation tool for its detection pipeline"],
-              ["Tanmigo", "in beta"],
-            ].map(([name, blurb]) => (
-              <li
-                key={name}
-                className="flex items-baseline justify-between gap-6 border-b border-black/10 py-3.5"
-              >
-                <span className="shrink-0 text-[17px] font-semibold text-ink">{name}</span>
-                <span className="text-right text-[15px] leading-6 text-muted">{blurb}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="ml-auto w-fit">
+            <p className="font-nav text-xs font-medium tracking-[0.14em] text-muted uppercase">
+              Currently building
+            </p>
+            <ul className="mt-3 border-t border-black/10">
+              {[
+                ["Wilde Backyard", "a nationwide wildlife reporting platform"],
+                ["WildePod", "an annotation tool for its detection pipeline"],
+                ["Tanmigo", "in beta"],
+              ].map(([name, blurb]) => (
+                <li
+                  key={name}
+                  className="flex items-baseline gap-4 border-b border-black/10 py-3.5"
+                >
+                  <span className="shrink-0 text-[17px] font-semibold text-ink">{name}</span>
+                  <span className="text-[15px] leading-6 text-muted">{blurb}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
           <p className="mt-5 text-right text-sm text-accent-deep">Designing since 2021</p>
         </div>
       </div>
