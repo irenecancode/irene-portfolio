@@ -45,7 +45,7 @@ export function Hero() {
                   key={name}
                   className="flex items-baseline gap-4 border-b border-black/10 py-3.5"
                 >
-                  <span className="shrink-0 text-[17px] font-semibold text-ink">{name}</span>
+                  <span className="min-w-[130px] shrink-0 text-[17px] font-semibold text-ink">{name}</span>
                   <span className="text-[15px] leading-6 text-muted">{blurb}</span>
                 </li>
               ))}
