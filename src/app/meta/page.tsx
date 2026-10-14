@@ -560,9 +560,9 @@ export default function MetaCaseStudy() {
                 href="https://mixed-news.com/en/meta-codec-avatars-gaussian-splatting/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-accent-deep underline underline-offset-2 hover:no-underline"
+                className="site-link"
               >
-                (source)
+                (source) ↗
               </a>
             </p>
           </div>
@@ -724,9 +724,11 @@ export default function MetaCaseStudy() {
             <CaseStudy
               attribution="tanmigo"
               href="/tanmigo"
-              imageWebp="/media/case-tanmigo.webp"
-              imagePng="/media/case-tanmigo.png"
-              imageAlt="Tanmigo interface showing a tango video paired with an annotation panel for tagging embrace, footwork, and axis"
+              imageWebp="/media/case-tanmigo-hero.webp"
+              imagePng="/media/case-tanmigo-hero.png"
+              imageAlt="The live Tanmigo app showing a tango video alongside its timestamped annotations"
+              mediaAspect="aspect-[3008/1446]"
+              mediaClassName="rounded-xl shadow-[0_10px_28px_-6px_rgba(0,0,0,0.32)]"
               headline="A 0-to-1 video annotation platform for dancers"
               body="Bridging the gap between video discovery and physical practice with a seamless, one-stop annotation experience, designed and built in code with an engineer."
               tags={["TypeScript", "Front-End Development", "Live Product"]}
@@ -734,9 +736,11 @@ export default function MetaCaseStudy() {
             <CaseStudy
               attribution="Claude Code"
               href="/claude-code"
-              imageWebp="/media/case-claude-code.webp"
-              imagePng="/media/case-claude-code.png"
-              imageAlt="Claude Code chat interface mid-conversation, showing a Bash tool call and a permission prompt to allow running git status"
+              imageWebp="/media/case-claude-code-thumbnail.webp"
+              imagePng="/media/case-claude-code-thumbnail.png"
+              imageAlt="The Claude Code redesign prototype in VS Code: an .mcp.json file open beside the Claude panel, with a context log of edits and a bash command permission prompt"
+              mediaAspect="aspect-[3018/1514]"
+              mediaClassName="rounded-xl shadow-[0_10px_28px_-6px_rgba(0,0,0,0.32)]"
               headline="Developer experience in Claude Code"
               body="Restoring a sense of agency in AI coding tools, tested with a working prototype."
               tags={["Agentic Developer Experience", "Concept", "Prototype"]}

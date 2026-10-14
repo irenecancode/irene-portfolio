@@ -8,6 +8,7 @@ import { Lead } from "@/components/Lead";
 import { SummaryGrid, type SummaryField } from "@/components/SummaryGrid";
 import { ToolCard, ListCard } from "@/components/OutlineCard";
 import { CaseStudy } from "@/components/CaseStudy";
+import { DisclosureList } from "@/components/DisclosureList";
 import {
   TagIcon,
   BuildingIcon,
@@ -235,7 +236,20 @@ export default function TanmigoCaseStudy() {
             </div>
           </div>
 
-
+          <div className="mt-6">
+            <picture>
+              <source srcSet="/media/tanmigo-color-system.webp" type="image/webp" />
+              <img
+                src="/media/tanmigo-color-system.png"
+                alt="Tanmigo's color token system: surfaces, ink levels, brand, tag rail colors, structure, and semantic colors, each mapped to a CSS variable"
+                className="mx-auto w-full max-w-[420px] rounded-md"
+              />
+            </picture>
+            <p className="mt-2 text-center text-sm text-muted">
+              The design system now lives in code, here&apos;s the color, and
+              components with reference to shadcn.
+            </p>
+          </div>
         </Reveal>
 
         <Reveal as="section" className="bg-decision-bg py-14 sm:py-16">
@@ -249,8 +263,8 @@ export default function TanmigoCaseStudy() {
             ignored shadcn components by accident. These are lessons I
             learned by doing this project.
           </p>
-          <ol className="mt-10 flex flex-col gap-10">
-            {[
+          <DisclosureList
+            items={[
               {
                 n: "01",
                 title: "It speeds up the production flow, without sacrificing quality",
@@ -266,15 +280,8 @@ export default function TanmigoCaseStudy() {
                 title: "It provides a set of objective principles to reference",
                 body: "Instead of countless sticky notes next to wireframes, a markdown file is powerful as it provides ground truth for everyone when shipping new features.",
               },
-            ].map((item) => (
-              <li key={item.n}>
-                <p className="text-xl font-medium text-ink">
-                  <span className="text-muted">{item.n}</span> {item.title}
-                </p>
-                <p className="mt-2 max-w-3xl text-lg leading-7 text-ink">{item.body}</p>
-              </li>
-            ))}
-          </ol>
+            ]}
+          />
 
 
           <h3 className="mt-16 font-display text-xl font-medium text-ink">
@@ -483,19 +490,22 @@ export default function TanmigoCaseStudy() {
             Scroll sideways to see the whole diagram.
           </p>
 
-          <picture>
-            <source srcSet="/media/tanmigo-annotation-page.webp" type="image/webp" />
-            <img
-              src="/media/tanmigo-annotation-page.png"
-              alt="Tanmigo video page on a laptop: the player's timeline shows colored tag segments, and the annotation rail beside it renders each card by the decision path, with tag rails, a plain note, and timestamp pills"
-              className="mt-12 w-full rounded-md ring-1 ring-black/10"
-            />
-          </picture>
-          <p className="mt-2 text-center text-sm text-muted">
-            {/* DRAFT caption: Irene to edit */}
-            The result: every card renders by the same rules, and the
-            timeline mirrors their tag colors.
-          </p>
+          <div className="mx-auto mt-12 w-full sm:w-[calc(50%-1rem)]">
+            <div>
+              <picture>
+                <source srcSet="/media/tanmigo-annotation-autocomplete.webp" type="image/webp" />
+                <img
+                  src="/media/tanmigo-annotation-autocomplete.png"
+                  alt="Tag autocomplete while editing a Tanmigo annotation: typing # surfaces the dancer's own tags first, then the shared tango vocabulary"
+                  className="w-full rounded-md ring-1 ring-black/10"
+                />
+              </picture>
+              <p className="mt-2 text-center text-sm text-muted">
+                Typing # while editing surfaces your own tags first, then the
+                shared tango vocabulary.
+              </p>
+            </div>
+          </div>
         </Reveal>
 
 
@@ -551,12 +561,22 @@ export default function TanmigoCaseStudy() {
             can explore the functional MVP at{" "}
             <a
               href="https://www.tanmigo.com"
-              className="text-accent-deep underline underline-offset-2 hover:no-underline"
+              className="site-link"
             >
-              www.tanmigo.com
+              www.tanmigo.com ↗
             </a>
-            .
+            , or you can watch the product demo.
           </p>
+
+          <video
+            className="mt-6 w-full rounded-md ring-1 ring-black/10"
+            controls
+            playsInline
+            poster="/media/case-tanmigo-hero.png"
+            aria-label="Screen recording of the Tanmigo product demo"
+          >
+            <source src="/media/tanmigo-demo.mp4" type="video/mp4" />
+          </video>
         </Reveal>
 
         <Reveal as="section" className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-10">
@@ -573,9 +593,11 @@ export default function TanmigoCaseStudy() {
             <CaseStudy
               attribution="Claude Code"
               href="/claude-code"
-              imageWebp="/media/case-claude-code.webp"
-              imagePng="/media/case-claude-code.png"
-              imageAlt="Claude Code chat interface mid-conversation, showing a Bash tool call and a permission prompt to allow running git status"
+              imageWebp="/media/case-claude-code-thumbnail.webp"
+              imagePng="/media/case-claude-code-thumbnail.png"
+              imageAlt="The Claude Code redesign prototype in VS Code: an .mcp.json file open beside the Claude panel, with a context log of edits and a bash command permission prompt"
+              mediaAspect="aspect-[3018/1514]"
+              mediaClassName="rounded-xl shadow-[0_10px_28px_-6px_rgba(0,0,0,0.32)]"
               headline="Developer experience in Claude Code"
               body="Restoring a sense of agency in AI coding tools, tested with a working prototype."
               tags={["Agentic Developer Experience", "Concept", "Prototype"]}

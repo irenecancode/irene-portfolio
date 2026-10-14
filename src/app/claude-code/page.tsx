@@ -441,14 +441,16 @@ export default function ClaudeCodeCaseStudy() {
                           aria-hidden="true"
                           className="pointer-events-none absolute top-0 left-0 hidden h-full w-0 -translate-x-4 sm:block"
                         >
-                          {/* One unbroken line: first dot, straight through the image, past its
-                              bottom edge, then the hook's own path takes over for the last
-                              stretch so the curve+arrowhead reads as the same stroke. */}
+                          {/* First dot straight down to the image's bottom edge. The rest
+                              of the trail lives in the caption and takeaways cells below
+                              (see the annotationDots blocks there), so the arrowhead is
+                              placed relative to the takeaways' first line instead of a
+                              guessed pixel distance from the image. */}
                           <div
                             className="absolute left-0 w-0 border-l-2 border-navy"
                             style={{
                               top: `${step.annotationDots[0]}%`,
-                              height: `calc(${100 - step.annotationDots[0]}% + 70px)`,
+                              height: `${100 - step.annotationDots[0]}%`,
                             }}
                           />
                           {step.annotationDots.map((y, idx) => (
@@ -458,17 +460,40 @@ export default function ClaudeCodeCaseStudy() {
                               style={{ top: `${y}%` }}
                             />
                           ))}
-                          <AnnotationHook
-                            className="absolute h-6 w-10 text-navy"
-                            style={{ top: "calc(100% + 70px)", left: 0 }}
-                          />
                         </div>
                       )}
                     </div>
 
-                    <p className="mt-3 text-center text-sm text-muted">{step.afterCaption}</p>
+                    {/* Caption cell: carries the trail's middle stretch. top -36px =
+                        its own mt-3 (12) + the subgrid row gap (24) back up to the
+                        image's bottom edge; bottom -24px = the row gap down to the
+                        takeaways cell. */}
+                    <p className="relative mt-3 text-center text-sm text-muted">
+                      {step.annotationDots && (
+                        <span
+                          aria-hidden="true"
+                          className="pointer-events-none absolute left-0 hidden w-0 -translate-x-4 border-l-2 border-navy sm:block"
+                          style={{ top: -36, bottom: -24 }}
+                        />
+                      )}
+                      {step.afterCaption}
+                    </p>
 
-                    <div className={`mt-10 flex flex-col gap-4 ${step.annotationDots ? "pl-12" : step.hideNumerals ? "pl-1" : "pl-12"}`}>
+                    {/* Takeaways cell: for annotated steps there's no top margin, so
+                        the first line's vertical center (12px, half its 24px line)
+                        lands exactly on the hook's arrowhead (17px down the 24px
+                        hook), i.e. the hook's top sits 5px above this cell. */}
+                    <div
+                      className={`relative flex flex-col gap-4 ${
+                        step.annotationDots ? "mt-10 pl-12 sm:mt-0 sm:pl-8" : step.hideNumerals ? "mt-10 pl-1" : "mt-10 pl-12"
+                      }`}
+                    >
+                      {step.annotationDots && (
+                        <AnnotationHook
+                          className="pointer-events-none absolute hidden h-6 w-10 text-navy sm:block"
+                          style={{ top: -5, left: -16 }}
+                        />
+                      )}
                       {step.takeaways.map((t, j) => (
                         <p key={t} className="text-base text-ink">
                           {!step.hideNumerals && (
@@ -737,7 +762,7 @@ export default function ClaudeCodeCaseStudy() {
               href="https://irenecancode.github.io/Claude-Code-Re-design/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-accent-deep underline underline-offset-2 hover:no-underline"
+              className="site-link text-sm"
             >
               Live prototype ↗
             </a>
@@ -745,7 +770,7 @@ export default function ClaudeCodeCaseStudy() {
               href="https://github.com/irenecancode/Claude-Code-Re-design"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-accent-deep underline underline-offset-2 hover:no-underline"
+              className="site-link text-sm"
             >
               GitHub repo ↗
             </a>
@@ -822,7 +847,10 @@ export default function ClaudeCodeCaseStudy() {
                 </thead>
                 <tbody>
                   {COMPARISON_ROWS.map((row, i) => (
-                    <tr key={row.label}>
+                    <tr
+                      key={row.label}
+                      className={i < COMPARISON_ROWS.length - 1 ? "border-b border-ink/10" : undefined}
+                    >
                       <th scope="row" className="py-3 pr-4 font-nav font-medium text-ink">
                         {row.label}
                       </th>
@@ -878,9 +906,11 @@ export default function ClaudeCodeCaseStudy() {
             <CaseStudy
               attribution="tanmigo"
               href="/tanmigo"
-              imageWebp="/media/case-tanmigo.webp"
-              imagePng="/media/case-tanmigo.png"
-              imageAlt="Tanmigo interface showing a tango video paired with an annotation panel for tagging embrace, footwork, and axis"
+              imageWebp="/media/case-tanmigo-hero.webp"
+              imagePng="/media/case-tanmigo-hero.png"
+              imageAlt="The live Tanmigo app showing a tango video alongside its timestamped annotations"
+              mediaAspect="aspect-[3008/1446]"
+              mediaClassName="rounded-xl shadow-[0_10px_28px_-6px_rgba(0,0,0,0.32)]"
               headline="A 0-to-1 video annotation platform for dancers"
               body="Bridging the gap between video discovery and physical practice with a seamless, one-stop annotation experience, designed and built in code with an engineer."
               tags={["TypeScript", "Front-End Development", "Live Product"]}
