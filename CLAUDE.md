@@ -630,6 +630,15 @@ a crisp still, everyone else gets the loop, and nobody downloads 18MB.
   keeps collapsed text out of tab order and the a11y tree; the row is a
   real <button> with aria-expanded/aria-controls. The intro paragraph
   above it and the workflow table below are untouched.
+- Hero grid images downsized (2026-10-14, my call, after a perf
+  review): the 16 hero-grid-*.png/.webp were 1606x1606 but display at
+  ~150px (desktop) / ~72px (phone). Re-exported in place at 480px wide
+  (~3x the largest display size, so still crisp on retina), alpha
+  preserved: PNG+WebP combined 18.9MB -> 2.1MB; the WebP actually
+  served to modern browsers is ~0.4MB total for all 16. Originals
+  remain in ~/Desktop/portfolio images. Not applied to the case-study
+  thumbnails (Felidae's PNG is still 2.8MB) — that's the next place to
+  look if page weight matters again.
 - Hero grid on phones (2026-10-14, my call, her "4x4" pick over a
   scrolling-strips alternative): at 390px the 6-column grid left
   images ~26px (50px cells minus p-3). Below sm it's now 4 columns:
