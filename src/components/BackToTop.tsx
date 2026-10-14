@@ -1,7 +1,9 @@
-export function BackToTop() {
+export function BackToTop({ wide = false }: { wide?: boolean } = {}) {
   return (
     <div className="py-10">
-      <div className="mx-auto flex w-full max-w-6xl justify-end px-6 sm:px-10">
+      <div
+        className={`mx-auto flex w-full justify-end pl-6 sm:pl-10 ${wide ? "max-w-7xl pr-3 sm:pr-5" : "max-w-6xl px-6 sm:px-10"}`}
+      >
         <a
           href="#top"
           aria-label="Back to top"

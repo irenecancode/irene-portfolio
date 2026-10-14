@@ -77,11 +77,6 @@ h3 {
 .font-nav {
   font-family: var(--font-hanken), sans-serif;
 }
-/* Beth Ellen script: masthead wordmark, hero signature, About scrapbook
-   headings, footer sign-off only (Irene's call, 2026-08-25). Never nav or body. */
-.font-script {
-  font-family: var(--font-script), cursive;
-}
 
 /* Accessibility: visible keyboard focus everywhere (CLAUDE.md a11y rules) */
 :focus-visible {
@@ -118,6 +113,24 @@ h3 {
   animation: hero-fade-up 250ms ease-out both;
 }
 
+/* Hero grid cells: staggered left-to-right reveal on first paint. Delay
+   comes from --delay (set per cell in HeroGrid). `both` keeps cells hidden
+   during their delay and leaves them visible after. */
+@keyframes hero-cell-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-cell {
+  animation: hero-cell-in 700ms ease-out both;
+  animation-delay: var(--delay, 0ms);
+}
+
 /* Blinking terminal caret after the hero headline. A styled ::after box,
    not a text glyph, so the headline string stays exactly "Designer who
    builds and ships code." for screen readers and copy-paste. */
@@ -146,6 +159,11 @@ h3 {
    compresses these to a single near-instant frame, which risks landing on
    an invisible keyframe. Force the static, visible end state instead. */
 @media (prefers-reduced-motion: reduce) {
+  .hero-cell {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
   .hero-fade-up {
     animation: none;
     opacity: 1;
@@ -154,6 +172,65 @@ h3 {
   .hero-caret::after {
     animation: none;
     opacity: 1;
+  }
+}
+
+/* Project chip cloud (2026-10-12, Irene's call): hovering one chip dims and
+   blurs its siblings so the hovered chip's caption reads as the focus,
+   instead of competing with three other equally-sharp labels. */
+.chip-item {
+  transition:
+    opacity 200ms ease,
+    filter 200ms ease;
+}
+.chip-cloud:has(.chip-item:hover) .chip-item:not(:hover) {
+  opacity: 0.4;
+  filter: blur(1.5px);
+}
+
+/* Case Studies list (2026-10-12, Irene's call): hovering one row dims the
+   others — same focus-the-hovered-one idea as the chip cloud above, but
+   opacity only, no blur, since these rows carry real content (image +
+   copy) that should stay legible even while de-emphasized. */
+.case-study-row {
+  transition:
+    opacity 200ms ease,
+    background-color 200ms ease,
+    box-shadow 200ms ease;
+}
+.case-study-list:has(.case-study-row:hover) .case-study-row:not(:hover) {
+  opacity: 0.45;
+}
+
+/* One link style for the whole site (2026-10-14, Irene's call): plain ink
+   text with a faint underline, turning accent-deep on hover. The old
+   accent-deep-at-rest underline read as a form-validation error. A trailing
+   arrow (written in the markup, not here) marks links that leave the page:
+   external sites and mailto. */
+.site-link {
+  display: inline-block;
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-decoration-color: rgb(0 0 0 / 0.3);
+  text-underline-offset: 4px;
+  transform-origin: left center;
+  transition:
+    color 200ms ease,
+    text-decoration-color 200ms ease,
+    transform 200ms ease;
+}
+/* Same tilt-and-grow as the footer envelope's hover, so every link and
+   icon-link answers the cursor the same way. */
+.site-link:hover,
+.site-link:focus-visible {
+  color: var(--color-accent-deep);
+  text-decoration-color: var(--color-accent-deep);
+  transform: rotate(-3deg) scale(1.08);
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-link:hover,
+  .site-link:focus-visible {
+    transform: none;
   }
 }
 

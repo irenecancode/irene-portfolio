@@ -95,18 +95,18 @@ export default function Creative() {
                   href="https://www.etsy.com/shop/BottegaLily"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-accent-deep underline transition-opacity duration-200 hover:opacity-75 focus-visible:opacity-75"
+                  className="site-link"
                 >
-                  Bottega Lily
+                  Bottega Lily ↗
                 </a>
                 . You can follow my{" "}
                 <a
                   href="https://www.instagram.com/dayday_tipsy/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-accent-deep underline transition-opacity duration-200 hover:opacity-75 focus-visible:opacity-75"
+                  className="site-link"
                 >
-                  Instagram
+                  Instagram ↗
                 </a>{" "}
                 for new artwork.
               </p>

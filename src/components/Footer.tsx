@@ -1,19 +1,75 @@
+"use client";
+
+import { useRef, useState } from "react";
+
+const EMAIL = "irenemycheung@gmail.com";
+
 export function Footer() {
+  const [copied, setCopied] = useState(false);
+  const addressRef = useRef<HTMLSpanElement>(null);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      // Clipboard API unavailable: select the address so Cmd/Ctrl+C works.
+      const node = addressRef.current;
+      if (node) {
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        const selection = window.getSelection();
+        selection?.removeAllRanges();
+        selection?.addRange(range);
+      }
+    }
+  };
+
   return (
     <footer className="mx-auto w-full max-w-6xl px-6 pb-20 sm:px-10">
       <div className="border-t border-black/10 pt-14">
-        <h2 className="font-script text-[26px] text-accent sm:text-[30px]">
+        <h2 className="font-display text-[26px] font-medium text-accent sm:text-[30px]">
           irene cheung
         </h2>
         <p className="mt-5 max-w-xl text-[17px] leading-7 text-ink">
           I enjoy building the tools other designers find boring.
         </p>
-        <a
-          href="mailto:irenemycheung@gmail.com"
-          className="mt-3 inline-block text-accent-deep underline transition-opacity duration-200 hover:opacity-75 focus-visible:opacity-75"
-        >
-          irenemycheung@gmail.com
-        </a>
+
+        <div className="group relative mt-3 inline-flex items-center">
+          <a
+            href={`mailto:${EMAIL}`}
+            aria-label="Email me"
+            className="group/mail inline-block p-2"
+          >
+            <picture>
+              <source srcSet="/media/email-me.webp" type="image/webp" />
+              <img
+                src="/media/email-me.png"
+                alt=""
+                className="h-auto w-16 transition-transform duration-200 group-hover/mail:-rotate-3 group-hover/mail:scale-110 group-focus-visible/mail:-rotate-3 group-focus-visible/mail:scale-110"
+              />
+            </picture>
+          </a>
+          {/* Sits flush against the envelope (no gap to cross), to its right,
+              and is clickable/selectable: it used to be pointer-events-none,
+              dropped below the envelope with an 8px gap, and vanished the
+              moment the cursor left the icon, which made the address
+              nearly impossible to select or copy. invisible (not just
+              opacity-0) keeps it from catching clicks while hidden. */}
+          <div className="invisible absolute top-1/2 left-full z-10 -translate-y-1/2 pl-1 opacity-0 transition-opacity duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <div className="flex w-max items-center gap-3 rounded-sm border border-ink/10 bg-surface px-3 py-2 text-sm text-ink shadow-md">
+              <span ref={addressRef} className="select-all">{EMAIL}</span>
+              <button
+                type="button"
+                onClick={handleCopy}
+                className="shrink-0 text-xs font-medium text-accent-deep underline-offset-2 hover:underline"
+              >
+                {copied ? "Copied!" : "Copy"}
+              </button>
+            </div>
+          </div>
+        </div>
 
         <p className="mt-10 font-nav text-sm tracking-wide text-muted uppercase">
           Social
@@ -24,7 +80,7 @@ export function Footer() {
               href="https://www.linkedin.com/in/irenemy"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-base text-ink underline-offset-4 transition-colors duration-200 hover:text-accent-deep hover:underline focus-visible:text-accent-deep focus-visible:underline"
+              className="site-link text-base"
             >
               LinkedIn
             </a>
@@ -34,7 +90,7 @@ export function Footer() {
               href="https://github.com/irenecancode"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-base text-ink underline-offset-4 transition-colors duration-200 hover:text-accent-deep hover:underline focus-visible:text-accent-deep focus-visible:underline"
+              className="site-link text-base"
             >
               GitHub
             </a>
@@ -44,7 +100,7 @@ export function Footer() {
               href="https://www.instagram.com/dayday_tipsy/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-base text-ink underline-offset-4 transition-colors duration-200 hover:text-accent-deep hover:underline focus-visible:text-accent-deep focus-visible:underline"
+              className="site-link text-base"
             >
               Instagram
             </a>
