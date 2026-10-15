@@ -1388,3 +1388,11 @@ the notes.
   paragraph went from text-muted #666 (which matched the 01/02/03
   numbers) to charcoal #4a4a4a (~8:1 on the #ffece6 band), so it reads
   as body text while the numbers stay the quietest element.
+- Social preview image replaced (2026-10-15, her call: the fox with
+  laptop is gone from the site): new public/media/og-home.png
+  (1200x630) mirrors the home hero — the same 16 hand-drawn cells in
+  the 6x3 layout on the #fffdfc page bg, with "Irene Cheung / PRODUCT
+  DESIGNER / Designer who builds and ships code." in Hanken Grotesk
+  in the middle-left slot. layout.tsx points at it (new filename so
+  Slack/LinkedIn/iMessage caches of the old URL don't stick). The old
+  og-image.png is unreferenced.

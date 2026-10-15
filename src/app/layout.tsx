@@ -19,10 +19,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/media/og-image.png",
+        url: "/media/og-home.png",
         width: 1200,
         height: 630,
-        alt: "Irene Cheung, product designer who ships code, with her fox mascot working at a laptop",
+        alt: "Irene Cheung, product designer who builds and ships code, surrounded by her hand-drawn illustrations of dogs, coffee, pastries and tool logos",
       },
     ],
   },
