@@ -1396,3 +1396,8 @@ the notes.
   in the middle-left slot. layout.tsx points at it (new filename so
   Slack/LinkedIn/iMessage caches of the old URL don't stick). The old
   og-image.png is unreferenced.
+- Mobile header (2026-10-15, her call): below sm the fox logo sits
+  top-left on the same row as the nav (top-[14px] left-[26px]) instead
+  of centered under it, and the header's bottom padding dropped from
+  108px to 44px since nothing hangs below the nav any more. sm and up
+  are unchanged (fox centered; lg vertically centered).

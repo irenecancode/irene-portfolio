@@ -71,11 +71,11 @@ function NavCircle() {
 
 export function Header({ active }: HeaderProps) {
   return (
-    <header className="relative w-full bg-surface px-[26px] pt-[26px] pb-[108px] sm:px-[38px] sm:pt-[38px] sm:pb-[58px]">
+    <header className="relative w-full bg-surface px-[26px] pt-[26px] pb-[44px] sm:px-[38px] sm:pt-[38px] sm:pb-[58px]">
       <Link
         href="/"
         aria-label="Irene Cheung, home"
-        className="absolute top-[54px] left-1/2 -translate-x-1/2 text-center transition-opacity duration-200 hover:opacity-80 focus-visible:opacity-80 lg:top-1/2 lg:left-1/2 lg:-translate-y-1/2"
+        className="absolute top-[14px] left-[26px] text-center transition-opacity duration-200 hover:opacity-80 focus-visible:opacity-80 sm:top-[54px] sm:left-1/2 sm:-translate-x-1/2 lg:top-1/2 lg:left-1/2 lg:-translate-y-1/2"
       >
         <p className="inline-block">
           <Image
