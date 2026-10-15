@@ -69,7 +69,7 @@ export function DisclosureList({ items }: { items: readonly Item[] }) {
               }`}
             >
               <div className="overflow-hidden">
-                <p className="mt-2 max-w-3xl text-lg leading-7 text-ink">{item.body}</p>
+                <p className="mt-2 max-w-3xl text-lg leading-7 text-[#4a4a4a]">{item.body}</p>
               </div>
             </div>
           </li>

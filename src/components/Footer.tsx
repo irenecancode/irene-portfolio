@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { Letter } from "@/components/Letter";
 
 const EMAIL = "irenemycheung@gmail.com";
 
@@ -42,14 +43,7 @@ export function Footer() {
             aria-label="Email me"
             className="group/mail inline-block p-2"
           >
-            <picture>
-              <source srcSet="/media/email-me.webp" type="image/webp" />
-              <img
-                src="/media/email-me.png"
-                alt=""
-                className="h-auto w-16 transition-transform duration-200 group-hover/mail:-rotate-3 group-hover/mail:scale-110 group-focus-visible/mail:-rotate-3 group-focus-visible/mail:scale-110"
-              />
-            </picture>
+            <Letter className="w-[78px]" />
           </a>
           {/* Sits flush against the envelope (no gap to cross), to its right,
               and is clickable/selectable: it used to be pointer-events-none,

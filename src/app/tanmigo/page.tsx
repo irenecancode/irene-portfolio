@@ -295,9 +295,9 @@ export default function TanmigoCaseStudy() {
             <table className="mx-auto w-full min-w-[560px] max-w-3xl border-collapse text-center text-base">
               <thead>
                 <tr>
-                  <th scope="col" className="px-5 py-3 font-nav text-sm font-medium tracking-[0.06em] text-muted uppercase">Stage</th>
-                  <th scope="col" className="border-l border-ink/10 px-4 py-3 font-nav text-sm font-medium tracking-[0.06em] text-muted uppercase">Scenario</th>
-                  <th scope="col" className="border-l border-ink/10 px-4 py-3 font-nav text-sm font-medium tracking-[0.06em] text-muted uppercase">Tool</th>
+                  <th scope="col" className="border-b border-ink/10 px-5 py-3 font-nav text-sm font-medium tracking-[0.06em] text-muted uppercase">Stage</th>
+                  <th scope="col" className="border-b border-l border-ink/10 px-4 py-3 font-nav text-sm font-medium tracking-[0.06em] text-muted uppercase">Scenario</th>
+                  <th scope="col" className="border-b border-l border-ink/10 px-4 py-3 font-nav text-sm font-medium tracking-[0.06em] text-muted uppercase">Tool</th>
                 </tr>
               </thead>
               <tbody className="align-top">
@@ -342,7 +342,7 @@ export default function TanmigoCaseStudy() {
                   <td rowSpan={2} className="border-l border-ink/10 px-4 py-3 align-middle font-medium text-ink">GitHub</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-6 text-ink">Stage deployment</td>
+                  <td className="border-l border-ink/10 px-4 py-3 text-ink">Stage deployment</td>
                 </tr>
               </tbody>
             </table>

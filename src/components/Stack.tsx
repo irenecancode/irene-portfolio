@@ -13,19 +13,19 @@ const TOOLS = [
 export function Stack() {
   return (
     <div>
-      <h2 className="font-display text-[34px] font-medium text-accent">Stack</h2>
-      <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3">
+      <h2 className="font-display text-[30px] font-normal text-ink sm:text-[36px]">Stack</h2>
+      <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-3">
         {TOOLS.map((tool) => (
           <div
             key={tool.name}
-            className="flex flex-col items-center rounded-lg bg-white/30 p-2 text-center backdrop-blur-[2px]"
+            className="group flex flex-col items-center bg-white p-6 text-center shadow-[0_4px_14px_-2px_rgba(0,0,0,0.14)]"
           >
             <picture>
               <source srcSet={`/media/stack-${tool.icon}.webp`} type="image/webp" />
               <img
                 src={`/media/stack-${tool.icon}.png`}
                 alt={`${tool.name} logo`}
-                className="h-14 w-14"
+                className="h-14 w-14 transition-transform duration-200 group-hover:scale-110"
                 loading="lazy"
               />
             </picture>

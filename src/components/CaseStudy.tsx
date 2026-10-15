@@ -53,7 +53,7 @@ export function CaseStudy(props: CaseStudyProps) {
   // list's own.
   const baseBoxClassName =
     "case-study-row row-span-6 grid grid-rows-subgrid gap-y-0 rounded-lg border border-ink/10 bg-[#fefcf8] p-6";
-  const linkClassName = `${baseBoxClassName} group hover:shadow-[0_0_28px_rgba(204,81,59,0.35)] focus-visible:shadow-[0_0_28px_rgba(204,81,59,0.35)]`;
+  const linkClassName = `${baseBoxClassName} group hover:shadow-[0_0_32px_rgba(204,81,59,0.16)] focus-visible:shadow-[0_0_32px_rgba(204,81,59,0.16)]`;
 
   const imgClassName =
     "h-full w-full object-cover transition-transform duration-300 motion-safe:group-hover:scale-[1.03] motion-safe:group-focus-visible:scale-[1.03]" +

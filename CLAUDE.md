@@ -630,6 +630,169 @@ a crisp still, everyone else gets the loop, and nobody downloads 18MB.
   keeps collapsed text out of tab order and the a11y tree; the row is a
   real <button> with aria-expanded/aria-controls. The intro paragraph
   above it and the workflow table below are untouched.
+- /creative rebuilt as seven colored series bands (2026-10-14, her
+  call, from a reference of full-bleed colored sections with white
+  cards: "revoke the layout"). Old Drawings masonry / UI Icons /
+  Bottega Lily sections and the jump nav are gone from the page
+  (MasonryCollage.tsx and CreativeJumpNav.tsx stay in the repo,
+  unused). Each series = a full-bleed band (max-w-7xl rail, py-14/16),
+  left-aligned display-font title, white square tag chips, and every
+  piece in its own bg-white aspect-[4/3] box with the art contained
+  (p-5). Order and colors, as she specified: Dog series (light yellow
+  #fbf3b5; Procreate), Cafe series (dark terracotta #923626, white text;
+  Procreate), Animal UI icons (light blue #cfe2f3; Charlie's Acres,
+  Illustrator), Animal series (light terracotta #f2cfc4; Charlie's
+  Acres, Procreate), Pattern design (the site navy; Procreate,
+  Photoshop), Montessorian teaching syllabus (light sage #d3e2cc;
+  Procreate), Nature series (orange #f2994a; no tags). The intro block
+  (h1, blurb, Etsy/Instagram links, Bottega logo) was kept as is.
+  ASSIGNMENT OF PIECES IS MY GUESS, not hers — she named series and
+  tags, not files: Dog = the old curated 8 dog drawings + the dog
+  animation; Cafe = creative-03/04/05 (dog scenes), 22 (animals at a
+  cafe counter), 21 (cafe storefront); Animal UI icons = the 8
+  ui-icon-*; Animal series = creative-24 (sheep) + 11 (ducks);
+  Pattern = the 4 bottega mockups; Montessori = creative-19 (child
+  sweeping), 20 (child + cat with drinks), creative-video-2 (girl with
+  umbrella); Nature = creative-01/02/08/09 (fruit crates, vegetables,
+  bananas, trout). Unused: creative-18, creative-23, illust-*. Series
+  data lives in the SERIES array at the top of creative/page.tsx; move a
+  piece by moving its line. Same-day follow-up ("inconsistent big and
+  small box like the reference"): the fixed aspect-[4/3] white boxes
+  became content-sized (bg-white p-5 around an h-auto w-full image/
+  video), in an items-start grid, so each box takes its piece's own
+  proportions and a short box doesn't stretch to its tall neighbor —
+  the staggered look of her reference. Pieces get a hover:scale-105
+  (the old page's hover-zoom, kept). Second follow-up ("consistent for
+  UI icons... all images center-aligned with the same padding on 4
+  sides"): (1) the Animal UI icons series sets uniform: true —
+  identical square white boxes (278px at 1280) with the icon contained
+  and centered, since a set should read as equals; (2) every raster
+  piece is now a trimmed copy in public/media/trim/ (bounding box of
+  non-white pixels, difference > 14 from white; the full-bleed scenes
+  and Bottega mockups had no margin so they're unchanged), because the
+  source files carried uneven baked-in white margins that made a box's
+  padding look different on each side. Dimensions in SERIES were
+  regenerated from the trims. Videos can't be trimmed without
+  re-encoding, so they're cropped in CSS from the poster's bounding box
+  (a crop: [x,y,w,h] on the piece; inner element offset/oversized inside
+  an overflow-hidden aspect-ratio box). Result at 1280: natural boxes
+  all measure 20px padding on every side; icons are centered with a 20px
+  minimum. Originals are untouched in public/media. Series tag chips now hover to a
+  black fill with white text and a 2px lift (they're not links; just
+  feedback).
+- /creative follows her Figma placement (2026-10-14, her call, from
+  two annotated mock screenshots + 20 new files in ~/Desktop/portfolio
+  images/creative, "Instagram post - 2..21.png"): identical white
+  boxes in vertical columns, each column nudged to a different height.
+  New assets: public/media/series/{dog,cafe,animal}-N.webp (640px wide,
+  opaque white, 460KB for all 20; the tiles are already white canvases
+  so they are NOT trimmed). File -> slot, from matching her mock:
+  Dog series = #2,#3,#4,#5 over #10,#11,#12,#13 (shiba, shiba, samoyed,
+  coffee-dog / puppy on back, golden w/ bandana, sleeper on pillow,
+  husky); Cafe series = #6,#7,#8,#9 over #14,#15,#16,#17 (whisk,
+  cornet, pour-over, choc cake / latte, iced matcha, toast, pastry);
+  Animal series = #18,#19,#20,#21 in one row. Offsets (in box heights,
+  per column): dog [0,-.25,-.07,.25] (col 2 highest, col 4 lowest),
+  cafe [0,.15,.28,.14], animal [0,.16,.32,.16]; icons [0,.18,.06,.26]
+  and pattern [0,.22] borrow the same idea. Mechanism: a series' new
+  `stagger` config drives StaggerColumns — columns of flex-col boxes,
+  each with padding-top as a % of its own width (percentage padding
+  resolves against the grid area = one box width, so offset/ratio is
+  exactly that many box heights and the space IS reserved). Boxes are
+  `relative` + the image `absolute inset-0`: without that an h-full img
+  with intrinsic dims inflated the aspect-ratio box (icons came out
+  unequal). Sizes: Animal UI icons and Pattern design 0.7x of before
+  (195px / 409px boxes, max-w 816 / 830), Motions 0.5x (292px, max-w
+  600). Below sm everything collapses to a plain 2-up grid with no
+  offsets. The old curated dog drawings, café scenes, sheep and ducks
+  paintings are no longer on the page (still in public/media). Teaching
+  syllabus / Nature band untouched.
+- /creative follow-up pass (2026-10-14, her call): (1) Animal UI icons
+  padding 1.2x (p-4 16px -> p-[19px]; `stagger.pad`). (2) Glossary
+  words are colored text instead of filled chips — but not the exact
+  pastel band colors, which are 1.1-1.4:1 on the page (unreadable as
+  type): each word uses its band's hue deepened to >=3:1 (Series.word:
+  yellow #a18f00, blue #3d91dd, light terracotta #e36a44, sage
+  #629b47, orange #e16c04; the two dark bands already pass and are
+  unchanged). If she wants the literal pastels, flip those five values.
+  (3) Animal series boxes 1.3x (209 -> 272px). (4) Every set now spans
+  the whole rail: first column flush with the title (x=40 at 1280),
+  last flush with the right edge (x=1240), boxes at fixed width
+  (Series.boxW) and the leftover width becoming the gaps
+  (grid-cols-[repeat(var(--n),var(--w))] + justify-between). The old
+  centered max-w caps are gone. The stagger's %-padding trick still
+  works because tracks are fixed-width grid areas (a flex container
+  would resolve % against the whole row). (5) "Montessorian teaching
+  syllabus" is now "Nature" (id nature), and the child-with-broom +
+  black cat (creative-19) and the child/cat drinking (creative-20)
+  were removed, leaving the four stills in a lg:grid-cols-4. Glossary
+  Nature/Bee point at it. creative-video-2 stays in Motions.
+- /about restyled to match Home/Creative (2026-10-14, her call, items
+  1-6 of my recommendation list): the torn-paper scrapbook is gone.
+  Four full-bleed bands in the Creative palette — intro light yellow
+  (#fbf3b5), Journey Map light blue (#cfe2f3) with the SVG in a white
+  box, Stack light sage (#d3e2cc), closing line light terracotta
+  (#f2cfc4). Photo: white box, no tilt, rounded-xl + the same
+  0_10px_28px_-6px shadow as the thumbnails, source dims given. Headings
+  are ink font-display (Journey Map and Stack no longer terracotta).
+  Stack tiles: flat white boxes (p-6), icon scales on hover. "My offline
+  moments" paragraph became a sentence + nine word chips (Dogs, Cats,
+  Plants, Walking in my Birks, Thrifting, Antique goods, New recipes,
+  Video games, Soccer) cycling the palette; all one size, since unlike
+  Creative's cloud there's no count behind them. Closing line is
+  display-font beside her envelope (mailto, same hover tilt). Left
+  alone: the h1 and the JourneyMap component. Unused now:
+  torn-paper.png, journey-paper.png, stack-paper.png, PaperBacking.tsx.
+- Creative glossary revision (2026-10-14, her call: "teaching syllabus
+  -> Nature, another same color is Bee"): in the sage series the
+  glossary word "Teaching syllabus" became "Nature", and a second sage
+  word "Bee" was added. Nature = the four stills I had dropped when
+  Nature became Motions (creative-01/02/08/09, now back in that sage
+  section, which has six pieces and lg:grid-cols-3). Bee matches any
+  piece whose alt text says "bee" — there is none yet, so it renders at
+  the minimum size; she needs to supply that artwork. The section's
+  title is still "Montessorian teaching syllabus" (she only named the
+  glossary word).
+- /creative intro stripped + glossary (2026-10-14, her call): the
+  blurb, Etsy/Instagram links and the Bottega Lily logo are gone — the
+  intro is just the "Creative" h1 (bottega-lily-logo.* left on disk,
+  unused; the Bottega Lily link no longer appears on the page). Under
+  it, a glossary/word cloud: Dog, Coffee Matcha, UI icons, Duck, Animal
+  illustration, Pattern design, Teaching syllabus, Motion. Each word is
+  a square chip filled with its series' band color (text white on the
+  two dark bands), font size = clamp(18px, 14px + 6px x pieces, 12vw)
+  so more pieces = bigger, and links to its section. I chose chips
+  rather than colored TEXT because the light yellow/blue/sage bands are
+  unreadable as text on the off-white page. Counts are computed from
+  SERIES, not typed: Dog 8, Coffee Matcha 5, UI icons 8, Duck 2 (alt
+  text matches /duck/: the duck icon + the ducks painting, colored as
+  the Animal series — my call, she didn't say), Animal illustration 2,
+  Pattern design 4, Teaching syllabus 2, Motion 2. "Nature series" is
+  now "Motions" (id motions): it holds the two animations
+  (creative-video-1, -2), moved out of Dog and Montessori. Consequence:
+  the four nature stills (creative-01 fruit crates, -02 vegetables,
+  -08 bananas, -09 trout) are no longer on the page — flagged to her;
+  Dog is now a clean 4x2 and Teaching syllabus 2.
+- Felidae thumbnail hidden + thumbnails shrunk (2026-10-14, her call,
+  "for safety reason because it's not shipped yet"): the Felidae card's
+  image is the unreleased felidaefund.org redesign hero, so it's now a
+  "Coming Soon" placeholder tile (CaseStudy's existing placeholder
+  branch, restyled as a rounded white tile with a ring instead of a
+  floating box; mediaAspect set to the Claude Code card's 3018/1514 so
+  the row's heights match) and
+  case-felidae-thumbnail.png/.webp were removed from public/media (a
+  copy lives in ~/Desktop/portfolio images). The card keeps its
+  headline/body/tags and the Coming Soon pill under it, so "Coming
+  Soon" shows twice (tile + pill) — remove one if it reads as noise.
+  CAVEAT: the repo is public and the file is in git history since
+  5db9c64, so removing it from the tree only stops serving it going
+  forward; scrubbing history would need a rewrite. Also still in the
+  tree, unreferenced: public/media/case-felidae.png/.webp (an Aug 24
+  cover showing the Wildlife Sighting report form) — her call whether
+  that should go too. Same pass: case-tanmigo-hero and
+  case-claude-code-thumbnail re-exported at 1200px wide (displayed at
+  ~540px, so 2x): PNG+WebP 2.7MB -> 0.7MB; the WebP actually served is
+  ~60KB and ~42KB.
 - Hero grid images downsized (2026-10-14, my call, after a perf
   review): the 16 hero-grid-*.png/.webp were 1606x1606 but display at
   ~150px (desktop) / ~72px (phone). Re-exported in place at 480px wide
@@ -1141,3 +1304,87 @@ the notes.
 - Files sometimes change outside a session (I edit, or another agent
   does). If anything looks different from your memory of it, run git
   diff and re-read this file before continuing.
+- /creative cut to five series + smaller filled chips (2026-10-15, her
+  call): the Motions band and the Nature (Montessorian) band are gone,
+  along with the Nature / Bee / Motion glossary words and the video
+  rendering path (CollageVideo is no longer imported here;
+  creative-video-1/-2 and creative-01/02/08/09 stay on disk, unused).
+  Glossary is back to FILLED chips (series band color, white type on the
+  cafe and pattern bands), smaller than before (font = 15px + 1.25px x
+  the series' piece count, px-3 py-0.5), with her words, two per series
+  in section order: Dog, Shiba / Pour over, French toast / UI icons,
+  Duck / Sheep, Sanctuary / Terracotta, Bouquet. Each links to its
+  band (#dog-series, #cafe-series, #animal-ui-icons, #animal-series,
+  #pattern-design). Supersedes the 2026-10-14 glossary notes above.
+- /about tweaks (2026-10-15, her call): intro band is now super light
+  terracotta #ffece6 (the site's existing --color-chip/decision-bg
+  tint; she said "like home hero image" — I read that as this tone, the
+  hero itself has no band). Offline-moment chips cut to seven in the
+  Creative glossary style (font-display, filled, whitespace-nowrap),
+  alternating size as she specified: big Dog, small Cat, big Plants,
+  big Birks, big Thrifting, small Video games, small Soccer (25px /
+  20px). Antique goods / New recipes dropped. The closing "Open for
+  collaboration" band lost its terracotta fill and is neutral (page bg).
+- /about follow-up (2026-10-15, her call): intro band lightened again
+  from #ffece6 to an almost-white tint #fff7f4 (page bg is #fffdfc).
+  Offline chips now rest at small alternating tilts (-3..3deg, a literal
+  rotate class per chip in OFFLINE_MOMENTS) to feel less techy; hover
+  straightens them and lifts 2px.
+- Softer case-study glow + Pattern stagger (2026-10-15, her call): the
+  hover glow on linked case-study cards went from 28px/35% to 32px/16%
+  terracotta (CaseStudy.tsx linkClassName; the Open Resource cards on Home
+  keep their own 35% glow — she only named the case studies). Pattern
+  design offsets [0, 0.22] -> [0, 0.5] box heights so the two columns
+  alternate more.
+- Email icon swapped to her letter art (2026-10-15, her call):
+  letter_default / letter_hover from portfolio images (she said
+  "letter_open"; the file is letter_hover) replace email-me.* in the
+  footer and the About closing band. Both frames are cropped to one
+  shared box (331,261,1546,1459 of the 2048 canvas), 480px wide, exported
+  as public/media/letter-default|letter-open .png/.webp, so the closed
+  envelope stays put and the flap + "aye yo!" appear above it on hover.
+  New src/components/Letter.tsx (must sit inside a `group/mail` link);
+  widths: Footer w-14, About w-[72px]. email-me.* is now unreferenced.
+- Creative shadows + chip tilt (2026-10-15, her call): every white box
+  gets a light drop shadow (0 4px 14px -2px, 14% black). Glossary chips
+  take the About page's resting tilts (TILTS array, cycled by index) and
+  straighten on hover; the small series tag chips tilt +/-2deg
+  alternately too ("creative's chips" could mean either, so both).
+- Letter icon 1.4x (2026-10-15, her call, so the "aye yo!" text is
+  readable): Footer w-14 -> w-[78px], About w-[72px] -> w-[101px].
+- /about shadows + intro bg (2026-10-15, her call): intro band fill is
+  now the home hero's own ground, the page bg #fffdfc (sampled from her
+  screenshot; `bg-bg`), replacing the #fff7f4 tint. The same light
+  shadow as Creative's boxes (0 4px 14px -2px, 14% black) is on the
+  photo frame (was a heavier 0 10px 28px / 32%), the Journey Map box and
+  the Stack tiles.
+- Open Resource card glow (2026-10-15, her call): hover glow on the
+  three cards changed from terracotta rgba(204,81,59,.35) to light blue
+  rgba(207,226,243,.45) (#cfe2f3, the Creative light-blue band), which
+  also reads better on the navy band they sit on.
+- Creative glossary shuffled (2026-10-15, her call: "shuffle the
+  creative tags" — I read it as the top glossary chips, not the
+  Procreate/Photoshop series tags): fixed interleaved order in
+  CHIP_ORDER (Dog, Pour over, Sheep, UI icons, Terracotta, Shiba,
+  Sanctuary, French toast, Duck, Bouquet) so no two neighbors share a
+  fill. Data stays in section order in GLOSSARY.
+- Series tags un-tilted (2026-10-15, her call): the small Procreate /
+  Photoshop tags under each Creative section title are square again
+  (hover lift + black fill unchanged); only the glossary chips at the
+  top keep the tilt. Supersedes the tag-tilt part of the earlier
+  "Creative shadows + chip tilt" note.
+- Disclosure body text grey (2026-10-15, her call: "the text that
+  needs trigger -- make it grey so it visually distincts from title"):
+  the revealed paragraph under each numbered reason is now text-muted
+  (#666, ~5:1 on the #ffece6 band) instead of ink, so the ink headline
+  stands apart from its supporting text. I read "text that needs
+  trigger" as the hidden paragraph, not the headline.
+- Tanmigo workflow table lines restored (2026-10-15, her call, from an
+  annotated screenshot): the header row has its bottom rule again
+  (border-b on all three <th>), and the "Stage deployment" cell has its
+  left divider (it had no border-l and an odd pr-6), so the Scenario
+  column's rule runs unbroken to the last row.
+- Disclosure body charcoal (2026-10-15, her call): the revealed
+  paragraph went from text-muted #666 (which matched the 01/02/03
+  numbers) to charcoal #4a4a4a (~8:1 on the #ffece6 band), so it reads
+  as body text while the numbers stay the quietest element.

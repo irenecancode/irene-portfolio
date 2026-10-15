@@ -154,7 +154,7 @@ export default function Home() {
               {RESOURCE_CARDS.map(({ label, href, lines }, i) => (
                 <div
                   key={label}
-                  className={`rounded-2xl bg-[#fffff0] p-7 text-left transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:rotate-0 hover:shadow-[0_0_28px_rgba(204,81,59,0.35)] ${
+                  className={`rounded-2xl bg-[#fffff0] p-7 text-left transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:rotate-0 hover:shadow-[0_0_28px_rgba(207,226,243,0.45)] ${
                     ["-rotate-1", "rotate-1", "-rotate-1"][i % 3]
                   }`}
                 >
