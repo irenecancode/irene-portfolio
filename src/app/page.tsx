@@ -99,11 +99,9 @@ export default function Home() {
               />
               <CaseStudy
                 attribution="Felidae Conservation Fund"
-                imageWebp="/media/case-felidae-thumbnail.webp"
-                imagePng="/media/case-felidae-thumbnail.png"
-                imageAlt="The Felidae Conservation Fund homepage hero: a mountain lion on a rocky hillside, headlined 'The Cat in the Bottleneck'"
-                mediaAspect="aspect-[1618/1050]"
-                mediaClassName="rounded-xl shadow-[0_10px_28px_-6px_rgba(0,0,0,0.32)]"
+                placeholder
+                placeholderLabel="Coming Soon"
+                mediaAspect="aspect-[3018/1514]"
                 headline="Shipping a redesign on a nonprofit's legacy site"
                 body="Rebuilding the public homepage for a wildlife conservation nonprofit on infrastructure it was never built for."
                 tags={["Web Design", "Legacy Site", "HTML"]}

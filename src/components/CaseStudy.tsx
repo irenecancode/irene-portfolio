@@ -63,12 +63,12 @@ export function CaseStudy(props: CaseStudyProps) {
     <>
       <div className="flex items-center justify-center">
         {props.placeholder ? (
-          <div className={`flex ${mediaAspect} w-full items-center justify-center`}>
-            <div className="flex items-center justify-center bg-bg px-10 py-6 ring-1 ring-black/10">
-              <p className="font-display text-base font-medium tracking-wide text-muted uppercase">
-                {props.placeholderLabel ?? "thumbnail, tbd"}
-              </p>
-            </div>
+          <div
+            className={`flex ${mediaAspect} w-full items-center justify-center rounded-xl bg-surface ring-1 ring-black/10`}
+          >
+            <p className="font-display text-base font-medium tracking-wide text-muted uppercase">
+              {props.placeholderLabel ?? "thumbnail, tbd"}
+            </p>
           </div>
         ) : (
           <div className={`flex ${mediaAspect} w-full items-center justify-center`}>
