@@ -10,10 +10,10 @@ const hankenGrotesk = Hanken_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://irenecheung.net"),
-  title: "Irene Cheung, Product Designer",
+  title: "Irene Cheung, Product Designer, Design Engineer",
   description: "Product designer who ships code. Case studies in internal tools, data workflows, and human-AI interaction.",
   openGraph: {
-    title: "Irene Cheung, Product Designer",
+    title: "Irene Cheung, Product Designer, Design Engineer",
     description: "Product designer who ships code.",
     siteName: "Irene Cheung",
     type: "website",

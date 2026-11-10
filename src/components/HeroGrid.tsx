@@ -175,7 +175,7 @@ export function HeroGrid() {
       <div className="col-span-4 col-start-1 row-start-3 flex flex-col items-start justify-center py-5 text-left sm:col-start-2 sm:row-start-2 sm:py-4">
         <h1 className="font-display text-2xl font-medium text-ink sm:text-3xl lg:text-4xl">Irene Cheung</h1>
         <p className="mt-1 font-nav text-xs tracking-wide text-muted uppercase lg:text-sm">
-          product designer
+          product designer, design engineer
         </p>
         {/* Forced break instead of a max-w wrap (Irene's call, 2026-10-13):
             "always a 2-liner" needs to hold regardless of viewport, and a
